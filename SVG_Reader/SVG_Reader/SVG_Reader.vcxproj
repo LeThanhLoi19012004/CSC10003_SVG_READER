@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="ColorProperty.cpp" />
     <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="FactoryFigure.cpp" />
     <ClCompile Include="Figure.cpp" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="ColorProperty.h" />
     <ClInclude Include="Ellipse.h" />
     <ClInclude Include="FactoryFigure.h" />
     <ClInclude Include="Figure.h" />
