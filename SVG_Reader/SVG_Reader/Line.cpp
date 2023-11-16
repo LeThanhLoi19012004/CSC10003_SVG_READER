@@ -56,11 +56,11 @@ void Line::Draw(sf::RenderWindow& window) {
 	line.setPoint(2, sf::Vector2f(p2.getX(), p2.getY()));
 	line.setPoint(3, sf::Vector2f(p2.getX(), p2.getY()));
 
-	if (colorProp.getStroke().r != -1) {
-		line.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b));
-		line.setOutlineThickness(colorProp.getStrokeWidth() / 2);
-		if (colorProp.getStrokeOpa() >= 0) 
-			line.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b, colorProp.getStrokeOpa() * MAX));
+	if (stroke.getStrokeColor().r != -1) {
+		line.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
+		line.setOutlineThickness(stroke.getStrokeWidth() / 2);
+		if (stroke.getStrokeColor().opacity >= 0)
+			line.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
 	}
 	else line.setOutlineColor(sf::Color::Transparent);
 	window.draw(line);
