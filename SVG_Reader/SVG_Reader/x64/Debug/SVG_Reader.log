@@ -1,0 +1,1089 @@
+﻿  Circle.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Circle.cpp(16,18): error C2065: 'line': undeclared identifier
+  ColorProperty.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+  Ellipse.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(16,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(63,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(77,6): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(78,37): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(78,64): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(78,91): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(79,31): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(80,7): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(81,38): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(81,65): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(81,92): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(81,119): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.cpp(85,12): error C2039: 'getName': is not a member of 'Ellipse'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Ellipse.h(4,7): message : see declaration of 'Ellipse'
+  FactoryFigure.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(3,24): error C2039: 'getFigure': is not a member of 'FactoryFigure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(4,7): message : see declaration of 'FactoryFigure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(4,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(5,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(6,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(7,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(8,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(9,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(10,2): error C2065: 'figureId': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(12,12): error C2065: 'figureId': undeclared identifier
+  Figure.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(4,2): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(4,9): error C2065: 'figure': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(4,18): error C2065: 'text_name': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(5,8): error C2039: 'stroke': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(6,8): error C2039: 'fill': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(6,23): error C2039: 'fill': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(6,38): error C2039: 'fill': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(7,8): error C2039: 'fill': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(21,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(30,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(37,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(38,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(39,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(41,3): error C2065: 'map_color': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(43,2): error C2065: 'map_color': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(46,14): error C2511: 'void Figure::update(std::string,std::string,std::string)': overloaded member function not found in 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(47,2): error C2660: 'Figure::updateSameElement': function does not take 3 arguments
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,7): message : see declaration of 'Figure::updateSameElement'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(47,2): message : while trying to match the argument list '(std::string, std::string, std::string)'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(48,2): error C2352: 'Figure::updateDiffElement': a call of a non-static member function requires an object
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(27,15): message : see declaration of 'Figure::updateDiffElement'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(51,14): error C2511: 'void Figure::updateSameElement(std::string,std::string,std::string)': overloaded member function not found in 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(52,2): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(53,2): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(54,2): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(56,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(63,4): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(74,2): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(74,15): error C3861: 'processColor': identifier not found
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(75,2): error C2671: 'Figure::updateSameElement': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(75,30): error C3861: 'processColor': identifier not found
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(80,15): error C2039: 'processColor': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(97,17): error C2065: 'map_color': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(103,16): error C2039: 'getName': is not a member of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(104,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(107,14): error C2511: 'void Figure::setName(std::string)': overloaded member function not found in 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(4,7): message : see declaration of 'Figure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(108,2): error C2671: 'Figure::setName': static member functions do not have 'this' pointers
+  Image.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(4,18): error C2065: 'figures': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(4,27): error C2065: 'fileName': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(8,20): error C2065: 'figures': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(8,48): error C2065: 'imageName': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,8): error C7550: 'Image::{ctor}': the qualified name in this context names a constructor, not a type
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,14): error C2597: illegal reference to non-static member 'Image::string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): message : see declaration of 'Image::string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,21): error C2146: syntax error: missing ')' before identifier 'fileInput'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,32): error C2143: syntax error: missing ';' before '{'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,32): error C2447: '{': missing function header (old-style formal list?)
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(44,24): error C2039: 'getFigures': is not a member of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(45,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+  Line.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(14,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(59,6): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(60,34): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(60,61): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(60,88): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(61,28): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(62,7): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(63,35): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(63,62): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(63,89): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Line.cpp(63,116): error C2065: 'stroke': undeclared identifier
+  main.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+  Parser.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(3,14): error C2511: 'void Parser::parseItem(std::vector<Figure *,std::allocator<Figure *>> &,std::string)': overloaded member function not found in 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(4,7): message : see declaration of 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(43,3): error C2660: 'Parser::ProcessProperty': function does not take 4 arguments
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,7): message : see declaration of 'Parser::ProcessProperty'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(43,3): message : while trying to match the argument list '(std::string, std::string, std::string, std::string)'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(44,25): error C2039: 'getFigure': is not a member of 'FactoryFigure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(4,7): message : see declaration of 'FactoryFigure'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(47,7): error C2660: 'Figure::update': function does not take 3 arguments
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,7): message : see declaration of 'Figure::update'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(47,7): message : while trying to match the argument list '(std::string, std::string, std::string)'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(54,14): error C2511: 'void Parser::ProcessRGB(std::string &)': overloaded member function not found in 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(4,7): message : see declaration of 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(69,14): error C2511: 'void Parser::ProcessProperty(std::string &,std::string &,std::string &,std::string)': overloaded member function not found in 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(4,7): message : see declaration of 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(71,2): error C2660: 'Parser::ProcessRGB': function does not take 1 arguments
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,7): message : see declaration of 'Parser::ProcessRGB'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(71,2): message : while trying to match the argument list '(std::string)'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(75,14): error C3861: 'ProcessTextName': identifier not found
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(88,16): error C2039: 'ProcessTextName': is not a member of 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(4,7): message : see declaration of 'Parser'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(91,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(93,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(95,22): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Point.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+  Polygon.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(16,6): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(19,12): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(20,2): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(22,22): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(23,7): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(24,4): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(26,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(34,25): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(56,6): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(57,37): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(57,64): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(57,91): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(58,31): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(59,7): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(60,38): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(60,65): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(60,92): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(60,119): error C2065: 'stroke': undeclared identifier
+  Polyline.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(18,6): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(21,12): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(22,2): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(24,22): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(25,7): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(26,4): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(29,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(40,19): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(69,5): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(72,5): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(140,7): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(141,35): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(141,62): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(141,89): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(142,29): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(143,8): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(144,36): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(144,63): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(144,90): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(144,117): error C2065: 'stroke': undeclared identifier
+  Program.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(3,17): error C2039: 'name': is not a member of 'Program'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(4,7): message : see declaration of 'Program'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,13): error C2665: 'Image::Image': no overloaded function could convert all the argument types
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(29,1): message : could be 'Image::Image(const Image &)'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,13): message : 'Image::Image(const Image &)': cannot convert argument 1 from 'std::string' to 'const Image &'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,14): message : Reason: cannot convert from 'std::string' to 'const Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,14): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,13): message : while trying to match the argument list '(std::string)'
+  Rectangle.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(16,18): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(66,6): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(67,34): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(67,61): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(67,88): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(68,28): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(69,7): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(70,35): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(70,62): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(70,89): error C2065: 'stroke': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Rectangle.cpp(70,116): error C2065: 'stroke': undeclared identifier
+  Renderer.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(23,16): error C2511: 'void Renderer::renderItem(std::vector<Figure *,std::allocator<Figure *>>,float,std::string,float,float)': overloaded member function not found in 'Renderer'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(4,7): message : see declaration of 'Renderer'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(25,31): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(26,41): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(27,42): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(29,29): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(29,22): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(48,3): error C2352: 'Renderer::canvasControl': a call of a non-static member function requires an object
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(3,16): message : see declaration of 'Renderer::canvasControl'
+  Text.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(6,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,23): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,9): error C3646: 'ProcessTextName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,24): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(10,17): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.h(7,18): error C2061: syntax error: identifier 'vector'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,9): error C3646: 'fileName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,17): error C2059: syntax error: ','
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(7,28): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(12,25): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(15,8): error C2460: 'Image::string': uses 'Image', which is being defined
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : see declaration of 'Image'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(19,30): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,16): error C3646: 'name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.h(9,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(6,37): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C2143: syntax error: missing ';' before '*'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.h(8,32): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,9): error C3646: 'figure': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(7,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,9): error C3646: 'text_name': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(8,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,9): error C3646: 'stroke': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(11,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,8): error C3646: 'fill': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,9): error C3646: 'line': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(14,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C2143: syntax error: missing ';' before '<'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(15,40): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,8): error C3646: 'processColor': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,20): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(19,36): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(25,14): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(26,25): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,9): error C3646: 'getName': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,16): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(29,18): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(30,15): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,9): error C3646: 'content': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,9): error C3646: 'getContent': unknown override specifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,19): error C2059: syntax error: '('
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(18,21): error C2238: unexpected token(s) preceding ';'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(22,18): error C2061: syntax error: identifier 'string'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(7,2): error C2065: 'content': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(14,2): error C2065: 'content': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(18,12): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(19,16): error C2065: 'line': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(31,8): error C2039: 'content': is not a member of 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(4,7): message : see declaration of 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(31,18): error C2065: 'text_name': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(42,14): error C2039: 'getContent': is not a member of 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(4,7): message : see declaration of 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(43,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(55,12): error C2511: 'void Text::setContent(std::string)': overloaded member function not found in 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.h(4,7): message : see declaration of 'Text'
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(56,2): error C2671: 'Text::setContent': static member functions do not have 'this' pointers
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(67,17): error C2065: 'content': undeclared identifier
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(68,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  Generating Code...
