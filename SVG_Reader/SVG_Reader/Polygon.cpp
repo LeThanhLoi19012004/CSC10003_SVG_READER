@@ -46,20 +46,19 @@ void Polygon::Draw(sf::RenderWindow& window) {
 	for (int i = 0; i < nVer; i++)
 		polygon.setPoint(i, sf::Vector2f(Vers[i].getX(), Vers[i].getY()));
 
-	if (colorProp.getFill().r != -1) {
-		polygon.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b));
-		if (colorProp.getFillOpa() > 0)
-			polygon.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b, colorProp.getFillOpa() * MAX));
+	if (fill.r != -1) {
+		polygon.setFillColor(sf::Color(fill.r, fill.g, fill.b));
+		if (fill.opacity >= 0)
+			polygon.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
 	}
 	else polygon.setFillColor(sf::Color::Transparent);
 
-	if (colorProp.getStroke().r != -1) {
-		polygon.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b));
-		polygon.setOutlineThickness(colorProp.getStrokeWidth());
-		if (colorProp.getStrokeOpa() > 0)
-			polygon.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b, colorProp.getStrokeOpa() * MAX));
+	if (stroke.getStrokeColor().r != -1) {
+		polygon.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
+		polygon.setOutlineThickness(stroke.getStrokeWidth());
+		if (stroke.getStrokeColor().opacity >= 0)
+			polygon.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
 	}
 	else polygon.setOutlineColor(sf::Color::Transparent);
-
 	window.draw(polygon);
 }
