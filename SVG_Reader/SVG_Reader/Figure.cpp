@@ -2,13 +2,9 @@
 
 Figure::Figure() {
 	line = figure = text_name = "";
-
-	colorProp.setFill({ -1,-1, -1 });
-	colorProp.setStroke({ -1,-1,-1 });
-	colorProp.setFillOpa(-1);
-	colorProp.setStrokeOpa(-1);
-	colorProp.setStrokeWidth(0);
-
+	this->stroke;
+	this->fill.r = this->fill.g = this->fill.b = -1;
+	this->fill.opacity = -1;
 	loadColorMap();
 }
 
@@ -21,30 +17,30 @@ void Figure::loadColorMap() {
 	}
 
 	string color_line = "";
-
 	while (getline(color_file, color_line)) {
 		int pos = color_line.find("#");
 		stringstream ss(color_line);
 		string token = "";
 		vector<string> vct;
 
-		while (ss >> token) 
+		while (ss >> token)
 			vct.push_back(token);
-		
+
 		string color_name, hexa_code;
 		int n = vct.size();
 
-		for (int i = 0; i < n - 1; i++) 
+		for (int i = 0; i < n - 1; i++)
 			color_name = color_name + vct[i];
-		
+
 		hexa_code = vct[n - 1];
 		Color color;
 		color.r = stoi(hexa_code.substr(1, 2), NULL, 16);
 		color.g = stoi(hexa_code.substr(3, 2), NULL, 16);
 		color.b = stoi(hexa_code.substr(5, 2), NULL, 16);
+
 		map_color[color_name] = color;
 	}
-	map_color["none"] = { -1,-1,-1 };
+	map_color["none"] = { -1, -1, -1, -1 };
 }
 
 void Figure::update(string name, string attribute, string text_name) {
@@ -56,42 +52,52 @@ void Figure::updateSameElement(string figure, string attribute, string text_name
 	this->line = attribute;
 	this->figure = figure;
 	this->text_name = text_name;
+
 	stringstream ss(line);
 	string property, value;
+	string fillcolor = "", fillopa = "-1";
+	string strokecolor = "", strokeopa = "-1";
 
 	while (ss >> property >> value) {
-		if (property == "stroke-width") 
-			this->colorProp.setStrokeWidth(stof(value));
-		if (property == "fill-opacity") 
-			this->colorProp.setFillOpa(stof(value));		
-		if (property == "fill") 
-			this->colorProp.setFill(processColor(value));
-		if (property == "stroke") 
-			this->colorProp.setStroke(processColor(value));
-		if (property == "stroke-opacity") 
-			this->colorProp.setStrokeOpa(stof(value));
+		if (property == "stroke-width")
+			this->stroke.setStrokeWidth(stof(value));
+		if (property == "fill-opacity")
+			fillopa = value;
+		if (property == "fill")
+			fillcolor = value;
+		if (property == "stroke")
+			strokecolor = value;
+		if (property == "stroke-opacity")
+			strokeopa = value;
 	}
+
+	this->fill = processColor(fillcolor, fillopa);
+	this->stroke.setStrokeColor(processColor(strokecolor, strokeopa));
 }
 
 void Figure::updateDiffElement() {}
 
-Color Figure::processColor(string rgb) {
-	if (rgb.find("rgb") != string::npos) {
-		Color color = { -1,-1,-1 };
-
-		for (int i = 0; i < rgb.size(); i++) {
-			if (!isdigit(rgb[i]))  //If the character is not number then change to ' '
-				rgb[i] = ' ';
+Color Figure::processColor(string strokecolor, string strokeopa) {
+	if (strokecolor.find("rgb") != string::npos) {
+		Color color = { -1, -1, -1, -1 };
+		color.opacity = stof(strokeopa);
+		for (int i = 0; i < strokecolor.size(); i++) {
+			if (!isdigit(strokecolor[i]))	//If the character is not number then change to ' '
+				strokecolor[i] = ' ';
 		}
-
-		stringstream ss(rgb);
+		stringstream ss(strokecolor);
 		string r, g, b;
 		ss >> r >> g >> b;
 		color.r = stof(r); color.g = stof(g); color.b = stof(b);
 		ss.ignore();
 		return color;
 	}
-	else return map_color[rgb];
+	else {
+		//If the color property is Color
+		Color color = map_color[strokecolor];
+		color.opacity = stof(strokeopa);
+		return color;
+	}
 }
 
 string Figure::getName() {

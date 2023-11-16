@@ -2,26 +2,26 @@
 #define _COLORPROPERTY_H_
 
 class Color {
+private:
+
 public:
-	float r, g, b;
+	float r = -1, g = -1, b = -1;
+	float opacity = -1;
 };
 
-class ColorProperty {
+class Stroke {
 private:
-	Color stroke, fill;
-	float fillOpa, strokeWidth, strokeOpa;
+	Color strokeColor;
+	float strokeWidth;
 public:
-	void setStroke(Color);
-	void setFill(Color);
-	void setFillOpa(float);
-	void setStrokeWidth(float);
-	void setStrokeOpa(float);
-	
-	Color getStroke();
-	Color getFill();
-	float getFillOpa();
+	Stroke();
+	~Stroke();
+
+	Color getStrokeColor();
 	float getStrokeWidth();
-	float getStrokeOpa();
+
+	void setStrokeColor(Color);
+	void setStrokeWidth(float);
 };
 
 #endif

@@ -1,45 +1,25 @@
 #include "Lib.h"
 
-Color ColorProperty::getStroke() {
-	return this->stroke;
+Stroke::Stroke() {
+	this->strokeWidth = 0;
 }
 
-Color ColorProperty::getFill() {
-	return this->fill;
+Stroke::~Stroke() {
+	this->strokeWidth = 0;
 }
 
-float ColorProperty::getFillOpa() {
-	return this->fillOpa;
+Color Stroke::getStrokeColor() {
+	return this->strokeColor;
 }
 
-float ColorProperty::getStrokeOpa() {
-	return this->strokeOpa;
-}
-
-float ColorProperty::getStrokeWidth() {
+float  Stroke::getStrokeWidth() {
 	return this->strokeWidth;
 }
 
-void ColorProperty::setStroke(Color stroke) {
-	this->stroke.r = stroke.r;
-	this->stroke.g = stroke.g;
-	this->stroke.b = stroke.b;
+void Stroke::setStrokeColor(Color strokeColor) {
+	this->strokeColor = strokeColor;
 }
 
-void ColorProperty::setFill(Color fill) {
-	this->fill.r = fill.r;
-	this->fill.g = fill.g;
-	this->fill.b = fill.b;
-}
-
-void ColorProperty::setFillOpa(float fillOpa) {
-	this->fillOpa = fillOpa;
-}
-
-void ColorProperty::setStrokeWidth(float strokeWidth) {
+void Stroke::setStrokeWidth(float strokeWidth) {
 	this->strokeWidth = strokeWidth;
-}
-
-void ColorProperty::setStrokeOpa(float strokeOpa) {
-	this->strokeOpa = strokeOpa;
 }
