@@ -58,6 +58,7 @@ void Polyline::Draw(sf::RenderWindow& window) {
 	totalArray.push_back(Vers[0]); //Push back the first element of the vertices
 
 	for (int i = 1; i < nVer; i++) {
+
 		Point P1 = Vers[i - 1];
 		Point P2 = Vers[i];
 		Point intersect;
@@ -91,8 +92,8 @@ void Polyline::Draw(sf::RenderWindow& window) {
 		}
 		totalArray.push_back(Vers[i]);
 	}
-
 	int pos = -1;
+
 	for (int i = 0; i < totalArray.size(); i++) {
 		if (totalArray[i].getIntersect()) {
 			pos = i;
@@ -107,17 +108,17 @@ void Polyline::Draw(sf::RenderWindow& window) {
 			//Process
 			sf::ConvexShape shape;
 			shape.setPointCount(cnt);
-			for (int k = 0; k < cnt; k++) 
-				shape.setPoint(k, sf::Vector2f(totalArray[k + pos].getX(), totalArray[k + pos].getY()));
 
-			if (colorProp.getFill().r != -1) {
-				shape.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b));
-				if (colorProp.getFillOpa() > 0) 
-					shape.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b, colorProp.getFillOpa() * MAX));	
+			for (int k = 0; k < cnt; k++)
+				shape.setPoint(k, sf::Vector2f(totalArray[k + pos].getX(), totalArray[k + pos].getY()));
+			if (fill.r != -1) {
+				shape.setFillColor(sf::Color(fill.r, fill.g, fill.b)); //Fill the
+				if (fill.opacity >= 0)
+					shape.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
 			}
 			else {
-				if (colorProp.getFillOpa() >= 0)
-					shape.setFillColor(sf::Color(0, 0, 0, colorProp.getFillOpa() * MAX));
+				if (fill.opacity >= 0)
+					shape.setFillColor(sf::Color(0, 0, 0, fill.opacity * MAX));
 				else shape.setFillColor(sf::Color::Transparent);
 			}
 			window.draw(shape);
@@ -136,13 +137,14 @@ void Polyline::Draw(sf::RenderWindow& window) {
 		rect.setPoint(2, sf::Vector2f(Vers[i - 1].getX(), Vers[i - 1].getY()));
 		rect.setPoint(3, sf::Vector2f(Vers[i - 1].getX(), Vers[i - 1].getY()));
 
-		if (colorProp.getStroke().r != -1) {
-			rect.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b));
-			rect.setOutlineThickness(colorProp.getStrokeWidth() / 2);
-			if (colorProp.getStrokeOpa() >= 0) 
-				rect.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b, colorProp.getStrokeOpa() * MAX));
-			else rect.setOutlineColor(sf::Color::Transparent);
+		if (stroke.getStrokeColor().r != -1) {
+			rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
+			rect.setOutlineThickness(stroke.getStrokeWidth() / 2);
+			if (stroke.getStrokeColor().opacity >= 0)
+				rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
 		}
+		else rect.setOutlineColor(sf::Color::Transparent);
+
 		window.draw(rect);
 	}
 }
