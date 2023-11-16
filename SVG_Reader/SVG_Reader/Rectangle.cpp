@@ -52,26 +52,25 @@ void Rectangle::setHeight(float h) {
 	this->height = h;
 }
 
- void Rectangle::Draw(sf::RenderWindow & window) {
+void Rectangle::Draw(sf::RenderWindow& window) {
 	sf::RectangleShape rect;
-		
 	rect.setSize(sf::Vector2f(width, height));
-		
-	if (colorProp.getFill().r != -1) {
-		rect.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b));
-		if (colorProp.getFillOpa() >= 0) 
-			rect.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b, colorProp.getFillOpa() * MAX));
+
+	if (fill.r != -1) {
+		rect.setFillColor(sf::Color(fill.r, fill.g, fill.b));
+		if (fill.opacity >= 0)
+			rect.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
 	}
 	else rect.setFillColor(sf::Color::Transparent);
 
-	if (colorProp.getStroke().r != -1) {
-		rect.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b));
-		rect.setOutlineThickness(colorProp.getStrokeWidth());
-		if (colorProp.getStrokeOpa() >= 0) 
-			rect.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b, colorProp.getStrokeOpa() * MAX));
+	if (stroke.getStrokeColor().r != -1) {
+		rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
+		rect.setOutlineThickness(stroke.getStrokeWidth());
+		if (stroke.getStrokeColor().opacity >= 0)
+			rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
 	}
 	else rect.setOutlineColor(sf::Color::Transparent);
-	
+
 	rect.setPosition(root.getX(), root.getY());
 	window.draw(rect);
 }
