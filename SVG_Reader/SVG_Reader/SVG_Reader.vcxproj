@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FactoryFigure.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -144,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="FactoryFigure.h" />
     <ClInclude Include="Lib.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
