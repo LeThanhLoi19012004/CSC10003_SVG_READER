@@ -168,6 +168,9 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Color.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
