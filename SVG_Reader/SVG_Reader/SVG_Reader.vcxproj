@@ -133,14 +133,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FactoryFigure.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="Polyline.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FactoryFigure.h" />
     <ClInclude Include="Lib.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
+    <ClInclude Include="Polyline.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Rectangle.h" />
   </ItemGroup>
