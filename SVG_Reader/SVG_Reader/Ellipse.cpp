@@ -67,18 +67,18 @@ void Ellipse::Draw(sf::RenderWindow& window) {
 		ellipse.setPoint(i, sf::Vector2f(x, y));
 	}
 
-	if (colorProp.getFill().r != -1) {
-		ellipse.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b));
-		if (colorProp.getFillOpa() > 0)
-			ellipse.setFillColor(sf::Color(colorProp.getFill().r, colorProp.getFill().g, colorProp.getFill().b, colorProp.getFillOpa() * MAX));
+	if (fill.r != -1) {
+		ellipse.setFillColor(sf::Color(fill.r, fill.g, fill.b));
+		if (fill.opacity >= 0)
+			ellipse.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
 	}
 	else ellipse.setFillColor(sf::Color::Transparent);
-	
-	if (colorProp.getStroke().r != -1) {
-		ellipse.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b));
-		ellipse.setOutlineThickness(colorProp.getStrokeWidth());
-		if (colorProp.getStrokeOpa() > 0)
-			ellipse.setOutlineColor(sf::Color(colorProp.getStroke().r, colorProp.getStroke().g, colorProp.getStroke().b, colorProp.getStrokeOpa() * MAX));
+
+	if (stroke.getStrokeColor().r != -1) {
+		ellipse.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
+		ellipse.setOutlineThickness(stroke.getStrokeWidth());
+		if (stroke.getStrokeColor().opacity >= 0)
+			ellipse.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
 	}
 	else ellipse.setOutlineColor(sf::Color::Transparent);
 
