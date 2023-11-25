@@ -10,10 +10,14 @@ public:
 	~Polyline();
 
 	/*Update different polyline element*/
-	void updateDiffElement();
+	void updateProperty();
+	Point* getVers();
+	int getNVer();
+	
+	void setVers(Point*);
+	void setNVer(int);
 
-	/*Draw polyline*/
-	void Draw(sf::RenderWindow&);
+	void transformFigure();
 };
 
 #endif

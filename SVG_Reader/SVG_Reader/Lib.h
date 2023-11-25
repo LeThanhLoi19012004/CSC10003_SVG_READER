@@ -11,6 +11,8 @@
 #include <sstream>
 #include <cmath>
 #include <unordered_map>
+#include <queue>
+#include <stack>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/KeyBoard.hpp>
@@ -19,6 +21,7 @@ using namespace std;
 
 #include "ColorProperty.h"
 #include "Figure.h"
+#include "Group.h"
 #include "Point.h"
 #include "Polygon.h"
 #include "Rectangle.h"

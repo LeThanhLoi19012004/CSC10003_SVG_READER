@@ -14,13 +14,15 @@ Text::~Text() {
 	content = "";
 }
 
-void Text::updateDiffElement() {
+void Text::updateProperty() {
 	int pos = line.find(">");
 	string temp = line.substr(0, pos);
 	stringstream ss(temp);
-	string attribute, val;
+	string attribute, val, a;
 
-	while (ss >> attribute >> val) {
+	while (ss >> attribute) {
+		getline(ss, a, '"');
+		getline(ss, val, '"');
 		if (attribute == "x")
 			this->textPos.setX(stof(val));
 		if (attribute == "y")
@@ -56,21 +58,38 @@ void Text::setContent(string content) {
 	this->content = content;
 }
 
-void Text::Draw(sf::RenderWindow& window) {
-	sf::Text text;
-	sf::Font font;
+void Text::transformFigure() {
+	float curX = this->textPos.getX();
+	float curY = this->textPos.getY();
+	for (auto p : transVct) {
+		if (p.first == "translate") {
+			this->textPos.setX(curX + p.second[0]);
+			this->textPos.setY(curY + p.second[1]);
+		}
+		if (p.first == "rotate") {
+			this->isRotate = true;
+		}
+		if (p.first == "scale") {
+			curX = this->textPos.getX();
+			curY = this->textPos.getY();
+			if (p.second.size() == 1) {
+				float scl = p.second[0];
+				this->textPos.setX(curX * scl);
+				this->textPos.setY(curY * scl);
+				
+				this->fontSize *= scl;
 
-	if (!font.loadFromFile("times new roman.ttf"))
-		return;
+			}
+			else {
+				float sclX = p.second[0];
+				float sclY = p.second[1];
 
-	text.setFont(font);
-	text.setString(content);
-	text.setCharacterSize(fontSize);
-
-	if (fill.r != -1)
-		text.setFillColor(sf::Color(fill.r, fill.g, fill.b));
-	else text.setFillColor(sf::Color::Transparent);
-
-	text.setPosition(textPos.getX(), textPos.getY() - fontSize - 1.f);
-	window.draw(text);
+				this->textPos.setX(curX * sclX);
+				this->textPos.setY(curY * sclY);
+				this->fontSize *= sclX;
+				
+				
+			}
+		}
+	}
 }

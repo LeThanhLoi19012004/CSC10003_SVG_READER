@@ -8,7 +8,7 @@ public:
 	Circle();
 	~Circle();
 
-	void updateDiffElement();
+	void updateProperty();
 };
 
 #endif

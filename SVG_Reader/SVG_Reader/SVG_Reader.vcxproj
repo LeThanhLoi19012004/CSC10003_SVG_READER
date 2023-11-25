@@ -138,6 +138,7 @@
     <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="FactoryFigure.cpp" />
     <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="Group.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Ellipse.h" />
     <ClInclude Include="FactoryFigure.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="Group.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Lib.h" />
     <ClInclude Include="Line.h" />

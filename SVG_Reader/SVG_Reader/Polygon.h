@@ -8,8 +8,14 @@ private:
 public:
 	Polygon();
 	~Polygon();
-	void updateDiffElement();
-	void Draw(sf::RenderWindow&);
+
+	void setVers(Point*);
+	void setNVer(int);
+	Point* getVers();
+	int getNVer();
+
+	void updateProperty();
+	void transformFigure();
 };
 
 #endif

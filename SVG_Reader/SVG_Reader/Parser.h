@@ -1,13 +1,19 @@
 #ifndef _PARSER_H_
 #define _PARSER_H_
 
+
 class Parser {
 private:
+	unordered_map<string, Color> colorMap;
 	void ProcessRGB(string&);
-	void ProcessProperty(string&, string&, string&, string);
-	string ProcessTextName(string);
-public:
-	void parseItem(vector<Figure*>&, string);
-};
+	Color processColor(string , string);
+	void loadColorMap();
+	void processProperty(string, string, string, Figure*&);
+	Group getGroup(ifstream&,string);
+	Group generateGroup(string&, int);
 
+	void parseGroup(Group&);
+public:
+	void parseItem(vector<Figure*>&,GroupArray&, string);
+};
 #endif

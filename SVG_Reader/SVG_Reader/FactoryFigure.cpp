@@ -1,13 +1,7 @@
 #include "Lib.h"
 
 Figure* FactoryFigure::getFigure(string name) {
-	figureId["rect"]		= 1;
-	figureId["circle"]		= 2;
-	figureId["ellipse"]		= 3;
-	figureId["line"]		= 4;
-	figureId["polyline"]	= 5;
-	figureId["polygon"]		= 6;
-	figureId["text"]		= 7;
+	
 
 	int num = figureId[name];
 	switch (num) {
@@ -42,4 +36,16 @@ Figure* FactoryFigure::getFigure(string name) {
 	default: return NULL;
 	}
 	return NULL;
+}
+FactoryFigure::FactoryFigure() {
+	figureId["rect"] = 1;
+	figureId["circle"] = 2;
+	figureId["ellipse"] = 3;
+	figureId["line"] = 4;
+	figureId["polyline"] = 5;
+	figureId["polygon"] = 6;
+	figureId["text"] = 7;
+}
+unordered_map<string, int> FactoryFigure::getFigureId() {
+	return this->figureId;
 }
