@@ -12,11 +12,12 @@ Rectangle::~Rectangle() {
 	root.setY(0);
 }
 
-void Rectangle::updateDiffElement() {
+void Rectangle::updateProperty() {
 	stringstream ss(line);
-	string attribute, val;
-
-	while (ss >> attribute >> val) {
+	string attribute, val, temp;
+	while (ss >> attribute) {
+		getline(ss, temp, '"');
+		getline(ss, val, '"');
 		if (attribute == "x")
 			this->root.setX(stof(val));
 		if (attribute == "y")
@@ -26,6 +27,8 @@ void Rectangle::updateDiffElement() {
 		if (attribute == "height")
 			this->height = stof(val);
 	}
+
+
 }
 
 Point Rectangle::getRoot() {
@@ -52,25 +55,36 @@ void Rectangle::setHeight(float h) {
 	this->height = h;
 }
 
-void Rectangle::Draw(sf::RenderWindow& window) {
-	sf::RectangleShape rect;
-	rect.setSize(sf::Vector2f(width, height));
+void Rectangle :: transformFigure() {
+	float curX = this->root.getX();
+	float curY = this->root.getY();
+	for (auto p : transVct) {
+		if (p.first == "translate") {
+			this->root.setX(curX + p.second[0]);
+			this->root.setY(curY + p.second[1]);
+		}
+		if (p.first == "rotate") {
+			this->isRotate = true;
+		}
+		if (p.first == "scale") {
+			curX = this->root.getX();
+			curY = this->root.getY();
+			if (p.second.size() == 1) {
+				float scl = p.second[0];
+				this->root.setX(curX * scl);
+				this->root.setY(curY * scl);
+				this->width *= scl;
+				this->height *= scl;
+			}
+			else {
+				float sclX = p.second[0];
+				float sclY = p.second[1];
 
-	if (fill.r != -1) {
-		rect.setFillColor(sf::Color(fill.r, fill.g, fill.b));
-		if (fill.opacity >= 0)
-			rect.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
+				this->root.setX(curX * sclX);
+				this->root.setY(curY * sclY);
+				this->width *= sclX;
+				this->height *= sclY;
+			}
+		}
 	}
-	else rect.setFillColor(sf::Color::Transparent);
-
-	if (stroke.getStrokeColor().r != -1) {
-		rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
-		rect.setOutlineThickness(stroke.getStrokeWidth());
-		if (stroke.getStrokeColor().opacity >= 0)
-			rect.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
-	}
-	else rect.setOutlineColor(sf::Color::Transparent);
-
-	rect.setPosition(root.getX(), root.getY());
-	window.draw(rect);
 }

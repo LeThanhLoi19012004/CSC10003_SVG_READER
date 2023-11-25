@@ -12,11 +12,13 @@ Circle::~Circle() {
 	this->setRy(0);
 }
 
-void Circle::updateDiffElement() {
+void Circle::updateProperty() {
 	stringstream ss(line);
-	string attribute, val;
+	string attribute, val, temp;
 
-	while (ss >> attribute >> val) {
+	while (ss >> attribute) {
+		getline(ss, temp, '"');
+		getline(ss, val, '"');
 		if (attribute == "r") {
 			this->setRx(stof(val));
 			this->setRy(stof(val));

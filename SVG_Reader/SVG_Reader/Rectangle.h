@@ -10,7 +10,7 @@ public:
 	~Rectangle();
 
 	// Update Rectangle Element
-	void updateDiffElement();
+	void updateProperty();
 
 	// Setter and Getter
 	Point getRoot();
@@ -21,8 +21,7 @@ public:
 	void setWidth(float);
 	void setHeight(float);
 
-	// Draw function
-	void Draw(sf::RenderWindow&);
+	void transformFigure();
 };
 
 #endif

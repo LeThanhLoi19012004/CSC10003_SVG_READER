@@ -9,12 +9,14 @@ Line::~Line() {
 	p2.setX(0); p2.setY(0);
 }
 
-void Line::updateDiffElement()
+void Line::updateProperty()
 {
 	stringstream ss(line);
-	string attribute, val;
+	string attribute, val, temp;
 
-	while (ss >> attribute >> val) {
+	while (ss >> attribute) {
+		getline(ss, temp, '"');
+		getline(ss, val, '"');
 		if (attribute == "x1") {
 			this->p1.setX(stof(val));
 		}
@@ -46,22 +48,47 @@ void Line::setP2(Point p2) {
 	this->p2 = p2;
 }
 
-void Line::Draw(sf::RenderWindow& window) {
+void Line::transformFigure() {
+	float curX1 = this->p1.getX();
+	float curY1 = this->p1.getY();
 
-	sf::ConvexShape line;
+	float curX2 = this->p2.getX();
+	float curY2 = this->p2.getY();
 
-	line.setPointCount(4);
-	line.setPoint(0, sf::Vector2f(p1.getX(), p1.getY()));
-	line.setPoint(1, sf::Vector2f(p1.getX(), p1.getY()));
-	line.setPoint(2, sf::Vector2f(p2.getX(), p2.getY()));
-	line.setPoint(3, sf::Vector2f(p2.getX(), p2.getY()));
+	for (auto p : transVct) {
+		if (p.first == "translate") {
+			this->p1.setX(curX1 + p.second[0]);
+			this->p1.setY(curY1 + p.second[1]);
 
-	if (stroke.getStrokeColor().r != -1) {
-		line.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
-		line.setOutlineThickness(stroke.getStrokeWidth() / 2);
-		if (stroke.getStrokeColor().opacity >= 0)
-			line.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
+			this->p2.setX(curX2 + p.second[0]);
+			this->p2.setY(curY2 + p.second[1]);
+		}
+		if (p.first == "rotate") {
+			this->isRotate = true;
+		}
+		if (p.first == "scale") {
+			curX1 = this->p1.getX();
+			curY1 = this->p1.getY();
+			curX2 = this->p2.getX();
+			curY2 = this->p2.getY();
+			if (p.second.size() == 1) {
+				float scl = p.second[0];
+				this->p1.setX(curX1 * scl);
+				this->p1.setY(curY1 * scl);
+				
+				this->p2.setX(curX2 * scl);
+				this->p2.setY(curY2 * scl);
+			}
+			else {
+				float sclX = p.second[0];
+				float sclY = p.second[1];
+
+				this->p1.setX(curX1 * sclX);
+				this->p1.setY(curY1 * sclY);
+
+				this->p2.setX(curX2 * sclX);
+				this->p2.setY(curY2 * sclY);
+			}
+		}
 	}
-	else line.setOutlineColor(sf::Color::Transparent);
-	window.draw(line);
 }

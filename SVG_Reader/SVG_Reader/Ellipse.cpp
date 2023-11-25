@@ -12,19 +12,21 @@ Ellipse::~Ellipse() {
 	center.setY(0);
 }
 
-void Ellipse::updateDiffElement() {
+void Ellipse::updateProperty() {
 	stringstream ss(line);
-	string property, value;
+	string property, val, temp;
 
-	while (ss >> property >> value) {
+	while (ss >> property ) {
+		getline(ss, temp, '"');
+		getline(ss, val, '"');
 		if (property == "rx")
-			this->rx = stof(value);
+			this->rx = stof(val);
 		if (property == "ry")
-			this->ry = stof(value);
+			this->ry = stof(val);
 		if (property == "cx")
-			this->center.setX(stof(value));
+			this->center.setX(stof(val));
 		if (property == "cy")
-			this->center.setY(stof(value));
+			this->center.setY(stof(val));
 	}
 }
 
@@ -53,38 +55,37 @@ void Ellipse::setRy(float ry) {
 	this->ry = ry;
 }
 
-void Ellipse::Draw(sf::RenderWindow& window) {
-	unsigned short pointNum = 72; //72 is the golden distribution of points to form ellipse
+void Ellipse::transformFigure() {
+	float curX = this->center.getX();
+	float curY = this->center.getY();
+	for (auto p : transVct) {
+		if (p.first == "translate") {
+			this->center.setX(curX + p.second[0]);
+			this->center.setY(curY + p.second[1]);
+		}
+		if (p.first == "rotate") {
+			this->isRotate = true;
+		}
+		if (p.first == "scale") {
+			curX = this->center.getX();
+			curY = this->center.getY();
+			if (p.second.size() == 1) {
+				float scl = p.second[0];
+				this->center.setX(curX * scl);
+				this->center.setY(curY * scl);
+				this->rx *= scl;
+				this->ry *= scl;
+			}
+			else {
+				float sclX = p.second[0];
+				float sclY = p.second[1];
 
-	sf::ConvexShape ellipse;
-	ellipse.setPointCount(pointNum);
-
-	for (unsigned short i = 0; i < pointNum; i++) {
-		float radian = (360 / pointNum * i) / (180 / Pi);
-		float x = cos(radian) * rx;
-		float y = sin(radian) * ry;
-
-		ellipse.setPoint(i, sf::Vector2f(x, y));
+				this->center.setX(curX * sclX);
+				this->center.setY(curY * sclY);
+				this->rx *= sclX;
+				this->ry *= sclY;
+			}
+		}
 	}
-
-	if (fill.r != -1) {
-		ellipse.setFillColor(sf::Color(fill.r, fill.g, fill.b));
-		if (fill.opacity >= 0)
-			ellipse.setFillColor(sf::Color(fill.r, fill.g, fill.b, fill.opacity * MAX));
-	}
-	else ellipse.setFillColor(sf::Color::Transparent);
-
-	if (stroke.getStrokeColor().r != -1) {
-		ellipse.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b));
-		ellipse.setOutlineThickness(stroke.getStrokeWidth());
-		if (stroke.getStrokeColor().opacity >= 0)
-			ellipse.setOutlineColor(sf::Color(stroke.getStrokeColor().r, stroke.getStrokeColor().g, stroke.getStrokeColor().b, stroke.getStrokeColor().opacity * MAX));
-	}
-	else ellipse.setOutlineColor(sf::Color::Transparent);
-
-	if (this->getName() == "ellipse")
-		ellipse.setPosition(center.getX(), center.getY() - 10);
-	else ellipse.setPosition(center.getX() - 10, center.getY());
-
-	window.draw(ellipse);
 }
+

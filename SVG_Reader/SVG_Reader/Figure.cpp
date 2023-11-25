@@ -1,105 +1,12 @@
 #include "Lib.h"
 
 Figure::Figure() {
-	line = figure = text_name = "";
-	this->stroke;
-	this->fill.r = this->fill.g = this->fill.b = -1;
-	this->fill.opacity = -1;
-	loadColorMap();
+
 }
 
-void Figure::loadColorMap() {
-	ifstream color_file("Color.txt", ios::in);
+void Figure::updateProperty() {
 
-	if (!color_file.is_open()) {
-		cout << "Error Loading Color File\n";
-		return;
-	}
-
-	string color_line = "";
-	while (getline(color_file, color_line)) {
-		int pos = color_line.find("#");
-		stringstream ss(color_line);
-		string token = "";
-		vector<string> vct;
-
-		while (ss >> token)
-			vct.push_back(token);
-
-		string color_name, hexa_code;
-		int n = vct.size();
-
-		for (int i = 0; i < n - 1; i++)
-			color_name = color_name + vct[i];
-
-		hexa_code = vct[n - 1];
-		Color color;
-		color.r = stoi(hexa_code.substr(1, 2), NULL, 16);
-		color.g = stoi(hexa_code.substr(3, 2), NULL, 16);
-		color.b = stoi(hexa_code.substr(5, 2), NULL, 16);
-
-		map_color[color_name] = color;
-	}
-	map_color["none"] = { -1, -1, -1, -1 };
 }
-
-void Figure::update(string name, string attribute, string text_name) {
-	updateSameElement(name, attribute, text_name);
-	updateDiffElement();
-}
-
-void Figure::updateSameElement(string figure, string attribute, string text_name) {
-	this->line = attribute;
-	this->figure = figure;
-	this->text_name = text_name;
-
-	stringstream ss(line);
-	string property, value;
-	string fillcolor = "", fillopa = "-1";
-	string strokecolor = "", strokeopa = "-1";
-
-	while (ss >> property >> value) {
-		if (property == "stroke-width")
-			this->stroke.setStrokeWidth(stof(value));
-		if (property == "fill-opacity")
-			fillopa = value;
-		if (property == "fill")
-			fillcolor = value;
-		if (property == "stroke")
-			strokecolor = value;
-		if (property == "stroke-opacity")
-			strokeopa = value;
-	}
-
-	this->fill = processColor(fillcolor, fillopa);
-	this->stroke.setStrokeColor(processColor(strokecolor, strokeopa));
-}
-
-void Figure::updateDiffElement() {}
-
-Color Figure::processColor(string strokecolor, string strokeopa) {
-	if (strokecolor.find("rgb") != string::npos) {
-		Color color = { -1, -1, -1, -1 };
-		color.opacity = stof(strokeopa);
-		for (int i = 0; i < strokecolor.size(); i++) {
-			if (!isdigit(strokecolor[i]))	//If the character is not number then change to ' '
-				strokecolor[i] = ' ';
-		}
-		stringstream ss(strokecolor);
-		string r, g, b;
-		ss >> r >> g >> b;
-		color.r = stof(r); color.g = stof(g); color.b = stof(b);
-		ss.ignore();
-		return color;
-	}
-	else {
-		//If the color property is Color
-		Color color = map_color[strokecolor];
-		color.opacity = stof(strokeopa);
-		return color;
-	}
-}
-
 string Figure::getName() {
 	return this->figure;
 }
@@ -107,9 +14,86 @@ string Figure::getName() {
 void Figure::setName(string s) {
 	this->figure = s;
 }
-
+void Figure:: setStroke(Stroke stroke) {
+	this->stroke = stroke;
+}
+void Figure:: setColor(Color fill) {
+	this->fill = fill;
+}
 Figure:: ~Figure() {}
 
-void Figure::Draw(sf::RenderWindow& window) {
-	return;
+void Figure:: setTextName(string textName) {
+	this->text_name = textName;
 }
+void Figure::setLine(string line) {
+	this->line = line;
+}
+
+string Figure::getTextName() {
+	return this->text_name;
+}
+Stroke Figure::getStroke() {
+	return this->stroke;
+}
+Color Figure::getColor() {
+	return this->fill;
+}
+
+
+bool Figure::getisRotate() {
+	return this->isRotate;
+}
+void Figure::setisRotate(bool isRotate) {
+	this->isRotate = isRotate;
+}
+void Figure::updateTransformVct(string str) {
+	string tempStr = "", token = "";
+	stringstream ss(str);
+	while (ss >> token) {
+		tempStr = tempStr + token;
+	}
+	stringstream tmpStream(tempStr);
+	string property = "", val = "";
+
+	while (getline(tmpStream, property,'(')) {
+		pair<string, vector<float>> p;
+		p.first = property;
+		getline(tmpStream, val, ')');
+		stringstream sss(val);
+		if (property == "translate") {
+			string x = "", y = "";
+			getline(sss, x,',');
+			getline(sss, y);
+			p.second.push_back(stof(x));
+			p.second.push_back(stof(y));
+		}
+		else if (property == "rotate") {
+			string r = "";
+			getline(sss, r);
+			p.second.push_back(stof(r));
+		}
+		else if (property == "scale") {
+			if (val.find(",") != string::npos) {
+				string x = "", y = "";
+				getline(sss, x, ',');
+				getline(sss, y);
+				p.second.push_back(stof(x));
+				p.second.push_back(stof(y));
+			}
+			else {
+				string s = "";
+				getline(sss, s, ',');
+				p.second.push_back(stof(s));
+			}
+		}
+		transVct.push_back(p);
+	}
+}
+vector<pair<string, vector<float>>> Figure:: getTransVct() {
+	return this->transVct;
+}
+
+void Figure::transformFigure() {
+
+}
+

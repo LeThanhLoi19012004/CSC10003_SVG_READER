@@ -9,7 +9,7 @@ public:
 	Ellipse();
 	~Ellipse();
 
-	void updateDiffElement();
+	void updateProperty();
 
 	// Setter 
 	Point getCenter();
@@ -21,8 +21,7 @@ public:
 	void setRx(float);
 	void setRy(float);
 
-	// Draw function
-	void Draw(sf::RenderWindow&);
+	void transformFigure();
 };
 
 #endif 

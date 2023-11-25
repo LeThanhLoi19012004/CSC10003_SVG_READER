@@ -4,33 +4,35 @@
 class Figure {
 protected:
 	// Figure name, textname
-	string figure;
-	string text_name;
-
+	string figure, text_name, line;
+	
+	vector<pair<string, vector<float>>> transVct;
 	// Stroke and fillings
 	Stroke stroke;
 	Color fill;
-
-	string line;  //contain data of a figure
-	unordered_map<string, Color> map_color;
-
-	// Functions to process parameter
-	void loadColorMap();
-	Color processColor(string, string);
-
+	bool isRotate;
 public:
+
 	Figure();
-
-	//Update element of figure
-	void update(string, string, string);
-	void updateSameElement(string, string, string);
-	virtual void updateDiffElement();
-
-	string getName();
-	void setName(string);
-
 	virtual ~Figure();
-	virtual void Draw(sf::RenderWindow&);
+	virtual void updateProperty();
+	//Update element of figure
+	string getName();
+	string getTextName();
+	Stroke getStroke();
+	Color getColor();
+	bool getisRotate();
+	vector<pair<string, vector<float>>> getTransVct();
+
+	void setName(string);
+	void setTextName(string);
+	void setLine(string);
+	void setStroke(Stroke);
+	void setColor(Color);
+	void setisRotate(bool);
+	
+	void updateTransformVct(string);
+	virtual void transformFigure(); //Transform Figure;
 };
 
 #endif

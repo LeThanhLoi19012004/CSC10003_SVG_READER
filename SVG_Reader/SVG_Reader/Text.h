@@ -10,7 +10,7 @@ public:
 	Text();
 	~Text();
 	/*Update different element of shape*/
-	void updateDiffElement();
+	void updateProperty();
 
 	/*Setter and Getter*/
 	Point getTextPos();
@@ -21,8 +21,7 @@ public:
 	void setFontSize(float);
 	void setContent(string);
 
-	/*Draw Text*/
-	void Draw(sf::RenderWindow&);
+	void transformFigure();
 };
 
 #endif
