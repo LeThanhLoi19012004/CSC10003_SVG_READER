@@ -90,27 +90,18 @@ void Renderer::renderItem(vector<Figure*> figures,GroupArray groupArr, float ant
 		}
 		canvasControl(window, view, zoomAmount, panSpeed);
 		window.setView(view);
-
-		/*for (auto x : figures)
-			x->Draw(window);*/
 		drawFigure(figures, window);
-		
-		//drawGroup(groupArr,window);
+		drawGroup(groupArr,window);
 		window.display();
 		window.clear(sf::Color::White);
 	}
 }
 void Renderer::drawGroup(GroupArray groupArr, sf::RenderWindow& window) {
-	if (!groupArr.arr.empty()) {
-		for (auto group : groupArr.arr) {
-			
-			//cout << group;
-			//cout << "Propline:" << group.propLine << "\n";
-			drawFigure(group.figureArray,window);
-			//drawGroup(group.groupArray, window);
-		}
-	}
 	
+	for (auto x : groupArr.arr) {
+		drawFigure(x.figureArray, window);
+		drawGroup(x.groupArray,window);
+	}
 }
 void Renderer::drawRectangle(sf::RenderWindow& window, Rectangle* fig) {
 	/*sf::RectangleShape rect;

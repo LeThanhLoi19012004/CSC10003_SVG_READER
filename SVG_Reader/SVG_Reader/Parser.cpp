@@ -152,20 +152,20 @@ Group Parser::getGroup(ifstream& fin,string property) {
 			strGroup += temp+">";
 		}
 	}
-	//cout << "Strin group: " << strGroup << "\n";
 	stringstream ss(strGroup);
 
 	Group group;
 	int index = 1;
-	group.groupArray.arr.push_back(generateGroup(strGroup, index));
+	string parentProp = "";
+	getline(ss, parentProp, '>');
+	group = generateGroup(strGroup, index, parentProp);
 	int cnt = 1;
 	
-	parseGroup(group);
 	return group;
 }
 void printGroup(Group group, int cnt) {
-	//cout << cnt << "\n";
-	cout << group.propLine << "\n";
+	
+	cout << group.figureArray.size() << "\n";
 	if (group.groupArray.arr.empty()) {
 		return;
 	}
@@ -173,66 +173,64 @@ void printGroup(Group group, int cnt) {
 		printGroup(x, cnt+1);
 	}
 }
-Group Parser::generateGroup(string& strGroup, int index) {
+
+Group Parser::generateGroup(string& strGroup, int index, string parentProp) {
 	Group group;
 	if (strGroup.empty()) return group;
+
 	for (int i = index; i < strGroup.size() - 1; i++) {
 		if (strGroup[i] == '<' && strGroup[i + 1] == 'g') {
-			group.groupArray.arr.push_back(generateGroup(strGroup, i + 1));
+			parentProp.erase(0, 2);
+			strGroup.insert(i+2,parentProp);
+			string temp = strGroup;
+
+			temp.erase(0, i);
+			stringstream sss(temp);
+			getline(sss, parentProp, '>');
+		
+			group.groupArray.arr.push_back(generateGroup(strGroup, i + 1, parentProp));
 		}
 		else if(strGroup[i] == 'g' && strGroup[i-1] == '/'){
 			group.propLine = strGroup.substr(index-1, i + 3 - index);
+			stringstream ss(group.propLine);
+			string line = "", sameProp = "";
+			getline(ss, sameProp, '>');
+			sameProp.erase(0, 2);
+
+			FactoryFigure factory;
+
+			while (getline(ss, line, '>')) {
+				string name = "", property = "", textContent = "";
+				stringstream stream(line);
+				stream >> name;
+				getline(stream, property, '/');
+				property = sameProp + " " + property; //Same prop go before property so that you can overwritten the color
+				name.erase(0, 1);
+
+				if (name == "text") {
+					string temp = "";
+					getline(ss, textContent, '<');
+					getline(ss, temp, '>');
+				}
+				for (int i = 0; i < property.size(); i++) {
+					if (property[i] == '/' || property[i] == '=') {
+						property[i] = ' ';
+					}
+				}
+				Figure* fig = factory.getFigure(name);
+
+				if (fig) {
+					processProperty(name, property, textContent, fig);
+					group.figureArray.push_back(fig);
+				}
+			}
 			strGroup.erase(index-1, i + 3 - index);
 			return group;
 		}
 	}
 }
-void Parser::parseGroup(Group& group) {
 
-	if (group.propLine != "") {
-		stringstream ss(group.propLine);
-		//cout << "group prop line : " << group.propLine << "\n";
-		string line = "", sameProp = "";
-		getline(ss, sameProp, '>');
-		sameProp.erase(0, 2);
-		
-		FactoryFigure factory;
-
-		while (getline(ss, line, '>')) {
-			string name = "", property = "", textContent = "";
-			stringstream stream(line);
-			stream >> name;
-			getline(stream, property, '/');
-			property = property + " "+sameProp;
-			name.erase(0, 1);
-			cout << name<< "\n\n\n";
-
-			if (name == "text") {
-				string temp = "";
-				getline(ss, textContent, '<');
-				getline(ss, temp, '>');
-			}
-			for (int i = 0; i < property.size(); i++) {
-				if (property[i] == '/' || property[i] == '=') {
-					property[i] = ' ';
-				}
-			}
-			cout << name << "\n\n";
-			Figure* fig = factory.getFigure(name);
-
-			if (fig) {
-				processProperty(name, property, textContent, fig);
-				group.figureArray.push_back(fig);
-				
-			}
-		}
-	}
-	for (auto subGroup : group.groupArray.arr) {
-		//cout << "Hello\n";
-		//parseGroup(subGroup); //Recursion to process all subGroup in side a group;
-	}
-}
-void Parser::parseItem(vector<Figure*>& figures,GroupArray& groupArr, string fileName) {
+void Parser::parseItem(vector<Figure*>& figures, GroupArray& groupArr, string fileName) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -256,8 +254,8 @@ void Parser::parseItem(vector<Figure*>& figures,GroupArray& groupArr, string fil
 			getline(fin, temp, '>');
 		}
 		if (name == "g") {
-			//In a scope of Group
-			groupArr.arr.push_back(getGroup(fin,property));
+			
+			groupArr.arr.push_back(getGroup(fin, property));
 		}
 		for (int i = 0; i < property.size(); i++) {
 			if (property[i] =='/' || property[i] == '=') {

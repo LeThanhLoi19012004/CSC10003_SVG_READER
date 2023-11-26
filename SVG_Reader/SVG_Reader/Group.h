@@ -11,6 +11,8 @@ public:
 };
 class Group {
 public:
+	Group();
+	Group(const Group&);
 	vector<Figure*> figureArray;
 	GroupArray groupArray;
 	string propLine;

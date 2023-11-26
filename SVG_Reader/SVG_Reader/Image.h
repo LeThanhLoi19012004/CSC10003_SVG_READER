@@ -10,7 +10,8 @@ private:
 
 	//Figures Property
 	vector<Figure*> figures;
-	GroupArray groupArr; //Store all group in an svg file
+	Group groupTemp; //Store all group in an svg file
+	GroupArray groupArr;
 public:
 	Image(string);
 	int getWidth();

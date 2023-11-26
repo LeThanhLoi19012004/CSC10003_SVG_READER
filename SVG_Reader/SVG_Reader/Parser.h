@@ -10,9 +10,9 @@ private:
 	void loadColorMap();
 	void processProperty(string, string, string, Figure*&);
 	Group getGroup(ifstream&,string);
-	Group generateGroup(string&, int);
+	Group generateGroup(string&, int, string);
 
-	void parseGroup(Group&);
+
 public:
 	void parseItem(vector<Figure*>&,GroupArray&, string);
 };

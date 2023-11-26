@@ -1,8 +1,122 @@
-﻿  Parser.cpp
+﻿  Circle.cpp
+  ColorProperty.cpp
+  Ellipse.cpp
+  FactoryFigure.cpp
+  Figure.cpp
+  Group.cpp
+  Image.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(8,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(8,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Line.cpp
+  Parser.cpp
 D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(14,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(23,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(30,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(31,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(32,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(189): warning C4715: 'Parser::generateGroup': not all control paths return a value
+  Point.cpp
+  Polygon.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(108,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polygon.cpp(109,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Polyline.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(76,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Polyline.cpp(77,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Program.cpp
+  Rectangle.cpp
+  Renderer.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(69,31): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(70,41): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(71,42): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(73,29): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(73,22): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(133,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(134,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,84): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,65): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(145,113): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(145,85): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(145,66): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(145,47): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(150,141): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(150,104): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(150,67): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(153,188): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(153,142): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(153,105): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(153,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(168,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(180,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(181,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(192,87): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(192,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(192,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(194,117): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(194,89): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(194,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(194,51): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(199,144): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(199,107): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(199,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(202,191): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(202,145): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(202,108): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(202,71): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(230,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(231,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(246,141): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(246,104): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(246,67): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(249,188): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(249,142): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(249,105): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(249,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(272,5): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(275,5): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(318,87): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(318,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(318,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(320,116): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(320,88): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(320,69): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(320,50): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(324,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(345,142): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(345,105): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(345,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(348,189): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(348,143): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(348,106): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(348,69): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(364,87): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(364,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(364,49): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(366,116): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(366,88): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(366,69): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(366,50): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(371,144): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(371,107): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(371,70): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(374,191): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(374,145): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(374,108): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(374,71): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(389,40): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(405,84): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(405,65): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(405,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Text.cpp
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(18,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
+D:\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(231): warning C4715: 'Parser::generateGroup': not all control paths return a value
   SVG_Reader.vcxproj -> D:\CSC10003_SVG_READER\SVG_Reader\x64\Debug\SVG_Reader.exe

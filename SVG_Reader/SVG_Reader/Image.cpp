@@ -1,11 +1,11 @@
 #include "Lib.h"
 
 void Image::parseImage(Parser parse) {
-	parse.parseItem(figures, groupArr,fileName);
+	parse.parseItem(figures,groupArr,fileName);
 }
 
 void Image::renderImage(Renderer render) {
-	render.renderItem(figures, groupArr, antialiasingLevel, imageName, width, height);
+	render.renderItem(figures,groupArr, antialiasingLevel, imageName, width, height);
 }
 
 Image::Image(string fileInput) {
@@ -45,4 +45,11 @@ vector<Figure*> Image::getFigures() {
 	return this->figures;
 }
 
-Image::~Image() {}
+Image::~Image() {
+	for (auto x : figures) {
+		delete x;
+		x = NULL;
+	}
+
+	
+}
