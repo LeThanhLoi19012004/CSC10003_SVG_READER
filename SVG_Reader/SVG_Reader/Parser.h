@@ -9,11 +9,11 @@ private:
 	Color processColor(string , string);
 	void loadColorMap();
 	void processProperty(string, string, string, Figure*&);
-	Group getGroup(ifstream&,string);
-	Group generateGroup(string&, int);
+	//Group getGroup(ifstream&,string);
+	//Group generateGroup(string&, int);
 
-	void parseGroup(Group&);
+	//void parseGroup(Group&);
 public:
-	void parseItem(vector<Figure*>&,GroupArray&, string);
+	void parseItem(vector<Figure*>&, string);
 };
 #endif

@@ -44,6 +44,7 @@ void Renderer::drawFigure(vector<Figure*> figures, sf::RenderWindow& window) {
 	}
 	
 }
+
 void Renderer::canvasControl(sf::RenderWindow& window, sf::View& view, const float zoomAmount, const float panSpeed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 		view.zoom(1.f / zoomAmount);
@@ -52,19 +53,19 @@ void Renderer::canvasControl(sf::RenderWindow& window, sf::View& view, const flo
 		view.zoom(1.02f);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		view.move(panSpeed, 0);
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		view.move(-panSpeed, 0);
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		view.move(panSpeed, 0);
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		view.move(0, panSpeed);
+		view.move(0, -panSpeed);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		view.move(0, -panSpeed);
+		view.move(0, panSpeed);
 }
 
-void Renderer::renderItem(vector<Figure*> figures,GroupArray groupArr, float antialiasingLevel, string imageName, float width, float height) {
+void Renderer::renderItem(vector<Figure*> figures, float antialiasingLevel, string imageName, float width, float height) {
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = antialiasingLevel;
 	width = sf::VideoMode::getDesktopMode().width;
@@ -100,18 +101,7 @@ void Renderer::renderItem(vector<Figure*> figures,GroupArray groupArr, float ant
 		window.clear(sf::Color::White);
 	}
 }
-void Renderer::drawGroup(GroupArray groupArr, sf::RenderWindow& window) {
-	if (!groupArr.arr.empty()) {
-		for (auto group : groupArr.arr) {
-			
-			//cout << group;
-			//cout << "Propline:" << group.propLine << "\n";
-			drawFigure(group.figureArray,window);
-			//drawGroup(group.groupArray, window);
-		}
-	}
-	
-}
+
 void Renderer::drawRectangle(sf::RenderWindow& window, Rectangle* fig) {
 	/*sf::RectangleShape rect;
 	
@@ -149,21 +139,34 @@ void Renderer::drawRectangle(sf::RenderWindow& window, Rectangle* fig) {
 
 	}
 	if (fig->getColor().r != -1) {
-		rect.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 		if (fig->getColor().opacity >= 0)
 			rect.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+		else rect.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	}
 	else rect.setFillColor(sf::Color::Transparent);
 
+	sf::ConvexShape strokeRect = rect;
+	float tmp = fig->getStroke().getStrokeWidth() / 2.f;
+
 	if (fig->getStroke().getStrokeColor().r != -1) {
-		rect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
-		rect.setOutlineThickness(fig->getStroke().getStrokeWidth());
-		if (fig->getStroke().getStrokeColor().opacity >= 0)
+		if (fig->getStroke().getStrokeColor().opacity >= 0) {
 			rect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			rect.setOutlineThickness(-tmp);
+
+			strokeRect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			strokeRect.setOutlineThickness(tmp);
+		}
+		else {
+			rect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			rect.setOutlineThickness(-tmp);
+
+			strokeRect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			strokeRect.setOutlineThickness(tmp);
+		}
 	}
 	else rect.setOutlineColor(sf::Color::Transparent);
-	
 
+	window.draw(strokeRect);
 	window.draw(rect);
 }
 
@@ -198,31 +201,45 @@ void Renderer::drawEllipse(sf::RenderWindow& window, Ellipse* fig) {
 	}
 
 	if (fig->getColor().r != -1) {
-		ellipse.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 		if (fig->getColor().opacity >= 0)
-				ellipse.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+			ellipse.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+		else ellipse.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	}
 	else ellipse.setFillColor(sf::Color::Transparent);
 
+	sf::ConvexShape strokeEllipse = ellipse;
+	float tmp = fig->getStroke().getStrokeWidth() / 2.f;
+
 	if (fig->getStroke().getStrokeColor().r != -1) {
-		ellipse.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
-		ellipse.setOutlineThickness(fig->getStroke().getStrokeWidth());
-		if (fig->getStroke().getStrokeColor().opacity >= 0)
+		if (fig->getStroke().getStrokeColor().opacity >= 0) {
 			ellipse.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			ellipse.setOutlineThickness(-tmp);
+
+			strokeEllipse.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			strokeEllipse.setOutlineThickness(tmp);
+		}
+		else {
+			ellipse.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			ellipse.setOutlineThickness(-tmp);
+
+			strokeEllipse.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			strokeEllipse.setOutlineThickness(tmp);
+		}	
 	}
 	else ellipse.setOutlineColor(sf::Color::Transparent);
 
-	if (fig->getName() == "ellipse")
-		ellipse.setPosition(fig->getCenter().getX(), fig->getCenter().getY() - 10);
-	else ellipse.setPosition(fig->getCenter().getX() - 10, fig->getCenter().getY());
-
+	
+	ellipse.setPosition(fig->getCenter().getX(), fig->getCenter().getY());
+	strokeEllipse.setPosition(fig->getCenter().getX(), fig->getCenter().getY());
+	
+	window.draw(strokeEllipse);
 	window.draw(ellipse);
 }
 
 void Renderer::drawLine(sf::RenderWindow& window, Line* fig) {
 	sf::ConvexShape line;
-
 	line.setPointCount(4);
+
 	if (fig->getisRotate()) {
 		float x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 		x1 = fig->getP1().getX();
@@ -251,13 +268,28 @@ void Renderer::drawLine(sf::RenderWindow& window, Line* fig) {
 		line.setPoint(3, sf::Vector2f(fig->getP2().getX(), fig->getP2().getY()));
 	}
 	
+	sf::ConvexShape strokeLine = line; 
+	float tmp = fig->getStroke().getStrokeWidth() / 4.f;
+
 	if (fig->getStroke().getStrokeColor().r != -1) {
-		line.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
-		line.setOutlineThickness(fig->getStroke().getStrokeWidth() / 2);
-		if (fig->getStroke().getStrokeColor().opacity >= 0)
+		if (fig->getStroke().getStrokeColor().opacity >= 0) {
 			line.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			line.setOutlineThickness(-tmp);
+
+			strokeLine.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			strokeLine.setOutlineThickness(tmp);
+		}
+		else {
+			line.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			line.setOutlineThickness(-tmp);
+
+			strokeLine.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			strokeLine.setOutlineThickness(tmp);
+		}
 	}
 	else line.setOutlineColor(sf::Color::Transparent);
+
+	window.draw(strokeLine);
 	window.draw(line);
 }
 
@@ -270,18 +302,19 @@ void Renderer::drawPolyline(sf::RenderWindow& window, Polyline* fig) {
 	totalArray.push_back(fig->getVers()[0]); //Push back the first element of the vertices
 
 	for (int i = 1; i < fig->getNVer(); i++) {
-
 		Point P1 = fig->getVers()[i - 1];
 		Point P2 = fig->getVers()[i];
 		Point intersect;
-		float delta = (P1.getX() - P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() - end.getX());
-		if (abs(delta) >= 0.001f ) {
-			intersect.setX(
-				((P1.getX() * P2.getY() - P1.getY() * P2.getX()) * (start.getX() - end.getX()) - (P1.getX() - P2.getX()) * (start.getX() * end.getY() - start.getY() * end.getX())) * 1.0
-				/ ((P1.getX() - P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() - end.getX())));
 
-			intersect.setY(((P1.getX() * P2.getY() - P1.getY() * P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() * end.getY() - start.getY() * end.getX())) * 1.0
-				/ ((P1.getX() - P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() - end.getX())));
+		float delta = (P1.getX() - P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() - end.getX());
+		if (abs(delta) >= 0.1f ) {
+			intersect.setX(
+				((P1.getX() * P2.getY() - P1.getY() * P2.getX()) * (start.getX() - end.getX()) - (P1.getX() - P2.getX()) * (start.getX() * end.getY() - start.getY() * end.getX())) * 1.f
+				/ delta);
+
+			intersect.setY(
+				((P1.getX() * P2.getY() - P1.getY() * P2.getX()) * (start.getY() - end.getY()) - (P1.getY() - P2.getY()) * (start.getX() * end.getY() - start.getY() * end.getX())) * 1.f
+				/ delta);
 			intersect.setIntersect(true);
 
 			if (intersectArray.empty()) {
@@ -312,53 +345,52 @@ void Renderer::drawPolyline(sf::RenderWindow& window, Polyline* fig) {
 			break;
 		}
 	}
-	int cnt = 0;
 
+	int cnt = 0;
 	for (int i = pos + 1; i < totalArray.size(); i++) {
 		if (totalArray[i].getIntersect()) {
 			cnt = cnt + 2;
 			//Process
-			sf::ConvexShape shape;
-			shape.setPointCount(cnt);
+			sf::ConvexShape polyline;
+			polyline.setPointCount(cnt);
 
 			for (int k = 0; k < cnt; k++)
-				shape.setPoint(k, sf::Vector2f(totalArray[k + pos].getX(), totalArray[k + pos].getY()));
+				polyline.setPoint(k, sf::Vector2f(totalArray[k + pos].getX(), totalArray[k + pos].getY()));
+
 			if (fig->getColor().r != -1) {
-				shape.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b)); //Fill the
 				if (fig->getColor().opacity >= 0)
-					shape.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+					polyline.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+				else polyline.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 			}
 			else {
 				if (fig->getColor().opacity >= 0)
-					shape.setFillColor(sf::Color(0, 0, 0, fig->getColor().opacity * MAX));
-				else shape.setFillColor(sf::Color::Transparent);
+					polyline.setFillColor(sf::Color(0, 0, 0, fig->getColor().opacity * MAX));
+				else polyline.setFillColor(sf::Color::Transparent);
 			}
-			window.draw(shape);
+			window.draw(polyline);
 			pos = i;
 			cnt = 0;
 		}
 		else ++cnt;
 	}
+
 	//Making the outline of the shape
-
-	for (int i = 1; i < fig->getNVer(); i++) {
-		sf::ConvexShape rect;
-
-		rect.setPointCount(4);
-		rect.setPoint(0, sf::Vector2f(fig->getVers()[i].getX(), fig->getVers()[i].getY()));
-		rect.setPoint(1, sf::Vector2f(fig->getVers()[i].getX(), fig->getVers()[i].getY()));
-		rect.setPoint(2, sf::Vector2f(fig->getVers()[i - 1].getX(), fig->getVers()[i - 1].getY()));
-		rect.setPoint(3, sf::Vector2f(fig->getVers()[i - 1].getX(), fig->getVers()[i - 1].getY()));
-
+	for (int i = 0; i < fig->getNVer() - 1; i++) {
+		sf::Vector2f startPoint(fig->getVers()[i].getX(), fig->getVers()[i].getY());
+		sf::Vector2f endPoint(fig->getVers()[i + 1].getX(), fig->getVers()[i + 1].getY());
+		sf::RectangleShape line;
+		line.setSize(sf::Vector2f(hypot(endPoint.x - startPoint.x, endPoint.y - startPoint.y), fig->getStroke().getStrokeWidth()));
+		line.setPosition(startPoint);
+		line.setOrigin(fig->getStroke().getStrokeWidth() / 2.f, fig->getStroke().getStrokeWidth() / 2.f);
+		line.setRotation(atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x) * 180.f / Pi);
 		if (fig->getStroke().getStrokeColor().r != -1) {
-			rect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
-			rect.setOutlineThickness(fig->getStroke().getStrokeWidth() / 2);
 			if (fig->getStroke().getStrokeColor().opacity >= 0)
-				rect.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+				line.setFillColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			else line.setFillColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
 		}
-		else rect.setOutlineColor(sf::Color::Transparent);
+		else line.setFillColor(sf::Color::Transparent);
 
-		window.draw(rect);
+		window.draw(line);
 	}
 }
 
@@ -370,19 +402,34 @@ void Renderer::drawPolygon(sf::RenderWindow& window, Polygon* fig) {
 		polygon.setPoint(i, sf::Vector2f(fig->getVers()[i].getX(), fig->getVers()[i].getY()));
 
 	if (fig->getColor().r != -1) {
-		polygon.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 		if (fig->getColor().opacity >= 0)
 			polygon.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+		else polygon.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	}
 	else polygon.setFillColor(sf::Color::Transparent);
 
+	sf::ConvexShape strokePolygon = polygon;
+	float tmp = fig->getStroke().getStrokeWidth() / 2.f;
+
 	if (fig->getStroke().getStrokeColor().r != -1) {
-		polygon.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
-		polygon.setOutlineThickness(fig->getStroke().getStrokeWidth());
-		if (fig->getStroke().getStrokeColor().opacity >= 0)
+		if (fig->getStroke().getStrokeColor().opacity >= 0) {
 			polygon.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			polygon.setOutlineThickness(-tmp);
+
+			strokePolygon.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+			strokePolygon.setOutlineThickness(tmp);
+		}
+		else {
+			polygon.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			polygon.setOutlineThickness(-tmp);
+
+			strokePolygon.setOutlineColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+			strokePolygon.setOutlineThickness(tmp);
+		}		
 	}
 	else polygon.setOutlineColor(sf::Color::Transparent);
+
+	window.draw(strokePolygon);
 	window.draw(polygon);
 }
 
