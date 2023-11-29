@@ -33,6 +33,11 @@ Figure* FactoryFigure::getFigure(string name) {
 		return new Text();
 		break;
 	}
+
+	case 9: {
+		return new Path();
+		break;
+	}
 	default: return NULL;
 	}
 	return NULL;
@@ -45,6 +50,7 @@ FactoryFigure::FactoryFigure() {
 	figureId["polyline"] = 5;
 	figureId["polygon"] = 6;
 	figureId["text"] = 7;
+	figureId["path"] = 9;
 }
 unordered_map<string, int> FactoryFigure::getFigureId() {
 	return this->figureId;

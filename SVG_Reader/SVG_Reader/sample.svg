@@ -13,7 +13,8 @@
 	<line x1="50" y1="30" x2="70" y2="10" stroke="rgb(0, 0, 255)" stroke-width="15" stroke-opacity="0.9" />
 	<line x1="70" y1="30" x2="90" y2="10" stroke="rgb(0, 0, 255)" stroke-width="20" stroke-opacity="0.9" />
 	<line x1="90" y1="30" x2="110" y2="10" stroke="rgb(0, 0, 255)" stroke-width="25" stroke-opacity="1.0" />
-	<polygon fill="rgb(153, 204, 255)" fill-opacity="0.5" stroke-width="10" stroke="rgb(255, 0, 102)" stroke-opacity="0.7" points="850,75 958,137 958,262 850,325 742,262 742,137" transform="rotate(39) translate(10,10)"/>
+	<polygon fill="rgb(153, 204, 255)" fill-opacity="0.5" stroke-width="10" stroke="rgb(255, 0, 102)" stroke-opacity="0.7" points="850,75 958,137 958,262 850,325 742,262 742,137"/>
 	<polygon fill="rgb(255, 255, 0)" fill-opacity="0.6" stroke-width="10" stroke="rgb(255, 0, 0)" stroke-opacity="0.7" points="350,75 379,161 469,161 397,215 423,301 350,250 277,301 303,215 231,161 321,161"/>
 	<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,140" fill-opacity="0.5" />
+	<path fill="yellow" stroke="rgb(255,0,0)" stroke-width="5" d="M100,200 C100,100 250,100 250,200 C250,300 400,300 400,200" />
 </svg>

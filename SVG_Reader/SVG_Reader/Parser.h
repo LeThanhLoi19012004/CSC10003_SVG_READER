@@ -5,7 +5,6 @@
 class Parser {
 private:
 	unordered_map<string, Color> colorMap;
-	void ProcessRGB(string&);
 	Color processColor(string , string);
 	void loadColorMap();
 	void processProperty(string, string, string, Figure*&);

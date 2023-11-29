@@ -38,6 +38,11 @@ void Renderer::drawFigure(vector<Figure*> figures, sf::RenderWindow& window) {
 			drawText(window, text);
 			break;
 		}
+		case 9: {
+			Path* path = dynamic_cast<Path*>(fig);
+			drawPath(window, path);
+			break;
+		}
 		default:
 			break;
 		}
@@ -462,4 +467,71 @@ void Renderer::drawText(sf::RenderWindow& window, Text* fig) {
 	else text.setFillColor(sf::Color::Transparent);
 	
 	window.draw(text);
+}
+
+void Renderer::drawPath(sf::RenderWindow& window, Path* fig) {
+	vector<pair<char, vector<Point>>> vct = fig->getProp();
+	for (int i = 0; i < vct.size(); i++) {
+		pair<char, vector<Point>> x = vct[i];
+		if (vct[0].second.size() != 1) {
+			
+		}
+		else {
+			if (x.first == 'C' || x.first == 'c') {
+				Point P0 = vct[i - 1].second[vct[i - 1].second.size() - 1];
+				Point P1 = x.second[0];
+				Point P2 = x.second[1];
+				Point P3 = x.second[2];
+
+				sf::ConvexShape C;
+				C.setPointCount(201);
+
+				int k = 0;
+				for (float t = 0.0; t <= 1.0; t += 0.005) {
+					float X = (1.0 - t) * (1.0 - t) * (1.0 - t) * P0.getX() + 3.0 * (1.0 - t) * (1.0 - t) * t * P1.getX() + 3.0 * (1.0 - t) * t * t * P2.getX() + t * t * t * P3.getX();
+					float Y = (1.0 - t) * (1.0 - t) * (1.0 - t) * P0.getY() + 3.0 * (1.0 - t) * (1.0 - t) * t * P1.getY() + 3.0 * (1.0 - t) * t * t * P2.getY() + t * t * t * P3.getY();
+					C.setPoint(k, sf::Vector2f(X, Y));
+					++k;
+				}
+
+				if (fig->getColor().r != -1) {
+					if (fig->getColor().opacity >= 0)
+						C.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b, fig->getColor().opacity * MAX));
+					else C.setFillColor(sf::Color(fig->getColor().r, fig->getColor().g, fig->getColor().b));
+				}
+				else {
+					if (fig->getColor().opacity >= 0)
+						C.setFillColor(sf::Color(0, 0, 0, fig->getColor().opacity * MAX));
+					else C.setFillColor(sf::Color::Transparent);
+				}
+
+				window.draw(C);
+
+
+
+				for (int i = 1; i < 202; i++) {
+					float X = (1.0 - i * 0.005) * (1.0 - i * 0.005) * (1.0 - i * 0.005) * P0.getX() + 3.0 * (1.0 - i * 0.005) * (1.0 - i * 0.005) * (i * 0.005) * P1.getX() + 3.0 * (1.0 - i * 0.005) * (i * 0.005) * (i * 0.005) * P2.getX() + (i * 0.005) * (i * 0.005) * (i * 0.005) * P3.getX();
+					float Y = (1.0 - i * 0.005) * (1.0 - i * 0.005) * (1.0 - i * 0.005) * P0.getY() + 3.0 * (1.0 - i * 0.005) * (1.0 - i * 0.005) * (i * 0.005) * P1.getY() + 3.0 * (1.0 - i * 0.005) * (i * 0.005) * (i * 0.005) * P2.getY() + (i * 0.005) * (i * 0.005) * (i * 0.005) * P3.getY();
+					int j = i + 1;					
+					float Z = (1.0 - j * 0.005) * (1.0 - j * 0.005) * (1.0 - j * 0.005) * P0.getX() + 3.0 * (1.0 - j * 0.005) * (1.0 - j * 0.005) * (j * 0.005) * P1.getX() + 3.0 * (1.0 - j * 0.005) * (j * 0.005) * (j * 0.005) * P2.getX() + (j * 0.005) * (j * 0.005) * (j * 0.005) * P3.getX();
+					float T = (1.0 - j * 0.005) * (1.0 - j * 0.005) * (1.0 - j * 0.005) * P0.getY() + 3.0 * (1.0 - j * 0.005) * (1.0 - j * 0.005) * (j * 0.005) * P1.getY() + 3.0 * (1.0 - j * 0.005) * (j * 0.005) * (j * 0.005) * P2.getY() + (j * 0.005) * (j * 0.005) * (j * 0.005) * P3.getY();
+					sf::Vector2f startPoint(X, Y);
+					sf::Vector2f endPoint(Z, T);
+					sf::RectangleShape StrokeC;
+					StrokeC.setSize(sf::Vector2f(hypot(endPoint.x - startPoint.x, endPoint.y - startPoint.y), fig->getStroke().getStrokeWidth()));
+					StrokeC.setPosition(startPoint);
+					StrokeC.setOrigin(fig->getStroke().getStrokeWidth() / 2.f, fig->getStroke().getStrokeWidth() / 2.f);
+					StrokeC.setRotation(atan2(endPoint.y - startPoint.y, endPoint.x - startPoint.x) * 180.f / Pi);
+					if (fig->getStroke().getStrokeColor().r != -1) {
+						if (fig->getStroke().getStrokeColor().opacity >= 0)
+							StrokeC.setFillColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b, fig->getStroke().getStrokeColor().opacity * MAX));
+						else StrokeC.setFillColor(sf::Color(fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b));
+					}
+					else StrokeC.setFillColor(sf::Color::Transparent);
+
+					window.draw(StrokeC);
+				}
+			}
+		}
+	}
 }

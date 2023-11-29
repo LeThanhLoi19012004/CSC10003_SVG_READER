@@ -30,6 +30,7 @@ using namespace std;
 #include "Polyline.h"
 #include "Line.h"
 #include "Text.h"
+#include "Path.h"
 #include "FactoryFigure.h"
 #include "Parser.h"
 #include "Renderer.h"

@@ -15,7 +15,7 @@ public:
 	void drawPolygon(sf::RenderWindow&, Polygon*);
 	void drawPolyline(sf::RenderWindow&, Polyline*);
 	void drawText(sf::RenderWindow&, Text*);
-	//void drawPath(sf::RenderWindow&, Path*);
+	void drawPath(sf::RenderWindow&, Path*);
 
 };
 

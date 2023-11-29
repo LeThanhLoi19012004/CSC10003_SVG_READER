@@ -1,12 +1,9 @@
 #include "Lib.h"
 
-Figure::Figure() {
+Figure::Figure() {}
 
-}
+void Figure::updateProperty() {}
 
-void Figure::updateProperty() {
-
-}
 string Figure::getName() {
 	return this->figure;
 }
@@ -96,4 +93,3 @@ vector<pair<string, vector<float>>> Figure:: getTransVct() {
 void Figure::transformFigure() {
 
 }
-

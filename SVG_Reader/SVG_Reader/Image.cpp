@@ -45,4 +45,9 @@ vector<Figure*> Image::getFigures() {
 	return this->figures;
 }
 
-Image::~Image() {}
+Image::~Image() {
+	for (auto x : figures) {
+		delete x;
+		x = NULL;
+	}
+}

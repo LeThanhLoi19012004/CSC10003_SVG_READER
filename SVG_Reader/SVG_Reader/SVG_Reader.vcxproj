@@ -143,6 +143,7 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="Polyline.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Lib.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Polyline.h" />

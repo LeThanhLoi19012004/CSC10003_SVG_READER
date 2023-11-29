@@ -10,7 +10,7 @@ protected:
 	// Stroke and fillings
 	Stroke stroke;
 	Color fill;
-	bool isRotate;
+	bool isRotate = false;
 public:
 
 	Figure();
