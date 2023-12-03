@@ -1,19 +1,19 @@
 #include "Lib.h"
 
-Rectangle::Rectangle() :Figure() {
+rectangle::rectangle() :figure() {
 	width = height = 0;
 	root.setX(0);
 	root.setY(0);
 }
 
-Rectangle::~Rectangle() {
+rectangle::~rectangle() {
 	width = height = 0;
 	root.setX(0);
 	root.setY(0);
 }
 
-void Rectangle::updateProperty() {
-	stringstream ss(line);
+void rectangle::updateProperty() {
+	stringstream ss(line_str);
 	string attribute, val, temp;
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
@@ -31,32 +31,32 @@ void Rectangle::updateProperty() {
 
 }
 
-Point Rectangle::getRoot() {
+point rectangle::getRoot() {
 	return this->root;
 }
 
-float Rectangle::getWidth() {
+float rectangle::getWidth() {
 	return this->width;
 }
 
-float Rectangle::getHeight() {
+float rectangle::getHeight() {
 	return this->height;
 }
 
-void Rectangle::setRoot(Point root) {
+void rectangle::setRoot(point root) {
 	this->root = root;
 }
 
-void Rectangle::setWidth(float w) {
+void rectangle::setWidth(float w) {
 	this->width = w;
 }
 
-void Rectangle::setHeight(float h) {
+void rectangle::setHeight(float h) {
 	this->height = h;
 }
 
-void Rectangle::transformFigure() {
-	float curX = this->root.getX();
+void rectangle::transformFigure() {
+	/*float curX = this->root.getX();
 	float curY = this->root.getY();
 	for (auto p : transVct) {
 		if (p.first == "translate") {
@@ -86,5 +86,5 @@ void Rectangle::transformFigure() {
 				this->height *= sclY;
 			}
 		}
-	}
+	}*/
 }

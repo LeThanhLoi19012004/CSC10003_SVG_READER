@@ -1,12 +1,12 @@
 #ifndef _FACTORYFIGURE_H_
 #define _FACTORYFIGURE_H_
 
-class FactoryFigure {
+class factoryfigure {
 private:
 	unordered_map<string, int> figureId;
 public:
-	FactoryFigure();
-	Figure* getFigure(string name);
+	factoryfigure();
+	figure* getFigure(string name);
 	unordered_map<string, int> getFigureId();
 };
 

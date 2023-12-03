@@ -1,7 +1,7 @@
 #ifndef _RENDERER_H_
 #define _RENDERER_H_
 
-class Renderer {
+class renderer {
 public:
 	//void canvasControl(sf::RenderWindow&, sf::View&, const float, const float);
 	//void drawFigure(vector<Figure*>, sf::RenderWindow&);
