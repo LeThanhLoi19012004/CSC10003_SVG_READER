@@ -1,7 +1,7 @@
 #ifndef _COLOR_H_
 #define _COLOR_H_
 
-class COLOR {
+class color {
 private:
 	
 public:
@@ -9,18 +9,18 @@ public:
 	float opacity = -1;
 };
 
-class Stroke {
+class stroke {
 private:
-	COLOR strokeColor;
+	color strokeColor;
 	float strokeWidth;
 public:
-	Stroke();
-	~Stroke();
+	stroke();
+	~stroke();
 
-	COLOR getStrokeColor();
+	color getStrokeColor();
 	float getStrokeWidth();
 
-	void setStrokeColor(COLOR);
+	void setStrokeColor(color);
 	void setStrokeWidth(float);
 };
 
