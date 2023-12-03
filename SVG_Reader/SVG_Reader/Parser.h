@@ -7,8 +7,8 @@ private:
 	color processColor(string, string);
 	void loadColorMap();
 	void processProperty(string, string, string, figure*&);
-	group getGroup(ifstream&,string);
-	group generateGroup(string&, int,string);
+	//group getGroup(ifstream&,string);
+	//group generateGroup(string&, int,string);
 
 	//void parseGroup(Group&);
 public:
