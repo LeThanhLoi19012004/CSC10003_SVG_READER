@@ -1,34 +1,34 @@
 #ifndef _FIGURE_H_
 #define _FIGURE_H_
 
-class Figure {
+class figure {
 protected:
 	// Figure name, textname
-	string figure, text_name, line;
+	string fig, text_name, line_str;
 
 	vector<pair<string, vector<float>>> transVct;
 	// Stroke and fillings
-	Stroke stroke;
-	Color fill;
+	stroke strk;
+	color fill;
 	bool isRotate = false;
 public:
 
-	Figure();
-	virtual ~Figure();
+	figure();
+	virtual ~figure();
 	virtual void updateProperty();
 	//Update element of figure
 	string getName();
 	string getTextName();
-	Stroke getStroke();
-	Color getColor();
+	stroke getStroke();
+	color getColor();
 	bool getisRotate();
 	vector<pair<string, vector<float>>> getTransVct();
 
 	void setName(string);
 	void setTextName(string);
 	void setLine(string);
-	void setStroke(Stroke);
-	void setColor(Color);
+	void setStroke(stroke);
+	void setColor(color);
 	void setisRotate(bool);
 
 	void updateTransformVct(string);

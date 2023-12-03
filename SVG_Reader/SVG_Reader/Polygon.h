@@ -1,17 +1,17 @@
 #ifndef _POLYGON_H_
 #define _POLYGON_H_
 
-class Polygon : public Figure {
+class polygon : public figure {
 private:
 	int nVer;
-	Point* Vers;
+	point* Vers;
 public:
-	Polygon();
-	~Polygon();
+	polygon();
+	~polygon();
 
-	void setVers(Point*);
+	void setVers(point*);
 	void setNVer(int);
-	Point* getVers();
+	point* getVers();
 	int getNVer();
 
 	void updateProperty();

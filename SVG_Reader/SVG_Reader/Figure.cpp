@@ -11,8 +11,8 @@ string figure::getName() {
 void figure::setName(string s) {
 	this->fig = s;
 }
-void ::setStroke(stroke stroke) {
-	this->stroke = stroke;
+void figure::setStroke(stroke stroke) {
+	this->strk = stroke;
 }
 void figure::setColor(color fill) {
 	this->fill = fill;
@@ -23,14 +23,14 @@ void figure::setTextName(string textName) {
 	this->text_name = textName;
 }
 void figure::setLine(string line) {
-	this->line = line;
+	this->line_str = line;
 }
 
 string figure::getTextName() {
 	return this->text_name;
 }
 stroke figure::getStroke() {
-	return this->stroke;
+	return this->strk;
 }
 color figure::getColor() {
 	return this->fill;

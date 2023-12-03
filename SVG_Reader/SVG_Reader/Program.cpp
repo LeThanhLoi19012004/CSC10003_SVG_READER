@@ -9,7 +9,7 @@ program::program() {
 
 program* program::getObj(void(*pFunc)()) {
 	if (pg == NULL)
-		pg = new Program();
+		pg = new program();
 	if (pFunc != NULL)
 		pg->currentFunc = pFunc;
 	return pg;
@@ -19,9 +19,9 @@ void program::run() {
 	name = "sample.svg";
 	image img(name);
 	parser parseTool;
-	//Renderer renderTool;
+	renderer renderTool;
 	img.parseImage(parseTool);
-	//image.renderImage(renderTool);
+	img.renderImage(renderTool);
 }
 
 void program::execute() {

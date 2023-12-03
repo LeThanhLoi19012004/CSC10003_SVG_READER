@@ -34,6 +34,7 @@ void parser::loadColorMap() {
 	}
 	colorMap["none"] = { -1, -1, -1, -1 };
 }
+
 group parser::getGroup(ifstream& fin, string property) {
 	string strGroup = "", temp = "";
 	strGroup += ("<g " + property + ">");
@@ -69,6 +70,7 @@ group parser::getGroup(ifstream& fin, string property) {
 
 	return group;
 }
+
 group parser::generateGroup(string& strGroup, int index, string parentProp) {
 	group group;
 	if (strGroup.empty()) return group;
@@ -124,11 +126,11 @@ group parser::generateGroup(string& strGroup, int index, string parentProp) {
 		}
 	}
 }
-color parser::processColor(string strokecolor, string strokeopa) {
 
+color parser::processColor(string strokecolor, string strokeopa) {
 	if (strokecolor.find("rgb") != string::npos) {
 		color clr = { -1,-1,-1,-1 };
-		color.opacity = stof(strokeopa);
+		clr.opacity = stof(strokeopa);
 
 		for (int i = 0; i < strokecolor.size(); i++) {
 			if (!isdigit(strokecolor[i]))	//If the character is not number then change to ' '
@@ -138,9 +140,9 @@ color parser::processColor(string strokecolor, string strokeopa) {
 		stringstream ss(strokecolor);
 		string r, g, b;
 		ss >> r >> g >> b;
-		color.r = stof(r); color.g = stof(g); color.b = stof(b);
+		clr.r = stof(r); clr.g = stof(g); clr.b = stof(b);
 		ss.ignore();
-		return color;
+		return clr;
 
 	}
 	else if (strokecolor[0] == '#') {
@@ -159,7 +161,7 @@ color parser::processColor(string strokecolor, string strokeopa) {
 	}
 }
 
-void parser::processProperty(string name, string property, string textName, Figure*& fig) {
+void parser::processProperty(string name, string property, string textName, figure*& fig) {
 	fig->setName(name);
 	fig->setTextName(textName);
 	fig->setLine(property);

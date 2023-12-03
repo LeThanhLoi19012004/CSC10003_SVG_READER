@@ -40,7 +40,7 @@ figure* factoryfigure::getFigure(string name) {
 	}
 	return NULL;
 }
-factoryfigure::FactoryFigure() {
+factoryfigure::factoryfigure() {
 	figureId["rect"] = 1;
 	figureId["circle"] = 2;
 	figureId["ellipse"] = 3;

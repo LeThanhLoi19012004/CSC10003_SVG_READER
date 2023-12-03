@@ -13,7 +13,7 @@ ellipse::~ellipse() {
 }
 
 void ellipse::updateProperty() {
-	stringstream ss(line);
+	stringstream ss(line_str);
 	string property, val, temp;
 
 	while (ss >> property) {

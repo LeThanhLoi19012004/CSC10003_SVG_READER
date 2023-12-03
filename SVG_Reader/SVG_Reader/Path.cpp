@@ -5,7 +5,7 @@ path::path() :figure() {}
 path::~path() {}
 
 void path::updateProperty() {
-	stringstream ss(line);
+	stringstream ss(line_str);
 	string property, val, temp;
 
 	while (ss >> property) {
@@ -51,7 +51,7 @@ void path::updateProperty() {
 						string token;
 						bool flag = false;
 						while (ss >> token) {
-							Point p;
+							point p;
 							int n = vct[vct.size() - 1].second.size();
 
 							if (pr.first == 'H' || pr.first == 'h') {
@@ -93,7 +93,7 @@ void path::updateProperty() {
 							if (vct.size() != 0)
 								n = vct[vct.size() - 1].second.size();
 
-							Point point;
+							point point;
 							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C') {
 								point.setX(stof(x));
 								point.setY(stof(y));
