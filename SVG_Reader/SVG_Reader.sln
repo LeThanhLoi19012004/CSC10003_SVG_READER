@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SVG_Reader", "SVG_Reader\SVG_Reader.vcxproj", "{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SVG_Reader", "SVG_Reader\SVG_Reader.vcxproj", "{8968B191-BD11-42C5-8432-49A48473BCD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,19 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Debug|x64.ActiveCfg = Debug|x64
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Debug|x64.Build.0 = Debug|x64
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Debug|x86.ActiveCfg = Debug|Win32
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Debug|x86.Build.0 = Debug|Win32
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Release|x64.ActiveCfg = Release|x64
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Release|x64.Build.0 = Release|x64
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Release|x86.ActiveCfg = Release|Win32
-		{4A7F6DF9-43C5-4851-84D3-B640825AA0A5}.Release|x86.Build.0 = Release|Win32
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Debug|x64.ActiveCfg = Debug|x64
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Debug|x64.Build.0 = Debug|x64
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Debug|x86.ActiveCfg = Debug|Win32
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Debug|x86.Build.0 = Debug|Win32
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Release|x64.ActiveCfg = Release|x64
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Release|x64.Build.0 = Release|x64
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Release|x86.ActiveCfg = Release|Win32
+		{8968B191-BD11-42C5-8432-49A48473BCD6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AA52CCD4-155B-40B9-980D-DFE46061C312}
+		SolutionGuid = {F8272C60-FAAD-4DA6-8CBB-2762D93EEEF1}
 	EndGlobalSection
 EndGlobal
