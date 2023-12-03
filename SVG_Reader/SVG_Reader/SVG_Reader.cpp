@@ -160,7 +160,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             for (int i = 0; i < shapes.size(); i++) {
                 shapes[i]->draw(graphics);
             }*/
-
+            //Graphics graphics(hdc);
+            /*Tao Program rui sau do xu li tiep*/
             EndPaint(hWnd, &ps);
         }
         break;

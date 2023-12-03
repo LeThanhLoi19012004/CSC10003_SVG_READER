@@ -127,15 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FactoryFigure.h" />
+    <ClInclude Include="Figure.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Group.h" />
+    <ClInclude Include="Image.h" />
     <ClInclude Include="Lib.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="Program.h" />
     <ClInclude Include="rapidxml.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SVG_Reader.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FactoryFigure.cpp" />
+    <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="Group.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Program.cpp" />
     <ClCompile Include="SVG_Reader.cpp" />
+    <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SVG_Reader.rc" />

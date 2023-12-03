@@ -24,8 +24,8 @@ using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
 //#include "ColorProperty.h"
-//#include "Figure.h"
-//#include "Group.h"
+#include "Figure.h"
+#include "Group.h"
 //#include "Point.h"
 //#include "Polygon.h"
 //#include "Rectangle.h"
@@ -33,12 +33,12 @@ using namespace Gdiplus;
 //#include "Circle.h"
 //#include "Polyline.h"
 //#include "Line.h"
-//#include "Text.h"
+#include "Text.h"
 //#include "Path.h"
-//#include "FactoryFigure.h"
-//#include "Parser.h"
+#include "FactoryFigure.h"
+#include "Parser.h"
 //#include "Renderer.h"
-//#include "Image.h"
-//#include "Program.h"
+#include "Image.h"
+#include "Program.h"
 
 #endif 
