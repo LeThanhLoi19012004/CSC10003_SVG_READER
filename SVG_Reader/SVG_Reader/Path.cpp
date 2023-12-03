@@ -1,10 +1,10 @@
 #include "Lib.h"
 
-Path::Path() :Figure() {}
+path::path() :figure() {}
 
-Path::~Path() {}
+path::~path() {}
 
-void Path::updateProperty() {
+void path::updateProperty() {
 	stringstream ss(line);
 	string property, val, temp;
 
@@ -42,7 +42,7 @@ void Path::updateProperty() {
 						j++;
 					}*/
 
-					pair<char, vector<Point>> pr;
+					pair<char, vector<point>> pr;
 					pr.first = pointStr[0];
 					pointStr.erase(0, 2);
 
@@ -188,6 +188,6 @@ void Path::updateProperty() {
 //	}
 //}
 
-vector<pair<char, vector<Point>>> Path::getProp() {
+vector<pair<char, vector<point>>> path::getProp() {
 	return this->vct;
 }

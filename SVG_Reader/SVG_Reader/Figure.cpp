@@ -1,49 +1,49 @@
 #include "Lib.h"
 
-Figure::Figure() {}
+figure::figure() {}
 
-void Figure::updateProperty() {}
+void figure::updateProperty() {}
 
-string Figure::getName() {
-	return this->figure;
+string figure::getName() {
+	return this->fig;
 }
 
-void Figure::setName(string s) {
-	this->figure = s;
+void figure::setName(string s) {
+	this->fig = s;
 }
-void Figure::setStroke(Stroke stroke) {
+void ::setStroke(stroke stroke) {
 	this->stroke = stroke;
 }
-void Figure::setColor(Color fill) {
+void figure::setColor(color fill) {
 	this->fill = fill;
 }
-Figure:: ~Figure() {}
+figure:: ~figure() {}
 
-void Figure::setTextName(string textName) {
+void figure::setTextName(string textName) {
 	this->text_name = textName;
 }
-void Figure::setLine(string line) {
+void figure::setLine(string line) {
 	this->line = line;
 }
 
-string Figure::getTextName() {
+string figure::getTextName() {
 	return this->text_name;
 }
-Stroke Figure::getStroke() {
+stroke figure::getStroke() {
 	return this->stroke;
 }
-Color Figure::getColor() {
+color figure::getColor() {
 	return this->fill;
 }
 
 
-bool Figure::getisRotate() {
+bool figure::getisRotate() {
 	return this->isRotate;
 }
-void Figure::setisRotate(bool isRotate) {
+void figure::setisRotate(bool isRotate) {
 	this->isRotate = isRotate;
 }
-void Figure::updateTransformVct(string str) {
+void figure::updateTransformVct(string str) {
 	string tempStr = "", token = "";
 	stringstream ss(str);
 	while (ss >> token) {
@@ -86,10 +86,10 @@ void Figure::updateTransformVct(string str) {
 		transVct.push_back(p);
 	}
 }
-vector<pair<string, vector<float>>> Figure::getTransVct() {
+vector<pair<string, vector<float>>> figure::getTransVct() {
 	return this->transVct;
 }
 
-void Figure::transformFigure() {
+void figure::transformFigure() {
 
 }
