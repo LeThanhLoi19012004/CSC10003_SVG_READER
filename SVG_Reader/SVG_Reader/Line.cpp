@@ -1,15 +1,15 @@
 #include "Lib.h"
 
-Line::Line() :Figure() {
+line::line() :figure() {
 	p1.setX(0); p1.setY(0);
 	p2.setX(0); p2.setY(0);
 }
-Line::~Line() {
+line::~line() {
 	p1.setX(0); p1.setY(0);
 	p2.setX(0); p2.setY(0);
 }
 
-void Line::updateProperty()
+void line::updateProperty()
 {
 	stringstream ss(line);
 	string attribute, val, temp;
@@ -32,24 +32,24 @@ void Line::updateProperty()
 	}
 }
 
-Point Line::getP1() {
+point line::getP1() {
 	return this->p1;
 }
 
-Point Line::getP2() {
+point line::getP2() {
 	return this->p2;
 }
 
-void Line::setP1(Point p1) {
+void line::setP1(point p1) {
 	this->p1 = p1;
 }
 
-void Line::setP2(Point p2) {
+void line::setP2(point p2) {
 	this->p2 = p2;
 }
 
-void Line::transformFigure() {
-	float curX1 = this->p1.getX();
+void line::transformFigure() {
+	/*float curX1 = this->p1.getX();
 	float curY1 = this->p1.getY();
 
 	float curX2 = this->p2.getX();
@@ -90,5 +90,5 @@ void Line::transformFigure() {
 				this->p2.setY(curY2 * sclY);
 			}
 		}
-	}
+	}*/
 }

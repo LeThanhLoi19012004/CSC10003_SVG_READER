@@ -1,14 +1,14 @@
 #include "Lib.h"
 
-void Image::parseImage(Parser parse) {
+void image::parseImage(parser parse) {
 	parse.parseItem(figures, groupArr, fileName);
 }
 
-void Image::renderImage(Renderer render) {
+void image::renderImage(renderer render) {
 	render.renderItem(figures, groupArr, antialiasingLevel, imageName, width, height);
 }
 
-Image::Image(string fileInput) {
+image::image(string fileInput) {
 	this->fileName = fileInput;
 	this->figures = {};
 	this->width = 0;
@@ -17,42 +17,42 @@ Image::Image(string fileInput) {
 	this->imageName = "Image";
 }
 
-int Image::getHeight() {
+int image::getHeight() {
 	return this->height;
 }
 
-int Image::getWidth() {
+int image::getWidth() {
 	return this->width;
 }
 
-void Image::setHeight(int height) {
+void image::setHeight(int height) {
 	this->height = height;
 }
 
-void Image::setWidth(int width) {
+void image::setWidth(int width) {
 	this->width = width;
 }
 
-float Image::getAntialiasingLevel() {
+float image::getAntialiasingLevel() {
 	return this->antialiasingLevel;
 }
 
-void Image::setAntialiasingLevel(float atlvl) {
+void image::setAntialiasingLevel(float atlvl) {
 	this->antialiasingLevel = atlvl;
 }
 
-vector<Figure*> Image::getFigures() {
+vector<figure*> image::getFigures() {
 	return this->figures;
 }
 
-Image::~Image() {
+image::~image() {
 	for (auto x : figures) {
 		delete x;
 		x = NULL;
 	}
 	deleteGroupArr(groupArr);
 }
-void Image::deleteGroupArr(GroupArray& groupArr) {
+void image::deleteGroupArr(group_array& groupArr) {
 	if (groupArr.arr.empty()) {
 		return;
 	}

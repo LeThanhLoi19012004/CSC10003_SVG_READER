@@ -1,16 +1,12 @@
 #include "Lib.h"
-
-
-
-Group::Group() {
+group::group() {
 	figureArray = {};
 	groupArray = {};
 	propLine = "";
 }
 
-
-Group::Group(const Group& group) {
-	this->figureArray = group.figureArray;
-	this->groupArray = group.groupArray;
-	this->propLine = group.propLine;
+group::group(const group& grp) {
+	this->figureArray = grp.figureArray;
+	this->groupArray = grp.groupArray;
+	this->propLine = grp.propLine;
 }

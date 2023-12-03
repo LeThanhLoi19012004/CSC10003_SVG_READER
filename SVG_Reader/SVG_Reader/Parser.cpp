@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-void Parser::loadColorMap() {
+void parser::loadColorMap() {
 	ifstream color_file("Color.txt", ios::in);
 
 	if (!color_file.is_open()) {
@@ -25,7 +25,7 @@ void Parser::loadColorMap() {
 			color_name = color_name + vct[i];
 
 		hexa_code = vct[n - 1];
-		COLOR color;
+		color color;
 		color.r = stoi(hexa_code.substr(1, 2), NULL, 16);
 		color.g = stoi(hexa_code.substr(3, 2), NULL, 16);
 		color.b = stoi(hexa_code.substr(5, 2), NULL, 16);
@@ -34,7 +34,7 @@ void Parser::loadColorMap() {
 	}
 	colorMap["none"] = { -1, -1, -1, -1 };
 }
-Group Parser::getGroup(ifstream& fin, string property) {
+group parser::getGroup(ifstream& fin, string property) {
 	string strGroup = "", temp = "";
 	strGroup += ("<g " + property + ">");
 
@@ -60,7 +60,7 @@ Group Parser::getGroup(ifstream& fin, string property) {
 	}
 	stringstream ss(strGroup);
 
-	Group group;
+	group group;
 	int index = 1;
 	string parentProp = "";
 	getline(ss, parentProp, '>');
@@ -69,8 +69,8 @@ Group Parser::getGroup(ifstream& fin, string property) {
 
 	return group;
 }
-Group Parser::generateGroup(string& strGroup, int index, string parentProp) {
-	Group group;
+group parser::generateGroup(string& strGroup, int index, string parentProp) {
+	group group;
 	if (strGroup.empty()) return group;
 
 	for (int i = index; i < strGroup.size() - 1; i++) {
@@ -92,7 +92,7 @@ Group Parser::generateGroup(string& strGroup, int index, string parentProp) {
 			getline(ss, sameProp, '>');
 			sameProp.erase(0, 2);
 
-			FactoryFigure factory;
+			factoryfigure factory;
 
 			while (getline(ss, line, '>')) {
 				string name = "", property = "", textContent = "";
@@ -112,7 +112,7 @@ Group Parser::generateGroup(string& strGroup, int index, string parentProp) {
 						property[i] = ' ';
 					}
 				}
-				Figure* fig = factory.getFigure(name);
+				figure* fig = factory.getFigure(name);
 
 				if (fig) {
 					processProperty(name, property, textContent, fig);
@@ -124,10 +124,10 @@ Group Parser::generateGroup(string& strGroup, int index, string parentProp) {
 		}
 	}
 }
-COLOR Parser::processColor(string strokecolor, string strokeopa) {
+color parser::processColor(string strokecolor, string strokeopa) {
 
 	if (strokecolor.find("rgb") != string::npos) {
-		COLOR color = { -1,-1,-1,-1 };
+		color clr = { -1,-1,-1,-1 };
 		color.opacity = stof(strokeopa);
 
 		for (int i = 0; i < strokecolor.size(); i++) {
@@ -144,22 +144,22 @@ COLOR Parser::processColor(string strokecolor, string strokeopa) {
 
 	}
 	else if (strokecolor[0] == '#') {
-		COLOR color;
-		color.r = stoi(strokecolor.substr(1, 2), NULL, 16);
-		color.g = stoi(strokecolor.substr(3, 2), NULL, 16);
-		color.b = stoi(strokecolor.substr(5, 2), NULL, 16);
-		color.opacity = stof(strokeopa);
-		return color;
+		color clr;
+		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
+		clr.g = stoi(strokecolor.substr(3, 2), NULL, 16);
+		clr.b = stoi(strokecolor.substr(5, 2), NULL, 16);
+		clr.opacity = stof(strokeopa);
+		return clr;
 	}
 	else {
-		COLOR color = { -1,-1,-1,-1 };
-		color = colorMap[strokecolor];
-		color.opacity = stof(strokeopa);
-		return color;
+		color clr = { -1,-1,-1,-1 };
+		clr = colorMap[strokecolor];
+		clr.opacity = stof(strokeopa);
+		return clr;
 	}
 }
 
-void Parser::processProperty(string name, string property, string textName, Figure*& fig) {
+void parser::processProperty(string name, string property, string textName, Figure*& fig) {
 	fig->setName(name);
 	fig->setTextName(textName);
 	fig->setLine(property);
@@ -189,15 +189,15 @@ void Parser::processProperty(string name, string property, string textName, Figu
 		}
 	}
 
-	COLOR color = { -1,-1,-1,-1 };
-	color = processColor(fill, fillOpa);
-	fig->setColor(color);
-	Stroke stroke;
-	stroke.setStrokeWidth(stof(strokeWidth));
-	COLOR strokeColor = { -1,-1,-1,-1 };
+	color clr = { -1,-1,-1,-1 };
+	clr = processColor(fill, fillOpa);
+	fig->setColor(clr);
+	stroke strk;
+	strk.setStrokeWidth(stof(strokeWidth));
+	color strokeColor = { -1,-1,-1,-1 };
 	strokeColor = processColor(sStroke, strokeOpa);
-	stroke.setStrokeColor(strokeColor);
-	fig->setStroke(stroke);
+	strk.setStrokeColor(strokeColor);
+	fig->setStroke(strk);
 	fig->setisRotate(false);
 
 	stringstream transformStream(strTransform);
@@ -208,10 +208,9 @@ void Parser::processProperty(string name, string property, string textName, Figu
 		fig->transformFigure();
 	}
 
-
 }
 
-void Parser::parseItem(vector<Figure*>& figures, string fileName) {
+void parser::parseItem(vector<figure*>& figures, string fileName) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -219,7 +218,7 @@ void Parser::parseItem(vector<Figure*>& figures, string fileName) {
 	}
 	loadColorMap();
 	string line = "";
-	FactoryFigure factory;
+	factoryfigure factory;
 	int id = 1;
 	while (getline(fin, line, '>')) {
 
@@ -239,7 +238,7 @@ void Parser::parseItem(vector<Figure*>& figures, string fileName) {
 				property[i] = ' ';
 			}
 		}
-		Figure* fig = factory.getFigure(name);
+		figure* fig = factory.getFigure(name);
 
 		if (fig) {
 			processProperty(name, property, textContent, fig);

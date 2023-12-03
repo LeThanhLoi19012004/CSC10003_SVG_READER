@@ -1,25 +1,25 @@
 #include "Lib.h"
 
-Stroke::Stroke() {
+stroke::stroke() {
 	this->strokeWidth = 0;
 }
 
-Stroke::~Stroke() {
+stroke::~stroke() {
 	this->strokeWidth = 0;
 }
 
-COLOR Stroke::getStrokeColor() {
+color stroke::getStrokeColor() {
 	return this->strokeColor;
 }
 
-float Stroke::getStrokeWidth() {
+float stroke::getStrokeWidth() {
 	return this->strokeWidth;
 }
 
-void Stroke::setStrokeColor(COLOR strokeColor) {
+void stroke::setStrokeColor(color strokeColor) {
 	this->strokeColor = strokeColor;
 }
 
-void Stroke::setStrokeWidth(float strokeWidth) {
+void stroke::setStrokeWidth(float strokeWidth) {
 	this->strokeWidth = strokeWidth;
 }

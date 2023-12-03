@@ -1,20 +1,20 @@
 #include "Lib.h"
 
-Text::Text() :Figure() {
+text::text() :figure() {
 	textPos.setX(0);
 	textPos.setY(0);
 	fontSize = 0;
 	content = "";
 }
 
-Text::~Text() {
+text::~text() {
 	fontSize = 0;
 	textPos.setX(0);
 	textPos.setY(0);
 	content = "";
 }
 
-void Text::updateProperty() {
+void text::updateProperty() {
 	int pos = line.find(">");
 	string temp = line.substr(0, pos);
 	stringstream ss(temp);
@@ -33,33 +33,33 @@ void Text::updateProperty() {
 	this->content = text_name;
 }
 
-Point Text::getTextPos() {
+point text::getTextPos() {
 	return this->textPos;
 }
 
-float Text::getFontSize() {
+float text::getFontSize() {
 	return this->fontSize;
 }
 
-string Text::getContent() {
+string text::getContent() {
 	return this->content;
 }
 
-void Text::setTextPos(float x, float y) {
+void text::setTextPos(float x, float y) {
 	this->textPos.setX(x);
 	this->textPos.setY(y);
 }
 
-void Text::setFontSize(float fontSize) {
+void text::setFontSize(float fontSize) {
 	this->fontSize = fontSize;
 }
 
-void Text::setContent(string content) {
+void text::setContent(string content) {
 	this->content = content;
 }
 
-void Text::transformFigure() {
-	float curX = this->textPos.getX();
+void text::transformFigure() {
+	/*float curX = this->textPos.getX();
 	float curY = this->textPos.getY();
 	for (auto p : transVct) {
 		if (p.first == "translate") {
@@ -94,5 +94,5 @@ void Text::transformFigure() {
 
 			}
 		}
-	}
+	}*/
 }

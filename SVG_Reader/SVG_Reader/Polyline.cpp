@@ -1,11 +1,11 @@
 #include "Lib.h"
 
-Polyline::Polyline() :Figure() {
+polyline::polyline() :figure() {
 	nVer = 0;
 	Vers = NULL;
 }
 
-Polyline::~Polyline() {
+polyline::~polyline() {
 	nVer = 0;
 	if (Vers != NULL) {
 		delete[] Vers;
@@ -13,7 +13,7 @@ Polyline::~Polyline() {
 	}
 }
 
-void Polyline::updateProperty() {
+void polyline::updateProperty() {
 	stringstream ss(line);
 	string property, val, temp;
 
@@ -30,7 +30,7 @@ void Polyline::updateProperty() {
 			while (ss >> x >> y)
 				nVer++;
 
-			Vers = new Point[nVer];
+			Vers = new point[nVer];
 			int i = 0;
 
 			stringstream pointLine(val);
@@ -43,26 +43,26 @@ void Polyline::updateProperty() {
 	}
 }
 
-Point* Polyline::getVers() {
+point* polyline::getVers() {
 	return this->Vers;
 }
-int Polyline::getNVer() {
+int polyline::getNVer() {
 	return this->nVer;
 }
 
-void Polyline::setVers(Point* Vers) {
+void polyline::setVers(point* Vers) {
 	if (this->Vers != NULL) {
 		delete[] Vers;
 		Vers = NULL;
 		this->Vers = Vers;
 	}
 }
-void Polyline::setNVer(int nVer) {
+void polyline::setNVer(int nVer) {
 	this->nVer = nVer;
 }
 
-void Polyline::transformFigure() {
-	for (int i = 0; i < nVer; i++) {
+void polyline::transformFigure() {
+	/*for (int i = 0; i < nVer; i++) {
 		float curX = this->Vers[i].getX();
 		float curY = this->Vers[i].getY();
 		for (auto p : transVct) {
@@ -99,5 +99,5 @@ void Polyline::transformFigure() {
 			}
 		}
 
-	}
+	}*/
 }

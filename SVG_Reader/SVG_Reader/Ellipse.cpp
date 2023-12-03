@@ -1,18 +1,18 @@
 #include "Lib.h"
 
-ELLIPSE::ELLIPSE() :Figure() {
+ellipse::ellipse() :figure() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-ELLIPSE::~ELLIPSE() {
+ellipse::~ellipse() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-void ELLIPSE::updateProperty() {
+void ellipse::updateProperty() {
 	stringstream ss(line);
 	string property, val, temp;
 
@@ -30,32 +30,32 @@ void ELLIPSE::updateProperty() {
 	}
 }
 
-POINT ELLIPSE::getCenter() {
+point ellipse::getCenter() {
 	return this->center;
 }
 
-float ELLIPSE::getRx() {
+float ellipse::getRx() {
 	return this->rx;
 }
 
-float ELLIPSE::getRy() {
+float ellipse::getRy() {
 	return this->ry;
 }
 
-void ELLIPSE::setCenter(float x, float y) {
+void ellipse::setCenter(float x, float y) {
 	this->center.setX(x);
 	this->center.setY(y);
 }
 
-void ELLIPSE::setRx(float rx) {
+void ellipse::setRx(float rx) {
 	this->rx = rx;
 }
 
-void ELLIPSE::setRy(float ry) {
+void ellipse::setRy(float ry) {
 	this->ry = ry;
 }
 
-void ELLIPSE::transformFigure() {
+void ellipse::transformFigure() {
 	/*float curX = this->center.getX();
 	float curY = this->center.getY();
 	for (auto p : transVct) {
