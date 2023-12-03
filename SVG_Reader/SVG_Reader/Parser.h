@@ -4,12 +4,12 @@
 
 class Parser {
 private:
-	unordered_map<string, Color> colorMap;
-	Color processColor(string, string);
+	unordered_map<string, COLOR> colorMap;
+	COLOR processColor(string, string);
 	void loadColorMap();
 	void processProperty(string, string, string, Figure*&);
-	//Group getGroup(ifstream&,string);
-	//Group generateGroup(string&, int);
+	Group getGroup(ifstream&,string);
+	Group generateGroup(string&, int,string);
 
 	//void parseGroup(Group&);
 public:

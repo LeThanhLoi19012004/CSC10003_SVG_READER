@@ -1,18 +1,18 @@
 #include "Lib.h"
 
-Ellipse::Ellipse() :Figure() {
+ELLIPSE::ELLIPSE() :Figure() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-Ellipse::~Ellipse() {
+ELLIPSE::~ELLIPSE() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-void Ellipse::updateProperty() {
+void ELLIPSE::updateProperty() {
 	stringstream ss(line);
 	string property, val, temp;
 
@@ -30,33 +30,33 @@ void Ellipse::updateProperty() {
 	}
 }
 
-Point Ellipse::getCenter() {
+POINT ELLIPSE::getCenter() {
 	return this->center;
 }
 
-float Ellipse::getRx() {
+float ELLIPSE::getRx() {
 	return this->rx;
 }
 
-float Ellipse::getRy() {
+float ELLIPSE::getRy() {
 	return this->ry;
 }
 
-void Ellipse::setCenter(float x, float y) {
+void ELLIPSE::setCenter(float x, float y) {
 	this->center.setX(x);
 	this->center.setY(y);
 }
 
-void Ellipse::setRx(float rx) {
+void ELLIPSE::setRx(float rx) {
 	this->rx = rx;
 }
 
-void Ellipse::setRy(float ry) {
+void ELLIPSE::setRy(float ry) {
 	this->ry = ry;
 }
 
-void Ellipse::transformFigure() {
-	float curX = this->center.getX();
+void ELLIPSE::transformFigure() {
+	/*float curX = this->center.getX();
 	float curY = this->center.getY();
 	for (auto p : transVct) {
 		if (p.first == "translate") {
@@ -86,6 +86,6 @@ void Ellipse::transformFigure() {
 				this->ry *= sclY;
 			}
 		}
-	}
+	}*/
 }
 

@@ -1,18 +1,18 @@
 #include "Lib.h"
 
-Circle::Circle() :Ellipse() {
+CIRCLE::CIRCLE() :ELLIPSE() {
 	this->setCenter(0, 0);
 	this->setRx(0);
 	this->setRy(0);
 }
 
-Circle::~Circle() {
+CIRCLE::~CIRCLE() {
 	this->setCenter(0, 0);
 	this->setRx(0);
 	this->setRy(0);
 }
 
-void Circle::updateProperty() {
+void CIRCLE::updateProperty() {
 	stringstream ss(line);
 	string attribute, val, temp;
 
