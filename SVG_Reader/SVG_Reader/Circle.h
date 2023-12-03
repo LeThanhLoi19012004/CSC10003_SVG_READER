@@ -1,12 +1,12 @@
 #ifndef _CIRCLE_H_
 #define _CIRCLE_H_
 
-class Circle :public Ellipse {
+class CIRCLE :public ELLIPSE {
 private:
 
 public:
-	Circle();
-	~Circle();
+	CIRCLE();
+	~CIRCLE();
 
 	void updateProperty();
 };

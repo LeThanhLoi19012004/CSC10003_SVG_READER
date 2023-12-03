@@ -1,13 +1,13 @@
 #ifndef _POINT_H_
 #define _POINT_H
 
-class Point {
+class POINT {
 private:
 	float x, y;
 	bool intersect;
 public:
-	Point();
-	~Point();
+	POINT();
+	~POINT();
 
 	/*Setter and Getter*/
 	float getX();
@@ -19,7 +19,7 @@ public:
 	void setY(float);
 
 	//Operator == 
-	friend bool operator == (const Point&, const Point&);
+	friend bool operator == (const POINT&, const POINT&);
 };
 
 #endif

@@ -1,18 +1,18 @@
 #ifndef _ELLIPSE_H_
 #define _ELLIPSE_H_
 
-class Ellipse :public Figure {
+class ELLIPSE :public Figure {
 protected:
 	float rx, ry;
-	Point center;
+	POINT center;
 public:
-	Ellipse();
-	~Ellipse();
+	ELLIPSE();
+	~ELLIPSE();
 
 	void updateProperty();
 
 	// Setter 
-	Point getCenter();
+	POINT getCenter();
 	float getRx();
 	float getRy();
 
