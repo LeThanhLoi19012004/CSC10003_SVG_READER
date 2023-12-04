@@ -15,7 +15,7 @@ text::~text() {
 }
 
 void text::updateProperty() {
-	int pos = line_str.find(">");
+	size_t pos = line_str.find(">");
 	string temp = line_str.substr(0, pos);
 	stringstream ss(temp);
 	string attribute, val, a;

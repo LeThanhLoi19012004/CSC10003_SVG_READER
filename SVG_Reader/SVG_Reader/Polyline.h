@@ -3,19 +3,15 @@
 
 class polyline :public figure {
 private:
-	int nVer;
-	point* Vers;
+	vector<point> Vers;
 public:
 	polyline();
 	~polyline();
 
 	/*Update different polyline element*/
 	void updateProperty();
-	point* getVers();
-	int getNVer();
-
-	void setVers(point*);
-	void setNVer(int);
+	vector<point> getVers();
+	void setVers(vector<point>);
 
 	void transformFigure();
 };

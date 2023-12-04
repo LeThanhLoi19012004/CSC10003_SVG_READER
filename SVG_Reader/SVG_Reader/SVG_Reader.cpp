@@ -153,21 +153,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: Add any drawing code that uses hdc here...
-
-            /*Graphics graphics(hdc);
-            vector<shape*> shapes = read_file(path, max_width, max_height);
-            transform_image(graphics, Rotate, max_width + scroll_x, max_height + scroll_y, scroll_x, scroll_y, scale);
-            for (int i = 0; i < shapes.size(); i++) {
-                shapes[i]->draw(graphics);
-            }*/
-            //Graphics graphics(hdc);
-            /*Tao Program rui sau do xu li tiep*/
+            
+            image img("sample.svg");
+            parser parseTool;
+            renderer renderTool;
+            img.parseImage(parseTool);
+            img.renderImage(renderTool, hdc);
+            
             EndPaint(hWnd, &ps);
         }
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
-        // delete figure[i]
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);

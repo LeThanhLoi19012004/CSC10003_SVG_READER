@@ -1,14 +1,11 @@
 #include "Lib.h"
 
 polygon::polygon() : figure() {
-	nVer = 0;
-	Vers = NULL;
+	Vers = {};
 }
 
 polygon::~polygon() {
-	nVer = 0;
-	if (Vers != NULL)
-		delete[] Vers;
+	Vers = {};
 }
 
 void polygon::updateProperty() {
@@ -26,10 +23,13 @@ void polygon::updateProperty() {
 
 			stringstream ss(val);
 			string x = "", y = "";
-			while (ss >> x >> y)
-				nVer++;
-
-			Vers = new point[nVer];
+			while (ss >> x >> y) {
+				point p;
+				p.setX(stof(x));
+				p.setY(stof(y));
+				Vers.push_back(p);
+			}
+			/*Vers = new point[nVer];
 			int i = 0;
 
 			stringstream pointLine(val);
@@ -37,28 +37,19 @@ void polygon::updateProperty() {
 				Vers[i].setX(stof(x));
 				Vers[i].setY(stof(y));
 				i++;
-			}
+			}*/
 		}
 	}
 
 }
 
-point* polygon::getVers() {
+vector<point> polygon::getVers() {
 	return this->Vers;
 }
-int polygon::getNVer() {
-	return this->nVer;
-}
 
-void polygon::setVers(point* Vers) {
-	if (this->Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-		this->Vers = Vers;
-	}
-}
-void polygon::setNVer(int nVer) {
-	this->nVer = nVer;
+void polygon::setVers(vector<point> Vers) {
+	
+	this->Vers = Vers;
 }
 
 void polygon::transformFigure() {

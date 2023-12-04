@@ -24,7 +24,7 @@ public:
 	void setAntialiasingLevel(float);
 
 	void parseImage(parser);
-	void renderImage(renderer);
+	void renderImage(renderer, HDC);
 
 	void deleteGroupArr(group_array&);
 

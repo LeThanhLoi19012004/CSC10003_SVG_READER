@@ -1,373 +1,45 @@
-﻿  Color.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.cpp(11,1): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.cpp(19,29): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-  FactoryFigure.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(8,14): error C2061: syntax error: identifier 'Rectangle'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(12,14): error C2061: syntax error: identifier 'Circle'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(16,14): error C2061: syntax error: identifier 'Ellipse'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(20,14): error C2061: syntax error: identifier 'Line'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(24,14): error C2061: syntax error: identifier 'Polyline'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(28,14): error C2061: syntax error: identifier 'Polygon'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\FactoryFigure.cpp(36,14): error C2061: syntax error: identifier 'Path'
-  Figure.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(17,23): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.cpp(35,1): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-  Group.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-  Image.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(3,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(4,7): error C2660: 'Parser::parseItem': function does not take 3 arguments
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(16,7): message : see declaration of 'Parser::parseItem'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(4,7): message : while trying to match the argument list '(std::vector<Figure *,std::allocator<Figure *>>, GroupArray, std::string)'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,34): error C2761: 'void Image::renderImage(void)': redeclaration of member is not allowed
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,25): error C2065: 'Renderer': undeclared identifier
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,34): error C2146: syntax error: missing ')' before identifier 'render'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,42): error C2143: syntax error: missing ';' before '{'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(7,42): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(11,1): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(20,5): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(24,5): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(28,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(32,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(36,7): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(40,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(44,17): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(48,1): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(48,9): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.cpp(55,6): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-  Parser.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(22,9): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(28,3): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(29,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(30,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(31,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(38,1): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(41,3): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(58,3): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(59,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(60,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(61,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(66,3): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(103,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(108,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-  Program.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Program.cpp(20,2): error C2872: 'Image': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(4,7): message : could be 'Image'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusHeaders.h(384,7): message : or       'Gdiplus::Image'
-  SVG_Reader.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-  Text.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(14,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(20,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(23,22): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(12,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(23,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Figure.h(31,16): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(7,24): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.h(8,2): error C2872: 'Color': ambiguous symbol
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Color.h(4,7): message : could be 'Color'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusColor.h(50,7): message : or       'Gdiplus::Color'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Image.h(27,19): error C2061: syntax error: identifier 'Renderer'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(4,10): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(5,10): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(12,10): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(13,10): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(18,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(27,18): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(29,18): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(49,16): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(50,16): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(62,29): error C2039: 'getX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(63,29): error C2039: 'getY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(66,18): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(67,18): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(69,25): error C2039: 'getX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(70,25): error C2039: 'getY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(76,25): error C2039: 'getX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(77,25): error C2039: 'getY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(80,19): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(81,19): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(90,19): error C2039: 'setX': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Text.cpp(91,19): error C2039: 'setY': is not a member of 'Gdiplus::Point'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GdiplusTypes.h(301,7): message : see declaration of 'Gdiplus::Point'
-  Generating Code...
+﻿  Renderer.cpp
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,181): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,144): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,107): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,67): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(94,117): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(94,98): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(94,79): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(94,57): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(101,179): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(101,142): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(101,105): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(101,65): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(102,115): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(102,96): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(102,77): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(102,55): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(103,141): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(103,121): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(104,140): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(104,120): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(109,176): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(109,139): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(109,102): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(109,62): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(115,179): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(115,142): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(115,105): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(115,65): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(116,115): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(116,96): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(116,77): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(116,55): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(117,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(128,180): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(128,143): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(128,106): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(128,66): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(129,116): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(129,97): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(129,78): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(129,56): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(130,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(145,57): warning C4267: 'argument': conversion from 'size_t' to 'INT', possible loss of data
+  SVG_Reader.vcxproj -> C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\x64\Debug\SVG_Reader.exe

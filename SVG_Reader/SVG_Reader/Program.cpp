@@ -21,7 +21,7 @@ void program::run() {
 	parser parseTool;
 	renderer renderTool;
 	img.parseImage(parseTool);
-	img.renderImage(renderTool);
+	//img.renderImage(renderTool);
 }
 
 void program::execute() {
