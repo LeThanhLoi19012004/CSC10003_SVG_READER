@@ -1,15 +1,15 @@
 #ifndef _RENDERER_H_
 #define _RENDERER_H_
 
-class Renderer {
+class renderer {
 public:
 	//void canvasControl(sf::RenderWindow&, sf::View&, const float, const float);
-	//void drawFigure(vector<Figure*>, sf::RenderWindow&);
+	void drawFigure(vector<figure*>, HDC);
 	////void drawGroup(GroupArray, sf::RenderWindow&);
-	//void renderItem(vector<Figure*>, float, string, float, float);
+	void renderItem(vector<figure*>, float, string, float, float, HDC);
 
 	///*Draw the figure functions*/
-	//void drawRectangle(sf::RenderWindow&, Rectangle*);
+	void drawRectangle(rectangle*, HDC);
 	//void drawEllipse(sf::RenderWindow&, Ellipse*);
 	//void drawLine(sf::RenderWindow&, Line*);
 	//void drawPolygon(sf::RenderWindow&, Polygon*);

@@ -1,14 +1,14 @@
 #ifndef _PATH_H_
 #define _PATH_H_
 
-class Path : public Figure {
+class path : public figure {
 private:
-	vector<pair<char, vector<Point>>> vct;
+	vector<pair<char, vector<point>>> vct;
 public:
-	Path();
-	~Path();
+	path();
+	~path();
 
-	vector<pair<char, vector<Point>>> getProp();
+	vector<pair<char, vector<point>>> getProp();
 	/*Update different polyline element*/
 	void updateProperty();
 

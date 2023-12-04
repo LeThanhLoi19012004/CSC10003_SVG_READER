@@ -11,7 +11,7 @@ line::~line() {
 
 void line::updateProperty()
 {
-	stringstream ss(line);
+	stringstream ss(line_str);
 	string attribute, val, temp;
 
 	while (ss >> attribute) {

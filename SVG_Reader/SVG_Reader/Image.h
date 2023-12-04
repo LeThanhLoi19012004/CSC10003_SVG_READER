@@ -1,7 +1,7 @@
 #ifndef _IMAGE_H_
 #define _IMAGE_H_
 
-class Image {
+class image {
 private:
 	//Image property
 	string fileName, imageName;
@@ -9,26 +9,26 @@ private:
 	float antialiasingLevel;
 
 	//Figures Property
-	vector<Figure*> figures;
-	Group groupTemp; //Store all group in an svg file
-	GroupArray groupArr;
+	vector<figure*> figures;
+	group groupTemp; //Store all group in an svg file
+	group_array groupArr;
 public:
-	Image(string);
+	image(string);
 	int getWidth();
 	int getHeight();
 	float getAntialiasingLevel();
-	vector<Figure*> getFigures();
+	vector<figure*> getFigures();
 
 	void setWidth(int);
 	void setHeight(int);
 	void setAntialiasingLevel(float);
 
-	void parseImage(Parser);
-	void renderImage(Renderer);
+	void parseImage(parser);
+	void renderImage(renderer, HDC);
 
-	void deleteGroupArr(GroupArray&);
+	void deleteGroupArr(group_array&);
 
-	~Image();
+	~image();
 };
 
 #endif
