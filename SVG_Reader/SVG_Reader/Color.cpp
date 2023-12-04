@@ -1,7 +1,7 @@
 #include "Lib.h"
 
 stroke::stroke() {
-	this->strokeWidth = 0;
+	this->strokeWidth = 1;
 }
 
 stroke::~stroke() {

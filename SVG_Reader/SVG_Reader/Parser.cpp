@@ -127,9 +127,8 @@ void parser::loadColorMap() {
 //	}
 //}
 
-color parser::processColor(string strokecolor, string strokeopa) {
+void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 	if (strokecolor.find("rgb") != string::npos) {
-		color clr = { 0, 0, 0, 1 };
 		clr.opacity = stof(strokeopa);
 
 		for (int i = 0; i < strokecolor.size(); i++) {
@@ -142,22 +141,16 @@ color parser::processColor(string strokecolor, string strokeopa) {
 		ss >> r >> g >> b;
 		clr.r = stof(r); clr.g = stof(g); clr.b = stof(b);
 		ss.ignore();
-		return clr;
-
 	}
 	else if (strokecolor[0] == '#') {
-		color clr;
 		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
 		clr.g = stoi(strokecolor.substr(3, 2), NULL, 16);
 		clr.b = stoi(strokecolor.substr(5, 2), NULL, 16);
 		clr.opacity = stof(strokeopa);
-		return clr;
 	}
 	else {
-		color clr = { 0, 0, 0, 1 };
 		clr = colorMap[strokecolor];
 		clr.opacity = stof(strokeopa);
-		return clr;
 	}
 }
 
@@ -168,7 +161,7 @@ void parser::processProperty(string name, string property, string textName, figu
 
 	stringstream ss(property);
 	string attribute, value;
-	string strokeWidth = "0", sStroke = "", strokeOpa = "1", fill = "", fillOpa = "1";
+	string strokeWidth = "1", sStroke = "", strokeOpa = "1", fill = "", fillOpa = "1";
 	string strTransform = "";
 	string temp = "";
 	while (ss >> attribute) {
@@ -192,12 +185,14 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	clr = processColor(fill, fillOpa);
+	processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
 	stroke strk;
 	strk.setStrokeWidth(stof(strokeWidth));
 	color strokeColor = { 0, 0, 0, 1 };
-	strokeColor = processColor(sStroke, strokeOpa);
+	if (sStroke == "")
+		processColor(sStroke, "0", strokeColor);
+	else processColor(sStroke, strokeOpa, strokeColor);
 	strk.setStrokeColor(strokeColor);
 	fig->setStroke(strk);
 	fig->setisRotate(false);
