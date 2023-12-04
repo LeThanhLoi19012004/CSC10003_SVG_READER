@@ -15,7 +15,7 @@ public:
 	void drawPolygon(Graphics&, polygon*);
 	void drawPolyline(Graphics&, polyline*);
 	void drawText(Graphics&, text*);
-	//void drawPath(Graphics&, path*);
+	void drawPath(Graphics&, path*);
 };
 
 #endif

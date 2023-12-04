@@ -41,11 +41,11 @@ void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
 			drawText(graphics, texts);
 			break;
 		}
-		/*case 8: {
+		case 8: {
 			path* paths = dynamic_cast<path*>(fig);
 			drawPath(graphics, paths);
 			break;
-		}*/
+		}
 		default:
 			break;
 		}
@@ -156,6 +156,57 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 }
 
-//void renderer::drawPath(Graphics& graphics, path* fig) {
-//
-//}
+void renderer::drawPath(Graphics& graphics, path* fig) {
+	vector<pair<char, vector<point>>> vct = fig->getProp();
+	GraphicsPath path;
+	int numPoint = vct[0].second.size();
+	if (numPoint != 0) {
+		vector <Point> points(numPoint);
+		for (int i = 0; i < numPoint; i++)
+			points[i] = Point(vct[0].second[i].getX(), vct[0].second[i].getY());
+		path.AddLines(points.data(), numPoint);
+	}
+	for (int i = 1; i < vct.size(); i++) {
+		numPoint = vct[i].second.size();
+		if (vct[i].first == 'C' || vct[i].first == 'c') {
+				point Pt0 = vct[i - 1].second[vct[i - 1].second.size() - 1];
+				Point P0 = Point(Pt0.getX(), Pt0.getY());
+				point Pt1 = vct[i].second[0];
+				Point P1 = Point(Pt1.getX(), Pt1.getY());
+				point Pt2 = vct[i].second[1];
+				Point P2 = Point(Pt2.getX(), Pt2.getY());
+				point Pt3 = vct[i].second[2];
+				Point P3 = Point(Pt3.getX(), Pt3.getY());
+				path.AddBezier(P0, P1, P2, P3);		
+		}
+		else if (vct[i].first == 'Z' || vct[i].first == 'z') {
+			point Pt0 = vct[i].second[0];
+			Point P0 = Point(Pt0.getX(), Pt0.getY());
+			point Pt1 = vct[0].second[0];
+			Point P1 = Point(Pt1.getX(), Pt1.getY());
+			path.AddLine(P0, P1);
+			
+			/*if (i == vct.size() - 1)
+				open = false;
+			else {
+				SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+				Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+				graphics.FillPath(&fillPath, &path);
+				graphics.DrawPath(&penPath, &path);
+				graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+			}*/
+		}
+		else {
+			vector <Point> points(numPoint);
+			for (int j = 0; j < numPoint; j++)
+				points[j] = Point(vct[i].second[j].getX(), vct[i].second[j].getY());
+			path.AddLines(points.data(), numPoint);
+		}
+	}
+
+	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+	Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+	graphics.FillPath(&fillPath, &path);
+	graphics.DrawPath(&penPath, &path);
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+}

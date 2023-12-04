@@ -10,15 +10,14 @@ path::~path() {}
 void path::updateProperty() {
 	stringstream ss(line_str);
 	string property, val, temp;
-
 	while (ss >> property) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
 		if (property == "stroke-linejoin")
 			this->strokeLineJoin = val;
-		if (property == "stroke-linecap")
+		else if (property == "stroke-linecap")
 			this->strokeLineCap = val;
-		if (property == "d") {
+		else if (property == "d") {
 			if (val[0] != 'M' && val[0] != 'm')
 				return;
 			for (int i = 0; i < val.size(); i++) {
@@ -40,15 +39,6 @@ void path::updateProperty() {
 					while (!isalpha(val[j]) && j < val.size())
 						j++;
 					string pointStr = val.substr(i, j - i);
-
-					/*string pointStr = "";
-					pointStr += val[i];
-					int j = i + 1;
-					while (!isalpha(str[j]) && j < val.size()) {
-						pointStr += val[j];
-						j++;
-					}*/
-
 					pair<char, vector<point>> pr;
 					pr.first = pointStr[0];
 					pointStr.erase(0, 2);
@@ -151,9 +141,11 @@ void path::updateProperty() {
 		cout << "\n";
 	}*/
 }
+
 string path::getStrokeLineJoin() {
 	return this->strokeLineJoin;
 }
+
 string path::getStrokeLineCap() {
 	return this->strokeLineCap;
 }
@@ -161,12 +153,15 @@ string path::getStrokeLineCap() {
 void path:: setStrokeLineJoin(string linejoin) {
 	this->strokeLineJoin = linejoin;
 }
+
 void path:: setStrokeLineCap(string linecap) {
 	this->strokeLineCap = linecap;
 }
+
 void path:: setVct(vector<pair<char, vector<point>>> vct) {
 	this->vct = vct;
 }
+
 //void Path::transformFigure() {
 //	for (int i = 0; i < nVer; i++) {
 //		float curX = this->Vers[i].getX();
