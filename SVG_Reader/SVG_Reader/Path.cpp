@@ -1,6 +1,9 @@
 #include "Lib.h"
 
-path::path() :figure() {}
+path::path() :figure() {
+	strokeLineJoin = "miter";
+	strokeLineCap = "butt";
+}
 
 path::~path() {}
 
