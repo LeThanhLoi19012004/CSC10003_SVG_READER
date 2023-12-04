@@ -29,6 +29,16 @@ void text::updateProperty() {
 			this->textPos.setY(stof(val));
 		if (attribute == "font-size")
 			this->fontSize = stof(val);
+		if (attribute == "text-anchor")
+			this->textAnchor = val;
+		if (attribute == "font-family")
+			this->fontFamily = val;
+		if (attribute == "font-style")
+			this->italic = true;
+		if (attribute == "dx")
+			this->dx = stof(val);
+		if (attribute == "dy")
+			this->dy = stof(val);
 	}
 	this->content = text_name;
 }
@@ -57,7 +67,36 @@ void text::setFontSize(float fontSize) {
 void text::setContent(string content) {
 	this->content = content;
 }
-
+void text::setFontFamily(string fontFamily) {
+	this->fontFamily = fontFamily;
+}
+void text::setTextAnchor(string textAnchor) {
+	this->textAnchor = textAnchor;
+}
+void text::setItalic(bool italic) {
+	this->italic = italic;
+}
+void text::setDx(float dx) {
+	this->dx = dx;
+}
+void text::setDy(float dy) {
+	this->dy = dy;
+}
+string text::getFontFamily() {
+	return this->fontFamily;
+}
+string text:: getTextAnchor() {
+	return this->textAnchor;
+}
+bool text:: getItalic() {
+	return this->italic;
+}
+float text:: getDx() {
+	return this->dx;
+}
+float text:: getDy() {
+	return this->dy;
+}
 void text::transformFigure() {
 	/*float curX = this->textPos.getX();
 	float curY = this->textPos.getY();
