@@ -7,12 +7,12 @@ private:
 	color processColor(string, string);
 	void loadColorMap();
 	void processProperty(string, string, string, figure*&);
-	//group getGroup(ifstream&,string);
-	//group generateGroup(string&, int,string);
+	
+	group generateGroup(vector<string>&, int);
 
-	//void parseGroup(Group&);
+	void parseGroupStr(string&);
 public:
-	void parseItem(vector<figure*>&, string);
+	void parseItem(vector<figure*>&, group_array& ,string);
 };
 
 #endif

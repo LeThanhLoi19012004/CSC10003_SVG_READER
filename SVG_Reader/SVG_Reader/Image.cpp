@@ -1,13 +1,13 @@
 #include "Lib.h"
 
 void image::parseImage(parser parse) {
-	parse.parseItem(figures, fileName);
+	parse.parseItem(figures, groupArr,fileName);
 	//parse.parseItem(figures, groupArr, fileName);
 }
 
 void image::renderImage(renderer render, HDC hdc) {
-	//render.renderItem(figures, groupArr, antialiasingLevel, imageName, width, height);
-	render.renderItem(figures, antialiasingLevel, imageName, width, height, hdc);
+	render.renderItem(figures, groupArr, antialiasingLevel, imageName, width, height, hdc);
+	//render.renderItem(figures, antialiasingLevel, imageName, width, height, hdc);
 }
 
 image::image(string fileInput) {

@@ -6,7 +6,7 @@ public:
 	//void canvasControl(sf::RenderWindow&, sf::View&, const float, const float);
 	void drawFigure(vector<figure*>, HDC);
 	////void drawGroup(GroupArray, sf::RenderWindow&);
-	void renderItem(vector<figure*>, float, string, float, float, HDC);
+	void renderItem(vector<figure*>, group_array, float, string, float, float, HDC);
 
 	///*Draw the figure functions*/
 	void drawRectangle(rectangle*, HDC);

@@ -50,7 +50,7 @@ void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
 	}
 }
 
-void renderer::renderItem(vector<figure*> figures, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
+void renderer::renderItem(vector<figure*> figures, group_array groupArr , float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
 	/*sf::ContextSettings settings;
 	settings.antialiasingLevel = antialiasingLevel;
 	width = sf::VideoMode::getDesktopMode().width;
@@ -79,7 +79,7 @@ void renderer::renderItem(vector<figure*> figures, float antialiasingLevel, stri
 
 		/*for (auto x : figures)
 			x->Draw(window);*/
-	
+
 	drawFigure(figures, hdc); 
 
 		//drawGroup(groupArr,window);
