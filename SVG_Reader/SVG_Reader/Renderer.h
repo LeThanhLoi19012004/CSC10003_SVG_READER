@@ -5,7 +5,6 @@ class renderer {
 public:
 	//void canvasControl(sf::RenderWindow&, sf::View&, const float, const float);
 	void drawFigure(vector<figure*>, HDC);
-	////void drawGroup(GroupArray, sf::RenderWindow&);
 	void renderItem(vector<figure*>, group_array, float, string, float, float, HDC);
 
 	///*Draw the figure functions*/
@@ -16,6 +15,7 @@ public:
 	void drawPolyline(Graphics&, polyline*);
 	void drawText(Graphics&, text*);
 	void drawPath(Graphics&, path*);
+	void drawGroup(Graphics&, group_array);
 };
 
 #endif

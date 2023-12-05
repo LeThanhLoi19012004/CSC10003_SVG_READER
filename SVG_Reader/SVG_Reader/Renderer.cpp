@@ -57,34 +57,101 @@ void renderer::renderItem(vector<figure*> figures, group_array groupArr , float 
 }
 
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
+	GraphicsState save = graphics.Save();
 	Pen penRectangle(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillRectangle(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+		
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
 	
 	graphics.FillRectangle(&fillRectangle, fig->getRoot().getX(), fig->getRoot().getY(), fig->getWidth(), fig->getHeight());
 	graphics.DrawRectangle(&penRectangle, fig->getRoot().getX(), fig->getRoot().getY(), fig->getWidth(), fig->getHeight());
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.Restore(save);
 }
 
 void renderer::drawEllipse(Graphics& graphics, ellipse* fig) {
+	GraphicsState save = graphics.Save();
 	Pen penEllipse(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillEllipse(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-	
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	graphics.FillEllipse(&fillEllipse, fig->getCenter().getX() - fig->getRx(), fig->getCenter().getY() - fig->getRy(), 2.0 * fig->getRx(), 2.0 * fig->getRy());
 	graphics.DrawEllipse(&penEllipse, fig->getCenter().getX() - fig->getRx(), fig->getCenter().getY() - fig->getRy(), 2.0 * fig->getRx(), 2.0 * fig->getRy());
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.Restore(save);
 }
 
 void renderer::drawLine(Graphics& graphics, line* fig) {
+	GraphicsState save = graphics.Save();
 	Pen penLine(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
-	
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	graphics.DrawLine(&penLine, fig->getP1().getX(), fig->getP1().getY(), fig->getP2().getX(), fig->getP2().getY());
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.Restore(save);
 }
 
 void renderer::drawPolygon(Graphics& graphics, polygon* fig) {
+	GraphicsState save = graphics.Save();
 	Pen penPolygon(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillPolygon(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-	
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	int numPoint = fig->getVers().size();
 	PointF* p = new PointF[numPoint];
 	for (int i = 0; i < numPoint; i++)
@@ -93,14 +160,30 @@ void renderer::drawPolygon(Graphics& graphics, polygon* fig) {
 	graphics.FillPolygon(&fillPolygon, p, numPoint, FillModeWinding);
 	graphics.DrawPolygon(&penPolygon, p, numPoint);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-	
+	graphics.Restore(save);
 	delete[] p;
 }
 
 void renderer::drawPolyline(Graphics& graphics, polyline* fig) {
+	GraphicsState save = graphics.Save();
 	Pen penPolyline(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillPolyline(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-	
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	int numPoint = fig->getVers().size();
 	PointF* p = new PointF[numPoint];
 	for (int i = 0; i < numPoint; i++)
@@ -109,11 +192,12 @@ void renderer::drawPolyline(Graphics& graphics, polyline* fig) {
 	graphics.FillPolygon(&fillPolyline, p, numPoint, FillModeWinding);
 	graphics.DrawLines(&penPolyline, p, numPoint);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-	
+	graphics.Restore(save);
 	delete[] p;
 }
 
 void renderer::drawText(Graphics& graphics, text* fig) {
+	GraphicsState save = graphics.Save();
 	wstring_convert<codecvt_utf8<wchar_t>> converter;
 	wstring wContent = converter.from_bytes(fig->getContent());
 	wstring wFontFamily = converter.from_bytes(fig->getFontFamily());
@@ -121,12 +205,7 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 
 	PointF textPosition;
 	StringFormat stringFormat;
-	if (fig->getTextAnchor() == "start") {
-		textPosition = PointF(fig->getTextPos().getX() + fig->getDx(), fig->getTextPos().getY() + fig->getDy() - fig->getFontSize());
-		stringFormat.SetAlignment(StringAlignmentNear);
-		stringFormat.SetLineAlignment(StringAlignmentNear);
-	}
-	else if (fig->getTextAnchor() == "middle") {
+	if (fig->getTextAnchor() == "middle") {
 		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 20.f, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 20.f);
 		stringFormat.SetAlignment(StringAlignmentCenter);
 		stringFormat.SetLineAlignment(StringAlignmentCenter);
@@ -137,7 +216,7 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 		stringFormat.SetLineAlignment(StringAlignmentFar);
 	}
 	else {
-		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize(), fig->getTextPos().getY() + fig->getDy() - fig->getFontSize());
+		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 5.0f, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 1.1f);
 		stringFormat.SetAlignment(StringAlignmentNear);
 		stringFormat.SetLineAlignment(StringAlignmentNear);
 	}
@@ -149,14 +228,32 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 		path.AddString(wContent.c_str(), -1, &WFF, FontStyleBold, fig->getFontSize(), textPosition, &stringFormat);
 	else path.AddString(wContent.c_str(), -1, &WFF, FontStyleRegular, fig->getFontSize(), textPosition, &stringFormat);
 
-	SolidBrush fillText(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	Pen penText(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+	SolidBrush fillText(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	graphics.FillPath(&fillText, &path);
 	graphics.DrawPath(&penText, &path);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.Restore(save);
 }
 
 void renderer::drawPath(Graphics& graphics, path* fig) {
+	GraphicsState save = graphics.Save();
 	vector<pair<char, vector<point>>> vct = fig->getProp();
 	GraphicsPath path;
 	int numPoint = vct[0].second.size();
@@ -204,9 +301,30 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 		}
 	}
 
-	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+	for (auto trans : transVct) {
+		float x = 0.0f;
+		if (!trans.second.empty())
+			x = trans.second[0];
+		float y = x;
+		if (trans.second.size() == 2)
+			y = trans.second[1];
+		if (trans.first == "translate")
+			graphics.TranslateTransform(x, y);
+		else if (trans.first == "rotate")
+			graphics.RotateTransform(x);
+		else graphics.ScaleTransform(x, y);
+	}
+
 	graphics.FillPath(&fillPath, &path);
 	graphics.DrawPath(&penPath, &path);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.Restore(save);
+}
+
+void renderer::drawGroup(Graphics& graphics, group_array groupArr) {
+
 }

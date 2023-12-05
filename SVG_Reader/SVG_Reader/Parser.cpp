@@ -51,6 +51,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
+		if (strokecolor.size() == 4) {
+			string tmp = "#";
+			for (int i = 1; i < 4; i++)
+				tmp += strokecolor[i] + strokecolor[i];
+			strokecolor = tmp;
+		}
 		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
 		clr.g = stoi(strokecolor.substr(3, 2), NULL, 16);
 		clr.b = stoi(strokecolor.substr(5, 2), NULL, 16);
@@ -85,21 +91,12 @@ void parser::processProperty(string name, string property, string textName, figu
 			sStroke = value;
 		if (attribute == "stroke-opacity")
 			strokeOpa = value;
-		if (attribute == "transform") {
-			/*translate(100  100)rotate(20)    traslate(100    200)*/
-			/*for (int k = 0; k < value.size()-1; k++) {
-				if (value[k] == ')' && value[k + 1] != ' ') {
-					value.insert(k+1," ");
-					k++;
-				}
-			}*/
-			
-			strTransform += (" "+value + " ");
-		}
+		if (attribute == "transform")
+			strTransform += (" " + value + " ");
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	if (fill == "none" || fill == "")
+	if (fill == "none")
 		processColor(fill, "0", clr);
 	else processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
@@ -111,7 +108,6 @@ void parser::processProperty(string name, string property, string textName, figu
 	else processColor(sStroke, strokeOpa, strokeColor);
 	strk.setStrokeColor(strokeColor);
 	fig->setStroke(strk);
-	fig->setisRotate(false);
 
 	stringstream transformStream(strTransform);
 	string token = "";
@@ -121,6 +117,7 @@ void parser::processProperty(string name, string property, string textName, figu
 		fig->transformFigure();
 	}
 }
+
 group parser::generateGroup(vector<string>& vct, int index) {
 	group grp;
 	for (int i = index; i < vct.size(); i++) {
@@ -168,7 +165,6 @@ group parser::generateGroup(vector<string>& vct, int index) {
 		else {
 			grp.propLine += vct[i];
 		}
-
 	}
 	return grp;
 }
@@ -216,6 +212,7 @@ void parser::parseGroupStr(string& str) {
 	group grp;
 	grp = generateGroup(groupVct, 0);
 }
+
 void parser::parseItem(vector<figure*>& figures, group_array& grpArr, string fileName) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
@@ -257,8 +254,8 @@ void parser::parseItem(vector<figure*>& figures, group_array& grpArr, string fil
 			line_str += ">";
 			if (name == "text") {
 				string temp = "", grpText = "";
-				std::getline(fin, grpText, '<');
-				std::getline(fin, temp, '>');
+				getline(fin, grpText, '<');
+				getline(fin, temp, '>');
 				line_str += grpText + "</text>";
 			}
 			while (line_str[0] == ' ') {
