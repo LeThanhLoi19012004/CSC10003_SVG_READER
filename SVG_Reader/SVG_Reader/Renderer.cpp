@@ -79,7 +79,7 @@ void renderer::renderItem(vector<figure*> figures, group_array groupArr , float 
 
 		/*for (auto x : figures)
 			x->Draw(window);*/
-
+	
 	drawFigure(figures, hdc); 
 
 		//drawGroup(groupArr,window);

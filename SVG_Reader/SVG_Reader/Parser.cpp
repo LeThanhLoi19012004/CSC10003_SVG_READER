@@ -93,13 +93,15 @@ void parser::processProperty(string name, string property, string textName, figu
 		if (attribute == "stroke-opacity")
 			strokeOpa = value;
 		if (attribute == "transform") {
-			for (int k = 0; k < value.size()-1; k++) {
+			/*translate(100  100)rotate(20)    traslate(100    200)*/
+			/*for (int k = 0; k < value.size()-1; k++) {
 				if (value[k] == ')' && value[k + 1] != ' ') {
-					value.insert(value.begin()+k+1, ' ');
+					value.insert(k+1," ");
 					k++;
 				}
-			}
-			strTransform += value+" ";
+			}*/
+			
+			strTransform += (" "+value + " ");
 		}
 	}
 
