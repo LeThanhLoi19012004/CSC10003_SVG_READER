@@ -10,7 +10,7 @@ protected:
 	// Stroke and fillings
 	stroke strk;
 	color fill;
-	bool isRotate = false;
+	
 public:
 
 	figure();
@@ -21,7 +21,6 @@ public:
 	string getTextName();
 	stroke getStroke();
 	color getColor();
-	bool getisRotate();
 	vector<pair<string, vector<float>>> getTransVct();
 
 	void setName(string);
@@ -29,7 +28,6 @@ public:
 	void setLine(string);
 	void setStroke(stroke);
 	void setColor(color);
-	void setisRotate(bool);
 
 	void updateTransformVct(string);
 	virtual void transformFigure(); //Transform Figure;

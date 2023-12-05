@@ -119,7 +119,6 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 	wstring wFontFamily = converter.from_bytes(fig->getFontFamily());
 	FontFamily WFF = wFontFamily.c_str();
 
-	drawFigure(figures, hdc); 
 	PointF textPosition;
 	StringFormat stringFormat;
 	if (fig->getTextAnchor() == "start") {
