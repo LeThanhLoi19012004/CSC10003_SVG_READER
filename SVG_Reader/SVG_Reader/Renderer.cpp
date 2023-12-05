@@ -52,7 +52,7 @@ void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
 	}
 }
 
-void renderer::renderItem(vector<figure*> figures, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
+void renderer::renderItem(vector<figure*> figures, group_array groupArr , float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
 	drawFigure(figures, hdc);
 }
 
@@ -119,6 +119,7 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 	wstring wFontFamily = converter.from_bytes(fig->getFontFamily());
 	FontFamily WFF = wFontFamily.c_str();
 
+	drawFigure(figures, hdc); 
 	PointF textPosition;
 	StringFormat stringFormat;
 	if (fig->getTextAnchor() == "start") {
