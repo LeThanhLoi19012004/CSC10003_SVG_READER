@@ -153,16 +153,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: Add any drawing code that uses hdc here...
-
-            /*program* prg = program::getObj(program::run);
-            prg->execute();*/
-
+            
             image img("sample.svg");
             parser parseTool;
             renderer renderTool;
             img.parseImage(parseTool);
             img.renderImage(renderTool, hdc);
-
+            
             EndPaint(hWnd, &ps);
         }
         break;

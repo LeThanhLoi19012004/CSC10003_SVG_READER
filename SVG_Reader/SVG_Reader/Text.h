@@ -3,11 +3,10 @@
 
 class text :public figure {
 private:
-	float fontSize, italic, dx, dy;
+	float fontSize, dx, dy;
 	point textPos;
-	string content, fontFamily, textAnchor;
+	string content, fontFamily, textAnchor, fontStyle;
 	
-
 public:
 	text();
 	~text();
@@ -20,7 +19,7 @@ public:
 	string getContent();
 	string getFontFamily();
 	string getTextAnchor();
-	bool getItalic();
+	string getFontStyle();
 	float getDx();
 	float getDy();
 
@@ -29,7 +28,7 @@ public:
 	void setContent(string);
 	void setFontFamily(string);
 	void setTextAnchor(string);
-	void setItalic(bool);
+	void setFontStyle(string);
 	void setDx(float);
 	void setDy(float);
 

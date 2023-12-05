@@ -1,16 +1,11 @@
 #include "Lib.h"
 
 polyline::polyline() :figure() {
-	nVer = 0;
-	Vers = NULL;
+	Vers = {};
 }
 
 polyline::~polyline() {
-	nVer = 0;
-	if (Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-	}
+	Vers = {};
 }
 
 void polyline::updateProperty() {
@@ -27,10 +22,13 @@ void polyline::updateProperty() {
 
 			stringstream ss(val);
 			string x = "", y = "";
-			while (ss >> x >> y)
-				nVer++;
-
-			Vers = new point[nVer];
+			while (ss >> x >> y) {
+				point p;
+				p.setX(stof(x));
+				p.setY(stof(y));
+				Vers.push_back(p);
+			}
+			/*Vers = new point[nVer];
 			int i = 0;
 
 			stringstream pointLine(val);
@@ -38,27 +36,17 @@ void polyline::updateProperty() {
 				Vers[i].setX(stof(x));
 				Vers[i].setY(stof(y));
 				i++;
-			}
+			}*/
 		}
 	}
 }
 
-point* polyline::getVers() {
+vector<point> polyline::getVers() {
 	return this->Vers;
 }
-int polyline::getNVer() {
-	return this->nVer;
-}
 
-void polyline::setVers(point* Vers) {
-	if (this->Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-		this->Vers = Vers;
-	}
-}
-void polyline::setNVer(int nVer) {
-	this->nVer = nVer;
+void polyline::setVers(vector<point> Vers) {
+	this->Vers = Vers;
 }
 
 void polyline::transformFigure() {
