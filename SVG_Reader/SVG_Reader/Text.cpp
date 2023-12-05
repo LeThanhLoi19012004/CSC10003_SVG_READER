@@ -3,8 +3,12 @@
 text::text() :figure() {
 	textPos.setX(0);
 	textPos.setY(0);
-	fontSize = 0;
+	fontSize = 16;
 	content = "";
+	dx = dy = 0;
+	fontStyle = "";
+	fontFamily = "Times New Roman";
+	textAnchor = "start";
 }
 
 text::~text() {
@@ -34,7 +38,7 @@ void text::updateProperty() {
 		if (attribute == "font-family")
 			this->fontFamily = val;
 		if (attribute == "font-style")
-			this->italic = true;
+			this->fontStyle = val;
 		if (attribute == "dx")
 			this->dx = stof(val);
 		if (attribute == "dy")
@@ -73,8 +77,8 @@ void text::setFontFamily(string fontFamily) {
 void text::setTextAnchor(string textAnchor) {
 	this->textAnchor = textAnchor;
 }
-void text::setItalic(bool italic) {
-	this->italic = italic;
+void text::setFontStyle(string fontStyle) {
+	this->fontStyle = fontStyle;
 }
 void text::setDx(float dx) {
 	this->dx = dx;
@@ -85,18 +89,22 @@ void text::setDy(float dy) {
 string text::getFontFamily() {
 	return this->fontFamily;
 }
-string text:: getTextAnchor() {
+string text::getTextAnchor() {
 	return this->textAnchor;
 }
-bool text:: getItalic() {
-	return this->italic;
+
+string text::getFontStyle() {
+	return this->fontStyle;
 }
-float text:: getDx() {
+
+float text::getDx() {
 	return this->dx;
 }
-float text:: getDy() {
+
+float text::getDy() {
 	return this->dy;
 }
+
 void text::transformFigure() {
 	/*float curX = this->textPos.getX();
 	float curY = this->textPos.getY();
