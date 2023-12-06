@@ -118,56 +118,56 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
-group parser::generateGroup(vector<string>& vct, int index) {
-	group grp;
-	for (int i = index; i < vct.size(); i++) {
-		if (vct[i] == "<g>") {
-			grp.groupArray.arr.push_back(generateGroup(vct, i + 1));
-			vct[i] = " ";
-		}
-		else if (vct[i] == "</g>") {
-			for (int j = index - 1; j <= i; j++) {
-				vct[j] = " ";
-			}
-			stringstream ss(grp.propLine);
-			string line_str = "";
-			factoryfigure factory;
-
-			while (getline(ss, line_str, '>')) {
-				string name = "", property = "", textContent = "";
-				stringstream stream(line_str);
-				stream >> name;
-				std::getline(stream, property, '/');
-				name.erase(0, 1); //Get Figure Name
-
-				if (name == "text") {
-					string temp = "";
-					std::getline(ss, textContent, '<');
-					std::getline(ss, temp, '>');
-				}
-				for (int i = 0; i < property.size(); i++) {
-					if (property[i] == '/' || property[i] == '=') {
-						property[i] = ' ';
-
-					}
-					if (property[i] == '\'') {
-						property[i] = '"';
-					}
-				}
-				figure* fig = factory.getFigure(name);
-				if (fig) {
-					processProperty(name, property, textContent, fig);
-					grp.figureArray.push_back(fig);
-				}
-			}
-			return grp;
-		}
-		else {
-			grp.propLine += vct[i];
-		}
-	}
-	return grp;
-}
+//group parser::generateGroup(vector<string>& vct, int index) {
+//	group grp;
+//	for (int i = index; i < vct.size(); i++) {
+//		if (vct[i] == "<g>") {
+//			grp.groupArray.arr.push_back(generateGroup(vct, i + 1));
+//			vct[i] = " ";
+//		}
+//		else if (vct[i] == "</g>") {
+//			for (int j = index - 1; j <= i; j++) {
+//				vct[j] = " ";
+//			}
+//			stringstream ss(grp.propLine);
+//			string line_str = "";
+//			factoryfigure factory;
+//
+//			while (getline(ss, line_str, '>')) {
+//				string name = "", property = "", textContent = "";
+//				stringstream stream(line_str);
+//				stream >> name;
+//				std::getline(stream, property, '/');
+//				name.erase(0, 1); //Get Figure Name
+//
+//				if (name == "text") {
+//					string temp = "";
+//					std::getline(ss, textContent, '<');
+//					std::getline(ss, temp, '>');
+//				}
+//				for (int i = 0; i < property.size(); i++) {
+//					if (property[i] == '/' || property[i] == '=') {
+//						property[i] = ' ';
+//
+//					}
+//					if (property[i] == '\'') {
+//						property[i] = '"';
+//					}
+//				}
+//				figure* fig = factory.getFigure(name);
+//				if (fig) {
+//					processProperty(name, property, textContent, fig);
+//					grp.figureArray.push_back(fig);
+//				}
+//			}
+//			return grp;
+//		}
+//		else {
+//			grp.propLine += vct[i];
+//		}
+//	}
+//	return grp;
+//}
 void parser::parseGroupStr(string& str) {
 
 	stringstream ss(str);
@@ -210,10 +210,10 @@ void parser::parseGroupStr(string& str) {
 		}
 	}
 	group grp;
-	grp = generateGroup(groupVct, 0);
+	//grp = generateGroup(groupVct, 0);
 }
 
-void parser::parseItem(vector<figure*>& figures, group_array& grpArr, string fileName) {
+void parser::parseItem(vector<figure*>& figures, string fileName) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";

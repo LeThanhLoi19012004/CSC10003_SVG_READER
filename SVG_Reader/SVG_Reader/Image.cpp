@@ -1,11 +1,11 @@
 #include "Lib.h"
 
 void image::parseImage(parser parse) {
-	parse.parseItem(figures, groupArr, fileName);
+	parse.parseItem(figures, fileName);
 }
 
 void image::renderImage(renderer render, HDC hdc) {
-	render.renderItem(figures, groupArr, antialiasingLevel, imageName, width, height, hdc);
+	render.renderItem(figures, antialiasingLevel, imageName, width, height, hdc);
 }
 
 image::image(string fileInput) {
@@ -50,22 +50,22 @@ image::~image() {
 		delete x;
 		x = NULL;
 	}
-	deleteGroupArr(groupArr);
+	//deleteGroupArr(groupArr);
 }
-void image::deleteGroupArr(group_array& groupArr) {
-	if (groupArr.arr.empty()) {
-		return;
-	}
-	for (int i = 0; i < groupArr.arr.size(); i++) {
-		if (groupArr.arr[i].groupArray.arr.empty()) {
-			for (auto x : groupArr.arr[i].figureArray) {
-				delete x;
-				x = NULL;
-			}
-			return;
-		}
-		else {
-			deleteGroupArr(groupArr.arr[i].groupArray);
-		}
-	}
-}
+//void image::deleteGroupArr(group_array& groupArr) {
+//	if (groupArr.arr.empty()) {
+//		return;
+//	}
+//	for (int i = 0; i < groupArr.arr.size(); i++) {
+//		if (groupArr.arr[i].groupArray.arr.empty()) {
+//			for (auto x : groupArr.arr[i].figureArray) {
+//				delete x;
+//				x = NULL;
+//			}
+//			return;
+//		}
+//		else {
+//			deleteGroupArr(groupArr.arr[i].groupArray);
+//		}
+//	}
+//}

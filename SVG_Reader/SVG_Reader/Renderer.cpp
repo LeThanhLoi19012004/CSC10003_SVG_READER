@@ -1,8 +1,7 @@
 ﻿#include "Lib.h"
 using namespace std;
 
-void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
-	Graphics graphics(hdc);
+void renderer::drawFigure(Graphics& graphics, vector<figure*> figures) {
 	factoryfigure factory;
 	for (figure* fig : figures) {
 		int num = factory.getFigureId()[fig->getName()];
@@ -46,14 +45,20 @@ void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
 			drawPath(graphics, paths);
 			break;
 		}
+		case 9: {
+			group* groups = dynamic_cast<group*>(fig);
+			drawGroup(graphics, groups);
+			break;
+		}
 		default:
 			break;
 		}
 	}
 }
 
-void renderer::renderItem(vector<figure*> figures, group_array groupArr , float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
-	drawFigure(figures, hdc);
+void renderer::renderItem(vector<figure*> figures, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
+	Graphics graphics(hdc);
+	drawFigure(graphics, figures);
 }
 
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
@@ -76,10 +81,10 @@ void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
 		else graphics.ScaleTransform(x, y);
 	}
 	
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillRectangle(&fillRectangle, fig->getRoot().getX(), fig->getRoot().getY(), fig->getWidth(), fig->getHeight());
 	graphics.DrawRectangle(&penRectangle, fig->getRoot().getX(), fig->getRoot().getY(), fig->getWidth(), fig->getHeight());
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-	graphics.Restore(save);
+	graphics.Restore(save);	
 }
 
 void renderer::drawEllipse(Graphics& graphics, ellipse* fig) {
@@ -102,9 +107,9 @@ void renderer::drawEllipse(Graphics& graphics, ellipse* fig) {
 		else graphics.ScaleTransform(x, y);
 	}
 
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillEllipse(&fillEllipse, fig->getCenter().getX() - fig->getRx(), fig->getCenter().getY() - fig->getRy(), 2.0 * fig->getRx(), 2.0 * fig->getRy());
 	graphics.DrawEllipse(&penEllipse, fig->getCenter().getX() - fig->getRx(), fig->getCenter().getY() - fig->getRy(), 2.0 * fig->getRx(), 2.0 * fig->getRy());
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.Restore(save);
 }
 
@@ -127,8 +132,8 @@ void renderer::drawLine(Graphics& graphics, line* fig) {
 		else graphics.ScaleTransform(x, y);
 	}
 
-	graphics.DrawLine(&penLine, fig->getP1().getX(), fig->getP1().getY(), fig->getP2().getX(), fig->getP2().getY());
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+	graphics.DrawLine(&penLine, fig->getP1().getX(), fig->getP1().getY(), fig->getP2().getX(), fig->getP2().getY());
 	graphics.Restore(save);
 }
 
@@ -157,9 +162,9 @@ void renderer::drawPolygon(Graphics& graphics, polygon* fig) {
 	for (int i = 0; i < numPoint; i++)
 		p[i] = PointF(fig->getVers()[i].getX(), fig->getVers()[i].getY());
 	
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillPolygon(&fillPolygon, p, numPoint, FillModeWinding);
 	graphics.DrawPolygon(&penPolygon, p, numPoint);
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.Restore(save);
 	delete[] p;
 }
@@ -189,9 +194,9 @@ void renderer::drawPolyline(Graphics& graphics, polyline* fig) {
 	for (int i = 0; i < numPoint; i++)
 		p[i] = PointF(fig->getVers()[i].getX(), fig->getVers()[i].getY());
 	
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillPolygon(&fillPolyline, p, numPoint, FillModeWinding);
 	graphics.DrawLines(&penPolyline, p, numPoint);
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.Restore(save);
 	delete[] p;
 }
@@ -246,9 +251,9 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 		else graphics.ScaleTransform(x, y);
 	}
 
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillPath(&fillText, &path);
 	graphics.DrawPath(&penText, &path);
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.Restore(save);
 }
 
@@ -319,12 +324,14 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 		else graphics.ScaleTransform(x, y);
 	}
 
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.FillPath(&fillPath, &path);
 	graphics.DrawPath(&penPath, &path);
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 	graphics.Restore(save);
 }
 
-void renderer::drawGroup(Graphics& graphics, group_array groupArr) {
-
+void renderer::drawGroup(Graphics& graphics, group* fig) {
+	if (!fig->getFigureArray().empty())
+		drawFigure(graphics, fig->getFigureArray());
+	//...
 }

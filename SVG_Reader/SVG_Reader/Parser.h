@@ -8,11 +8,11 @@ private:
 	void loadColorMap();
 	void processProperty(string, string, string, figure*&);
 	
-	group generateGroup(vector<string>&, int);
+	//group generateGroup(vector<string>&, int);
 
 	void parseGroupStr(string&);
 public:
-	void parseItem(vector<figure*>&, group_array& ,string);
+	void parseItem(vector<figure*>&, string);
 };
 
 #endif
