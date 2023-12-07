@@ -1,10 +1,10 @@
 ﻿#include "Lib.h"
 using namespace std;
 
-void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
+void renderer::drawFigure(vector<figure*> figures, group* root, HDC hdc) {
 	Graphics graphics(hdc);
 	factoryfigure factory;
-	for (figure* fig : figures) {
+	for (figure* fig : root->getFigureArray()) {
 		int num = factory.getFigureId()[fig->getName()];
 
 		switch (num)
@@ -46,16 +46,25 @@ void renderer::drawFigure(vector<figure*> figures, HDC hdc) {
 			drawPath(graphics, paths);
 			break;
 		}
+		case 9: {
+			group* groups = dynamic_cast<group*>(fig);
+			//groups->setFigureArray(groups->getFigureArray());
+			//if (groups->getFigureArray().empty()) return;
+			drawFigure(groups->getFigureArray(), groups, hdc);
+			
+			break;
+		}
 		default:
 			break;
 		}
 	}
 }
 
-void renderer::renderItem(vector<figure*> figures, group_array groupArr , float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
-	drawFigure(figures, hdc);
+void renderer::renderItem(vector<figure*> figures,group* root,  float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
+	drawFigure(figures, root, hdc);
 }
-
+void renderer::drawGroup(Graphics& graphics, group* fig) {
+}
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
 	Pen penRectangle(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillRectangle(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));

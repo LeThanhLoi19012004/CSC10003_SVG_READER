@@ -12,7 +12,7 @@ private:
 
 	void parseGroupStr(string&);
 public:
-	void parseItem(vector<figure*>&, group_array& ,string);
+	void parseItem(vector<figure*>&, group* ,string);
 };
 
 #endif
