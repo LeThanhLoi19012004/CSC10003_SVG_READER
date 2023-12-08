@@ -1,9 +1,9 @@
 ﻿#include "Lib.h"
 using namespace std;
 
-void renderer::drawFigure(Graphics& graphics, vector<figure*> figures) {
+void renderer::drawFigure(Graphics& graphics, group* root) {
 	factoryfigure factory;
-	for (figure* fig : figures) {
+	for (figure* fig : root->getFigureArray()) {
 		int num = factory.getFigureId()[fig->getName()];
 
 		switch (num)
@@ -47,7 +47,9 @@ void renderer::drawFigure(Graphics& graphics, vector<figure*> figures) {
 		}
 		case 9: {
 			group* groups = dynamic_cast<group*>(fig);
-			drawGroup(graphics, groups);
+			if (groups->getFigureArray().empty())
+        return;
+			drawFigure(graphics, groups);
 			break;
 		}
 		default:
@@ -56,10 +58,10 @@ void renderer::drawFigure(Graphics& graphics, vector<figure*> figures) {
 	}
 }
 
-void renderer::renderItem(vector<figure*> figures, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
+void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
 	Graphics graphics(hdc);
-	drawFigure(graphics, figures);
-}
+	drawFigure(graphics, root);
+} 
 
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
 	GraphicsState save = graphics.Save();

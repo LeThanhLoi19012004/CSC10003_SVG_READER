@@ -7,10 +7,7 @@ private:
 	string fileName, imageName;
 	int width, height;
 	float antialiasingLevel;
-
-	//Figures Property
-	vector<figure*> figures;
-	
+	group* root;
 public:
 	image(string);
 	int getWidth();
