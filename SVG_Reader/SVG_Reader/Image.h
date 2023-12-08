@@ -10,8 +10,7 @@ private:
 
 	//Figures Property
 	vector<figure*> figures;
-	group groupTemp; //Store all group in an svg file
-	group_array groupArr;
+	
 public:
 	image(string);
 	int getWidth();
@@ -25,8 +24,6 @@ public:
 
 	void parseImage(parser);
 	void renderImage(renderer, HDC);
-
-	void deleteGroupArr(group_array&);
 
 	~image();
 };

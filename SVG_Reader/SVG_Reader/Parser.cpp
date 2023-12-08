@@ -35,98 +35,6 @@ void parser::loadColorMap() {
 	colorMap["none"] = { 0, 0, 0, 0 };
 }
 
-//group parser::getGroup(ifstream& fin, string property) {
-//	string strGroup = "", temp = "";
-//	strGroup += ("<g " + property + ">");
-//
-//	stack<string> bracket;
-//
-//	while (getline(fin, temp, '>')) {
-//		if (temp.find("</g>") != string::npos) {
-//			strGroup += temp + ">";
-//			if (!bracket.empty()) {
-//				bracket.pop();
-//			}
-//			if (bracket.empty()) {
-//				break;
-//			}
-//		}
-//		else if (temp.find("<g") != string::npos) {
-//			bracket.push(temp);
-//			strGroup += temp + ">";
-//		}
-//		else {
-//			strGroup += temp + ">";
-//		}
-//	}
-//	stringstream ss(strGroup);
-//
-//	group group;
-//	int index = 1;
-//	string parentProp = "";
-//	getline(ss, parentProp, '>');
-//	group = generateGroup(strGroup, index, parentProp);
-//	int cnt = 1;
-//
-//	return group;
-//}
-//
-//group parser::generateGroup(string& strGroup, int index, string parentProp) {
-//	group group;
-//	if (strGroup.empty()) return group;
-//
-//	for (int i = index; i < strGroup.size() - 1; i++) {
-//		if (strGroup[i] == '<' && strGroup[i + 1] == 'g') {
-//			parentProp.erase(0, 2);
-//			strGroup.insert(i + 2, parentProp);
-//			string temp = strGroup;
-//
-//			temp.erase(0, i);
-//			stringstream sss(temp);
-//			getline(sss, parentProp, '>');
-//
-//			group.groupArray.arr.push_back(generateGroup(strGroup, i + 1, parentProp));
-//		}
-//		else if (strGroup[i] == 'g' && strGroup[i - 1] == '/') {
-//			group.propLine = strGroup.substr(index - 1, i + 3 - index);
-//			stringstream ss(group.propLine);
-//			string line = "", sameProp = "";
-//			getline(ss, sameProp, '>');
-//			sameProp.erase(0, 2);
-//
-//			factoryfigure factory;
-//
-//			while (getline(ss, line, '>')) {
-//				string name = "", property = "", textContent = "";
-//				stringstream stream(line);
-//				stream >> name;
-//				getline(stream, property, '/');
-//				property = sameProp + " " + property; //Same prop go before property so that you can overwritten the color
-//				name.erase(0, 1);
-//
-//				if (name == "text") {
-//					string temp = "";
-//					getline(ss, textContent, '<');
-//					getline(ss, temp, '>');
-//				}
-//				for (int i = 0; i < property.size(); i++) {
-//					if (property[i] == '/' || property[i] == '=') {
-//						property[i] = ' ';
-//					}
-//				}
-//				figure* fig = factory.getFigure(name);
-//
-//				if (fig) {
-//					processProperty(name, property, textContent, fig);
-//					group.figureArray.push_back(fig);
-//				}
-//			}
-//			strGroup.erase(index - 1, i + 3 - index);
-//			return group;
-//		}
-//	}
-//}
-
 void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 	if (strokecolor.find("rgb") != string::npos) {
 		clr.opacity = stof(strokeopa);
@@ -143,6 +51,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
+		if (strokecolor.size() == 4) {
+			string tmp = "#";
+			for (int i = 1; i < 4; i++)
+				tmp += strokecolor[i] + strokecolor[i];
+			strokecolor = tmp;
+		}
 		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
 		clr.g = stoi(strokecolor.substr(3, 2), NULL, 16);
 		clr.b = stoi(strokecolor.substr(5, 2), NULL, 16);
@@ -165,10 +79,8 @@ void parser::processProperty(string name, string property, string textName, figu
 	string strTransform = "";
 	string temp = "";
 	while (ss >> attribute) {
-		//fill-opacity "100"
 		getline(ss, temp, '"');
 		getline(ss, value, '"');
-		//cout << attribute << " " << value << '\n';
 		if (attribute == "stroke-width")
 			strokeWidth = value;
 		if (attribute == "fill-opacity")
@@ -179,23 +91,23 @@ void parser::processProperty(string name, string property, string textName, figu
 			sStroke = value;
 		if (attribute == "stroke-opacity")
 			strokeOpa = value;
-		if (attribute == "transform") {
-			strTransform = value;
-		}
+		if (attribute == "transform")
+			strTransform += (" " + value + " ");
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	processColor(fill, fillOpa, clr);
+	if (fill == "none")
+		processColor(fill, "0", clr);
+	else processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
 	stroke strk;
 	strk.setStrokeWidth(stof(strokeWidth));
 	color strokeColor = { 0, 0, 0, 1 };
-	if (sStroke == "")
+	if (sStroke == "none" || sStroke == "")
 		processColor(sStroke, "0", strokeColor);
 	else processColor(sStroke, strokeOpa, strokeColor);
 	strk.setStrokeColor(strokeColor);
 	fig->setStroke(strk);
-	fig->setisRotate(false);
 
 	stringstream transformStream(strTransform);
 	string token = "";
@@ -206,6 +118,101 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
+//group parser::generateGroup(vector<string>& vct, int index) {
+//	group grp;
+//	for (int i = index; i < vct.size(); i++) {
+//		if (vct[i] == "<g>") {
+//			grp.groupArray.arr.push_back(generateGroup(vct, i + 1));
+//			vct[i] = " ";
+//		}
+//		else if (vct[i] == "</g>") {
+//			for (int j = index - 1; j <= i; j++) {
+//				vct[j] = " ";
+//			}
+//			stringstream ss(grp.propLine);
+//			string line_str = "";
+//			factoryfigure factory;
+//
+//			while (getline(ss, line_str, '>')) {
+//				string name = "", property = "", textContent = "";
+//				stringstream stream(line_str);
+//				stream >> name;
+//				std::getline(stream, property, '/');
+//				name.erase(0, 1); //Get Figure Name
+//
+//				if (name == "text") {
+//					string temp = "";
+//					std::getline(ss, textContent, '<');
+//					std::getline(ss, temp, '>');
+//				}
+//				for (int i = 0; i < property.size(); i++) {
+//					if (property[i] == '/' || property[i] == '=') {
+//						property[i] = ' ';
+//
+//					}
+//					if (property[i] == '\'') {
+//						property[i] = '"';
+//					}
+//				}
+//				figure* fig = factory.getFigure(name);
+//				if (fig) {
+//					processProperty(name, property, textContent, fig);
+//					grp.figureArray.push_back(fig);
+//				}
+//			}
+//			return grp;
+//		}
+//		else {
+//			grp.propLine += vct[i];
+//		}
+//	}
+//	return grp;
+//}
+void parser::parseGroupStr(string& str) {
+
+	stringstream ss(str);
+	string str_line = "";
+	stack<string> stackString;
+	string newStr = "";
+	vector<string> groupVct;
+	while (std::getline(ss, str_line, '>')) {
+		str_line += ">";
+		while (str_line[0] != '<' && str_line.find("</text>") == string::npos) {
+			str_line.erase(0, 1);
+		}
+		if (str_line.find("<text") != string::npos) {
+			string temp, groupText = "";
+			std::getline(ss, groupText, '<');
+			std::getline(ss, temp, '>');
+			str_line += groupText + "</text>";
+		}
+
+		if (str_line.find("<g") != string::npos) {
+			groupVct.push_back("<g>");
+			string data = str_line.erase(0, 2);
+			data.erase(data.size() - 1, 1);
+			if (stackString.empty()) stackString.push(data);
+			else {
+				data = stackString.top() + " " + data;
+				stackString.push(data);
+			}
+		}
+		else if (str_line.find("</g") != string::npos) {
+			if (!stackString.empty())
+				stackString.pop();
+			groupVct.push_back("</g>");
+		}
+		else {
+			int pos = 0;
+			while (pos < str_line.size() && str_line[++pos] != ' ');
+			str_line.insert(pos, stackString.top());
+			groupVct.push_back(str_line);
+		}
+	}
+	group grp;
+	//grp = generateGroup(groupVct, 0);
+}
+
 void parser::parseItem(vector<figure*>& figures, string fileName) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
@@ -213,32 +220,77 @@ void parser::parseItem(vector<figure*>& figures, string fileName) {
 		return;
 	}
 	loadColorMap();
-	string line = "";
+	string line_str = "", group_str = "";
 	factoryfigure factory;
-	int id = 1;
-	while (getline(fin, line, '>')) {
+
+	//int id = 1;
+	bool openGroup = false;
+	stack<string> groupStack;
+	vector<string> groupVct;
+
+	while (getline(fin, line_str, '>')) {
 
 		string name = "", property = "", textContent = "";
-		stringstream stream(line);
+		stringstream stream(line_str);
 		stream >> name;
 		getline(stream, property, '/');
 		name.erase(0, 1);
 
-		if (name == "text") {
+		if (name == "text" && !openGroup) {
 			string temp = "";
 			getline(fin, textContent, '<');
 			getline(fin, temp, '>');
+		}
+		if (name == "g" && !openGroup) {
+			openGroup = true;
+			line_str += ">";
+			while (line_str[0] == ' ') {
+				line_str.erase(0, 1);
+			}
+			group_str += line_str;
+			groupStack.push(line_str);
+		}
+		else if (openGroup) {
+			line_str += ">";
+			if (name == "text") {
+				string temp = "", grpText = "";
+				getline(fin, grpText, '<');
+				getline(fin, temp, '>');
+				line_str += grpText + "</text>";
+			}
+			while (line_str[0] == ' ') {
+				line_str.erase(0, 1);
+			}
+			group_str += line_str;
+			if (line_str.find("<g") != string::npos) {
+				groupStack.push(line_str);
+			}
+			else if (line_str.find("</g>") != string::npos) {
+				if (!groupStack.empty()) {
+					groupStack.pop();
+				}
+				if (groupStack.empty()) {
+					openGroup = false;
+					groupVct.push_back(group_str);
+					group_str = "";
+				}
+			}
 		}
 		for (int i = 0; i < property.size(); i++) {
 			if (property[i] == '/' || property[i] == '=') {
 				property[i] = ' ';
 			}
+			if (property[i] == '\'') {
+				property[i] = '"';
+			}
 		}
 		figure* fig = factory.getFigure(name);
-
 		if (fig) {
-			processProperty(name, property, textContent, fig);
-			figures.push_back(fig);
+			if (!openGroup) {
+				processProperty(name, property, textContent, fig);
+				figures.push_back(fig);
+			}
 		}
 	}
+	fin.close();
 }

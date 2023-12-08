@@ -3,8 +3,12 @@
 text::text() :figure() {
 	textPos.setX(0);
 	textPos.setY(0);
-	fontSize = 0;
+	fontSize = 16;
 	content = "";
+	dx = dy = 0;
+	fontStyle = "";
+	fontFamily = "Times New Roman";
+	textAnchor = "start";
 }
 
 text::~text() {
@@ -29,6 +33,16 @@ void text::updateProperty() {
 			this->textPos.setY(stof(val));
 		if (attribute == "font-size")
 			this->fontSize = stof(val);
+		if (attribute == "text-anchor")
+			this->textAnchor = val;
+		if (attribute == "font-family")
+			this->fontFamily = val;
+		if (attribute == "font-style")
+			this->fontStyle = val;
+		if (attribute == "dx")
+			this->dx = stof(val);
+		if (attribute == "dy")
+			this->dy = stof(val);
 	}
 	this->content = text_name;
 }
@@ -56,6 +70,39 @@ void text::setFontSize(float fontSize) {
 
 void text::setContent(string content) {
 	this->content = content;
+}
+void text::setFontFamily(string fontFamily) {
+	this->fontFamily = fontFamily;
+}
+void text::setTextAnchor(string textAnchor) {
+	this->textAnchor = textAnchor;
+}
+void text::setFontStyle(string fontStyle) {
+	this->fontStyle = fontStyle;
+}
+void text::setDx(float dx) {
+	this->dx = dx;
+}
+void text::setDy(float dy) {
+	this->dy = dy;
+}
+string text::getFontFamily() {
+	return this->fontFamily;
+}
+string text::getTextAnchor() {
+	return this->textAnchor;
+}
+
+string text::getFontStyle() {
+	return this->fontStyle;
+}
+
+float text::getDx() {
+	return this->dx;
+}
+
+float text::getDy() {
+	return this->dy;
 }
 
 void text::transformFigure() {

@@ -1,20 +1,14 @@
 #ifndef _GROUP_H_
 #define _GROUP_H_
 
-class group;
-class group_array;
-
-
-class group_array {
-public:
-	vector<group> arr;
-};
-class group {
+class group :public figure {
+private:
+	vector<figure*> figureArray;
 public:
 	group();
 	group(const group&);
-	vector<figure*> figureArray;
-	group_array groupArray;
-	string propLine;
+	
+	vector<figure*> getFigureArray();
+	void setFigureArray(vector<figure*>);
 };
 #endif

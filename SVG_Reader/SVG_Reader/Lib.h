@@ -9,6 +9,8 @@
 #include <cmath>
 #include <unordered_map>
 #include <stack>
+#include <locale>
+#include <codecvt>
 
 #include "framework.h"
 #include "rapidxml.hpp"
