@@ -1,7 +1,6 @@
 #ifndef _GROUP_H_
 #define _GROUP_H_
 
-
 class group:public figure {
 	vector<figure*> figureArray;
 	group* parent;
@@ -14,7 +13,6 @@ public:
 	void addFigure(figure*);
 	group* getParent();
 	vector<figure*> getFigureArray();
-	//group_array groupArray;
-	//string propLine;
 };
+
 #endif

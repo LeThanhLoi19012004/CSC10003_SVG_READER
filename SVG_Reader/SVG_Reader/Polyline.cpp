@@ -1,7 +1,8 @@
 #include "Lib.h"
 
 polyline::polyline() :figure() {
-	Vers = {};
+	fill.r = fill.g = fill.b = 0;
+	fill.opacity = 1;
 }
 
 polyline::~polyline() {

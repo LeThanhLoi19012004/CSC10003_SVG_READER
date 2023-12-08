@@ -2,13 +2,11 @@
 
 void image::parseImage(parser parse) {
 	root = new group();
-	//root->setFigureArray(figures);
-	parse.parseItem(figures,root, fileName);
+	parse.parseItem(root, fileName);
 }
 
 void image::renderImage(renderer render, HDC hdc) {
-
-	render.renderItem(figures, root,  antialiasingLevel, imageName, width, height, hdc);
+	render.renderItem(root, antialiasingLevel, imageName, width, height, hdc);
 }
 
 image::image(string fileInput) {

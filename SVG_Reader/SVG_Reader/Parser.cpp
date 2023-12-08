@@ -51,6 +51,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
+		if (strokecolor.size() == 4) {
+			string tmp = "#";
+			for (int i = 1; i < 4; i++)
+				tmp = tmp + strokecolor[i] + strokecolor[i];
+			strokecolor = tmp;
+		}
 		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
 		clr.g = stoi(strokecolor.substr(3, 2), NULL, 16);
 		clr.b = stoi(strokecolor.substr(5, 2), NULL, 16);
@@ -85,21 +91,12 @@ void parser::processProperty(string name, string property, string textName, figu
 			sStroke = value;
 		if (attribute == "stroke-opacity")
 			strokeOpa = value;
-		if (attribute == "transform") {
-			/*translate(100  100)rotate(20)    traslate(100    200)*/
-			/*for (int k = 0; k < value.size()-1; k++) {
-				if (value[k] == ')' && value[k + 1] != ' ') {
-					value.insert(k+1," ");
-					k++;
-				}
-			}*/
-			
-			strTransform += (" "+value + " ");
-		}
+		if (attribute == "transform")
+			strTransform += (" " + value + " ");
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	if (fill == "none" || fill == "")
+	if (fill == "none")
 		processColor(fill, "0", clr);
 	else processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
@@ -121,7 +118,7 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
-void parser::parseItem(vector<figure*>& figures, group* root, string fileName) {
+void parser::parseItem(group* root, string fileName) { 
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -188,62 +185,6 @@ void parser::parseItem(vector<figure*>& figures, group* root, string fileName) {
 				curGroup->addFigure(fig);
 			}
 		}
-
-		/*if (name == "text" && !openGroup) {
-			string temp = "";
-			getline(fin, textContent, '<');
-			getline(fin, temp, '>');
-		}
-		if (name == "g" && !openGroup) {
-			openGroup = true;
-			line_str += ">";
-			while (line_str[0] == ' ') {
-				line_str.erase(0, 1);
-			}
-			group_str += line_str;
-			groupStack.push(line_str);
-		}
-		else if (openGroup) {
-			line_str += ">";
-			if (name == "text") {
-				string temp = "", grpText = "";
-				std::getline(fin, grpText, '<');
-				std::getline(fin, temp, '>');
-				line_str += grpText + "</text>";
-			}
-			while (line_str[0] == ' ') {
-				line_str.erase(0, 1);
-			}
-			group_str += line_str;
-			if (line_str.find("<g") != string::npos) {
-				groupStack.push(line_str);
-			}
-			else if (line_str.find("</g>") != string::npos) {
-				if (!groupStack.empty()) {
-					groupStack.pop();
-				}
-				if (groupStack.empty()) {
-					openGroup = false;
-					groupVct.push_back(group_str);
-					group_str = "";
-				}
-			}
-		}
-		for (int i = 0; i < property.size(); i++) {
-			if (property[i] == '/' || property[i] == '=') {
-				property[i] = ' ';
-			}
-			if (property[i] == '\'') {
-				property[i] = '"';
-			}
-		}
-		figure* fig = factory.getFigure(name);
-		if (fig) {
-			if (!openGroup) {
-				processProperty(name, property, textContent, fig);
-				figures.push_back(fig);
-			}
-		}*/
 	}
 
 	fin.close();

@@ -7,11 +7,6 @@ private:
 	string fileName, imageName;
 	int width, height;
 	float antialiasingLevel;
-
-	//Figures Property
-	vector<figure*> figures;
-	
-
 	group* root;
 public:
 	image(string);
@@ -26,7 +21,6 @@ public:
 
 	void parseImage(parser);
 	void renderImage(renderer, HDC);
-
 
 	~image();
 };
