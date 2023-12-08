@@ -279,7 +279,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				Point P2 = Point(Pt2.getX(), Pt2.getY());
 				point Pt3 = vct[i].second[2];
 				Point P3 = Point(Pt3.getX(), Pt3.getY());
-				path.AddBezier(P0, P1, P2, P3);		
+				path.AddBezier(P0, P1, P2, P3);	
 		}
 		else if (vct[i].first == 'Z' || vct[i].first == 'z') {
 			point Pt0 = vct[i].second[0];

@@ -54,7 +54,7 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		if (strokecolor.size() == 4) {
 			string tmp = "#";
 			for (int i = 1; i < 4; i++)
-				tmp += strokecolor[i] + strokecolor[i];
+				tmp = tmp + strokecolor[i] + strokecolor[i];
 			strokecolor = tmp;
 		}
 		clr.r = stoi(strokecolor.substr(1, 2), NULL, 16);
