@@ -7,7 +7,6 @@ private:
 	void processColor(string, string, color&);
 	void loadColorMap();
 	void processProperty(string, string, string, figure*&);
-	void parseGroupStr(string&);
 public:
 	void parseItem(group* ,string);
 };

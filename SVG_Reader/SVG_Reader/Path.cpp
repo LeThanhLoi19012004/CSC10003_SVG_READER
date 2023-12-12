@@ -10,6 +10,8 @@ path::~path() {}
 void path::updateProperty() {
 	stringstream ss(line_str);
 	string property, val, temp;
+	int start = 0;
+
 	while (ss >> property) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
@@ -78,8 +80,9 @@ void path::updateProperty() {
 					}
 
 					else if (pr.first == 'Z' || pr.first == 'z') {
-						pr.second.push_back(vct[0].second[0]);
+						pr.second.push_back(vct[start].second[0]);
 						vct.push_back(pr);
+						start = vct.size();
 					}
 
 					else {
@@ -91,7 +94,7 @@ void path::updateProperty() {
 								n = vct[vct.size() - 1].second.size();
 
 							point point;
-							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C') {
+							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C' || pr.first == 'S') {
 								point.setX(stof(x));
 								point.setY(stof(y));
 							}
@@ -113,7 +116,7 @@ void path::updateProperty() {
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
 							}
-							else if (pr.first == 'l' || pr.first == 'c') {
+							else if (pr.first == 'l') {
 								if (!flag) {
 									point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
 									point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
@@ -124,6 +127,10 @@ void path::updateProperty() {
 									point.setX(stof(x) + pr.second[m - 1].getX());
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
+							}
+							else {		
+								point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
+								point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
 							}
 							pr.second.push_back(point);
 						}

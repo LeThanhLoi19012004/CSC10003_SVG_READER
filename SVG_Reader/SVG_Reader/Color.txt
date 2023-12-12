@@ -947,3 +947,6 @@ pink	#ff81c0
 blue	#0343df	
 green	#15b01a	
 purple	#7e1e9c	
+dark slate gray #2f4f4f
+CYAN #00FFFF
+sky blue #87CEEB

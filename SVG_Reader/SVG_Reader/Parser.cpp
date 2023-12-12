@@ -63,6 +63,9 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		clr.opacity = stof(strokeopa);
 	}
 	else {
+		for (int i = 0; i < strokecolor.size(); i++)
+			if (isupper(strokecolor[i]))
+				strokecolor[i] = tolower(strokecolor[i]);
 		clr = colorMap[strokecolor];
 		clr.opacity = stof(strokeopa);
 	}

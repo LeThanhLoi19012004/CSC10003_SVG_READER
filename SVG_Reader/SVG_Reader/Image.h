@@ -13,7 +13,6 @@ public:
 	int getWidth();
 	int getHeight();
 	float getAntialiasingLevel();
-	vector<figure*> getFigures();
 
 	void setWidth(int);
 	void setHeight(int);
