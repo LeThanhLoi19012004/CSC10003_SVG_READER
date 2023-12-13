@@ -7,16 +7,12 @@ private:
 	string fileName, imageName;
 	int width, height;
 	float antialiasingLevel;
-
-	//Figures Property
-	vector<figure*> figures;
-	
+	group* root;
 public:
 	image(string);
 	int getWidth();
 	int getHeight();
 	float getAntialiasingLevel();
-	vector<figure*> getFigures();
 
 	void setWidth(int);
 	void setHeight(int);
