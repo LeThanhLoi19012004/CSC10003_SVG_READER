@@ -1,17 +1,25 @@
 #include "Lib.h"
 
-Path::Path() :Figure() {}
+path::path() :figure() {
+	strokeLineJoin = "miter";
+	strokeLineCap = "butt";
+}
 
-Path::~Path() {}
+path::~path() {}
 
-void Path::updateProperty() {
-	stringstream ss(line);
+void path::updateProperty() {
+	stringstream ss(line_str);
 	string property, val, temp;
+	int start = 0;
 
 	while (ss >> property) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
-		if (property == "d") {
+		if (property == "stroke-linejoin")
+			this->strokeLineJoin = val;
+		else if (property == "stroke-linecap")
+			this->strokeLineCap = val;
+		else if (property == "d") {
 			if (val[0] != 'M' && val[0] != 'm')
 				return;
 			for (int i = 0; i < val.size(); i++) {
@@ -33,16 +41,7 @@ void Path::updateProperty() {
 					while (!isalpha(val[j]) && j < val.size())
 						j++;
 					string pointStr = val.substr(i, j - i);
-
-					/*string pointStr = "";
-					pointStr += val[i];
-					int j = i + 1;
-					while (!isalpha(str[j]) && j < val.size()) {
-						pointStr += val[j];
-						j++;
-					}*/
-
-					pair<char, vector<Point>> pr;
+					pair<char, vector<point>> pr;
 					pr.first = pointStr[0];
 					pointStr.erase(0, 2);
 
@@ -51,7 +50,7 @@ void Path::updateProperty() {
 						string token;
 						bool flag = false;
 						while (ss >> token) {
-							Point p;
+							point p;
 							int n = vct[vct.size() - 1].second.size();
 
 							if (pr.first == 'H' || pr.first == 'h') {
@@ -81,8 +80,9 @@ void Path::updateProperty() {
 					}
 
 					else if (pr.first == 'Z' || pr.first == 'z') {
-						pr.second.push_back(vct[0].second[0]);
+						pr.second.push_back(vct[start].second[0]);
 						vct.push_back(pr);
+						start = vct.size();
 					}
 
 					else {
@@ -93,8 +93,8 @@ void Path::updateProperty() {
 							if (vct.size() != 0)
 								n = vct[vct.size() - 1].second.size();
 
-							Point point;
-							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C') {
+							point point;
+							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C' || pr.first == 'S') {
 								point.setX(stof(x));
 								point.setY(stof(y));
 							}
@@ -116,7 +116,7 @@ void Path::updateProperty() {
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
 							}
-							else if (pr.first == 'l' || pr.first == 'c') {
+							else if (pr.first == 'l') {
 								if (!flag) {
 									point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
 									point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
@@ -128,6 +128,10 @@ void Path::updateProperty() {
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
 							}
+							else {		
+								point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
+								point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
+							}
 							pr.second.push_back(point);
 						}
 						vct.push_back(pr);
@@ -136,7 +140,6 @@ void Path::updateProperty() {
 			}
 		}
 	}
-
 	/*for (auto pair : vct) {
 		cout << pair.first << ":";
 		for (Point& point : pair.second) {
@@ -146,6 +149,25 @@ void Path::updateProperty() {
 	}*/
 }
 
+string path::getStrokeLineJoin() {
+	return this->strokeLineJoin;
+}
+
+string path::getStrokeLineCap() {
+	return this->strokeLineCap;
+}
+
+void path:: setStrokeLineJoin(string linejoin) {
+	this->strokeLineJoin = linejoin;
+}
+
+void path:: setStrokeLineCap(string linecap) {
+	this->strokeLineCap = linecap;
+}
+
+void path:: setVct(vector<pair<char, vector<point>>> vct) {
+	this->vct = vct;
+}
 
 //void Path::transformFigure() {
 //	for (int i = 0; i < nVer; i++) {
@@ -188,6 +210,6 @@ void Path::updateProperty() {
 //	}
 //}
 
-vector<pair<char, vector<Point>>> Path::getProp() {
+vector<pair<char, vector<point>>> path::getProp() {
 	return this->vct;
 }

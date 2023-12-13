@@ -1,30 +1,30 @@
 #include "Lib.h"
 
-string Program::name = "";
-Program* Program::program = NULL;
+string program::name = "";
+program* program::pg = NULL;
 
-Program::Program() {
+program::program() {
 	currentFunc = run;
 }
 
-Program* Program::getObj(void(*pFunc)()) {
-	if (program == NULL)
-		program = new Program();
+program* program::getObj(void(*pFunc)()) {
+	if (pg == NULL)
+		pg = new program();
 	if (pFunc != NULL)
-		program->currentFunc = pFunc;
-	return program;
+		pg->currentFunc = pFunc;
+	return pg;
 }
 
-void Program::run() {
+void program::run() {
 	name = "sample.svg";
-	Image image(name);
-	Parser parseTool;
-	//Renderer renderTool;
-	image.parseImage(parseTool);
-	//image.renderImage(renderTool);
+	image img(name);
+	parser parseTool;
+	renderer renderTool;
+	img.parseImage(parseTool);
+	//img.renderImage(renderTool);
 }
 
-void Program::execute() {
+void program::execute() {
 	if (currentFunc != NULL)
 		currentFunc();
 }

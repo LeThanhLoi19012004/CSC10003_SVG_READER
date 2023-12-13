@@ -1,22 +1,26 @@
 #include "Lib.h"
 
-Text::Text() :Figure() {
+text::text() :figure() {
 	textPos.setX(0);
 	textPos.setY(0);
+	fontSize = 16;
+	content = "";
+	dx = dy = 0;
+	fontStyle = "";
+	fontFamily = "Times New Roman";
+	textAnchor = "start";
+}
+
+text::~text() {
 	fontSize = 0;
+	textPos.setX(0);
+	textPos.setY(0);
 	content = "";
 }
 
-Text::~Text() {
-	fontSize = 0;
-	textPos.setX(0);
-	textPos.setY(0);
-	content = "";
-}
-
-void Text::updateProperty() {
-	int pos = line.find(">");
-	string temp = line.substr(0, pos);
+void text::updateProperty() {
+	size_t pos = line_str.find(">");
+	string temp = line_str.substr(0, pos);
 	stringstream ss(temp);
 	string attribute, val, a;
 
@@ -29,37 +33,82 @@ void Text::updateProperty() {
 			this->textPos.setY(stof(val));
 		if (attribute == "font-size")
 			this->fontSize = stof(val);
+		if (attribute == "text-anchor")
+			this->textAnchor = val;
+		if (attribute == "font-family") {
+			if (val != "Time New Romand")
+			this->fontFamily = val;
+		}
+		if (attribute == "font-style")
+			this->fontStyle = val;
+		if (attribute == "dx")
+			this->dx = stof(val);
+		if (attribute == "dy")
+			this->dy = stof(val);
 	}
 	this->content = text_name;
 }
 
-Point Text::getTextPos() {
+point text::getTextPos() {
 	return this->textPos;
 }
 
-float Text::getFontSize() {
+float text::getFontSize() {
 	return this->fontSize;
 }
 
-string Text::getContent() {
+string text::getContent() {
 	return this->content;
 }
 
-void Text::setTextPos(float x, float y) {
+void text::setTextPos(float x, float y) {
 	this->textPos.setX(x);
 	this->textPos.setY(y);
 }
 
-void Text::setFontSize(float fontSize) {
+void text::setFontSize(float fontSize) {
 	this->fontSize = fontSize;
 }
 
-void Text::setContent(string content) {
+void text::setContent(string content) {
 	this->content = content;
 }
+void text::setFontFamily(string fontFamily) {
+	this->fontFamily = fontFamily;
+}
+void text::setTextAnchor(string textAnchor) {
+	this->textAnchor = textAnchor;
+}
+void text::setFontStyle(string fontStyle) {
+	this->fontStyle = fontStyle;
+}
+void text::setDx(float dx) {
+	this->dx = dx;
+}
+void text::setDy(float dy) {
+	this->dy = dy;
+}
+string text::getFontFamily() {
+	return this->fontFamily;
+}
+string text::getTextAnchor() {
+	return this->textAnchor;
+}
 
-void Text::transformFigure() {
-	float curX = this->textPos.getX();
+string text::getFontStyle() {
+	return this->fontStyle;
+}
+
+float text::getDx() {
+	return this->dx;
+}
+
+float text::getDy() {
+	return this->dy;
+}
+
+void text::transformFigure() {
+	/*float curX = this->textPos.getX();
 	float curY = this->textPos.getY();
 	for (auto p : transVct) {
 		if (p.first == "translate") {
@@ -94,5 +143,5 @@ void Text::transformFigure() {
 
 			}
 		}
-	}
+	}*/
 }

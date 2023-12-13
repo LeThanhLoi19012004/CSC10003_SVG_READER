@@ -1,46 +1,50 @@
 #include "Lib.h"
 
-Figure* FactoryFigure::getFigure(string name) {
+figure* factoryfigure::getFigure(string name) {
 
 	int num = figureId[name];
 	switch (num) {
 	case 1: {
-		return new Rectangle();
+		return new rectangle();
 		break;
 	}
 	case 2: {
-		return new Circle();
+		return new circle();
 		break;
 	}
 	case 3: {
-		return new Ellipse();
+		return new ellipse();
 		break;
 	}
 	case 4: {
-		return new Line();
+		return new line();
 		break;
 	}
 	case 5: {
-		return new Polyline();
+		return new polyline();
 		break;
 	}
 	case 6: {
-		return new Polygon();
+		return new polygon();
 		break;
 	}
 	case 7: {
-		return new Text();
+		return new text();
 		break;
 	}
 	case 8: {
-		return new Path();
+		return new path();
+		break;
+	}
+	case 9: {
+		return new group();
 		break;
 	}
 	default: return NULL;
 	}
 	return NULL;
 }
-FactoryFigure::FactoryFigure() {
+factoryfigure::factoryfigure() {
 	figureId["rect"] = 1;
 	figureId["circle"] = 2;
 	figureId["ellipse"] = 3;
@@ -49,7 +53,8 @@ FactoryFigure::FactoryFigure() {
 	figureId["polygon"] = 6;
 	figureId["text"] = 7;
 	figureId["path"] = 8;
+	figureId["g"] = 9;
 }
-unordered_map<string, int> FactoryFigure::getFigureId() {
+unordered_map<string, int> factoryfigure::getFigureId() {
 	return this->figureId;
 }

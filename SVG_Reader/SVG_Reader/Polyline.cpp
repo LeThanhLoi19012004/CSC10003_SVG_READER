@@ -1,20 +1,16 @@
 #include "Lib.h"
 
-Polyline::Polyline() :Figure() {
-	nVer = 0;
-	Vers = NULL;
+polyline::polyline() :figure() {
+	fill.r = fill.g = fill.b = 0;
+	fill.opacity = 1;
 }
 
-Polyline::~Polyline() {
-	nVer = 0;
-	if (Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-	}
+polyline::~polyline() {
+	Vers = {};
 }
 
-void Polyline::updateProperty() {
-	stringstream ss(line);
+void polyline::updateProperty() {
+	stringstream ss(line_str);
 	string property, val, temp;
 
 	while (ss >> property) {
@@ -27,10 +23,13 @@ void Polyline::updateProperty() {
 
 			stringstream ss(val);
 			string x = "", y = "";
-			while (ss >> x >> y)
-				nVer++;
-
-			Vers = new Point[nVer];
+			while (ss >> x >> y) {
+				point p;
+				p.setX(stof(x));
+				p.setY(stof(y));
+				Vers.push_back(p);
+			}
+			/*Vers = new point[nVer];
 			int i = 0;
 
 			stringstream pointLine(val);
@@ -38,31 +37,21 @@ void Polyline::updateProperty() {
 				Vers[i].setX(stof(x));
 				Vers[i].setY(stof(y));
 				i++;
-			}
+			}*/
 		}
 	}
 }
 
-Point* Polyline::getVers() {
+vector<point> polyline::getVers() {
 	return this->Vers;
 }
-int Polyline::getNVer() {
-	return this->nVer;
+
+void polyline::setVers(vector<point> Vers) {
+	this->Vers = Vers;
 }
 
-void Polyline::setVers(Point* Vers) {
-	if (this->Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-		this->Vers = Vers;
-	}
-}
-void Polyline::setNVer(int nVer) {
-	this->nVer = nVer;
-}
-
-void Polyline::transformFigure() {
-	for (int i = 0; i < nVer; i++) {
+void polyline::transformFigure() {
+	/*for (int i = 0; i < nVer; i++) {
 		float curX = this->Vers[i].getX();
 		float curY = this->Vers[i].getY();
 		for (auto p : transVct) {
@@ -99,5 +88,5 @@ void Polyline::transformFigure() {
 			}
 		}
 
-	}
+	}*/
 }

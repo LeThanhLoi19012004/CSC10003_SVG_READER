@@ -120,14 +120,16 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Ellipse.h" />
     <ClInclude Include="FactoryFigure.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="framework.h" />
@@ -137,6 +139,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Path.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Polyline.h" />
     <ClInclude Include="Program.h" />
@@ -149,7 +152,9 @@
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Ellipse.cpp" />
     <ClCompile Include="FactoryFigure.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Group.cpp" />
@@ -157,6 +162,7 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Path.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="Polyline.cpp" />
     <ClCompile Include="Program.cpp" />
@@ -171,6 +177,9 @@
   <ItemGroup>
     <Image Include="small.ico" />
     <Image Include="SVG_Reader.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Color.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
