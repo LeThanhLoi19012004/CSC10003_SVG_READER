@@ -308,7 +308,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			Point P1 = Point(Pt1.getX(), Pt1.getY());
 			path.AddLine(P0, P1);
 
-			/*Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+			Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 			SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
 			vector<pair<string, vector<float>>> transVct = fig->getTransVct();
 
@@ -329,7 +329,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 			graphics.FillPath(&fillPath, &path);
 			graphics.DrawPath(&penPath, &path);
-			path.Reset();*/
+			path.Reset();
 
 			if (i != vct.size() - 1) {
 				++i;
