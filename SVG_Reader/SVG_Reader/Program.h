@@ -1,14 +1,14 @@
 #ifndef _PROGRAM_H_
 #define _PROGRAM_H_
 
-class Program {
+class program {
 private:
-	Program();
-	static Program* program;
+	program();
+	static program* pg;
 	void(*currentFunc)();
 	static string name;
 public:
-	static Program* getObj(void (*currentFunc)() = NULL);
+	static program* getObj(void (*currentFunc)() = NULL);
 	static void run();
 	void execute();
 };

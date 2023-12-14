@@ -1,39 +1,39 @@
 #include "Lib.h"
 
-Point::Point() {
+point::point() {
 	x = y = 0;
 	intersect = false;
 }
 
-Point::~Point() {
+point::~point() {
 	x = y = 0;
 	intersect = false;
 }
 
-float Point::getX() {
+float point::getX() {
 	return this->x;
 }
 
-float Point::getY() {
+float point::getY() {
 	return this->y;
 }
 
-bool Point::getIntersect() {
+bool point::getIntersect() {
 	return this->intersect;
 }
 
-void Point::setIntersect(bool intersect) {
+void point::setIntersect(bool intersect) {
 	this->intersect = intersect;
 }
 
-void Point::setX(float x) {
+void point::setX(float x) {
 	this->x = x;
 }
 
-void Point::setY(float y) {
+void point::setY(float y) {
 	this->y = y;
 }
 
-bool operator == (const Point& p1, const Point& p2) {
+bool operator == (const point& p1, const point& p2) {
 	return p1.x == p2.x && p1.y == p2.y;
 }

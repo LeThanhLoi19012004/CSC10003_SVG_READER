@@ -1,21 +1,17 @@
 #ifndef _POLYLINE_H_
 #define _POLYLINE_H_
 
-class Polyline :public Figure {
+class polyline :public figure {
 private:
-	int nVer;
-	Point* Vers;
+	vector<point> Vers;
 public:
-	Polyline();
-	~Polyline();
+	polyline();
+	~polyline();
 
 	/*Update different polyline element*/
 	void updateProperty();
-	Point* getVers();
-	int getNVer();
-
-	void setVers(Point*);
-	void setNVer(int);
+	vector<point> getVers();
+	void setVers(vector<point>);
 
 	void transformFigure();
 };

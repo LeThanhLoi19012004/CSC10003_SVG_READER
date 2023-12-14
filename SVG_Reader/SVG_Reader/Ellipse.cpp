@@ -1,19 +1,19 @@
 #include "Lib.h"
 
-Ellipse::Ellipse() :Figure() {
+ellipse::ellipse() :figure() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-Ellipse::~Ellipse() {
+ellipse::~ellipse() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
 }
 
-void Ellipse::updateProperty() {
-	stringstream ss(line);
+void ellipse::updateProperty() {
+	stringstream ss(line_str);
 	string property, val, temp;
 
 	while (ss >> property) {
@@ -30,33 +30,33 @@ void Ellipse::updateProperty() {
 	}
 }
 
-Point Ellipse::getCenter() {
+point ellipse::getCenter() {
 	return this->center;
 }
 
-float Ellipse::getRx() {
+float ellipse::getRx() {
 	return this->rx;
 }
 
-float Ellipse::getRy() {
+float ellipse::getRy() {
 	return this->ry;
 }
 
-void Ellipse::setCenter(float x, float y) {
+void ellipse::setCenter(float x, float y) {
 	this->center.setX(x);
 	this->center.setY(y);
 }
 
-void Ellipse::setRx(float rx) {
+void ellipse::setRx(float rx) {
 	this->rx = rx;
 }
 
-void Ellipse::setRy(float ry) {
+void ellipse::setRy(float ry) {
 	this->ry = ry;
 }
 
-void Ellipse::transformFigure() {
-	float curX = this->center.getX();
+void ellipse::transformFigure() {
+	/*float curX = this->center.getX();
 	float curY = this->center.getY();
 	for (auto p : transVct) {
 		if (p.first == "translate") {
@@ -86,6 +86,6 @@ void Ellipse::transformFigure() {
 				this->ry *= sclY;
 			}
 		}
-	}
+	}*/
 }
 

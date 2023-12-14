@@ -1,25 +1,36 @@
 #ifndef _TEXT_H_
 #define _TEXT_H_
 
-class Text :public Figure {
+class text :public figure {
 private:
-	float fontSize;
-	Point textPos;
-	string content;
+	float fontSize, dx, dy;
+	point textPos;
+	string content, fontFamily, textAnchor, fontStyle;
+	
 public:
-	Text();
-	~Text();
+	text();
+	~text();
 	/*Update different element of shape*/
 	void updateProperty();
 
 	/*Setter and Getter*/
-	Point getTextPos();
+	point getTextPos();
 	float getFontSize();
 	string getContent();
+	string getFontFamily();
+	string getTextAnchor();
+	string getFontStyle();
+	float getDx();
+	float getDy();
 
 	void setTextPos(float, float);
 	void setFontSize(float);
 	void setContent(string);
+	void setFontFamily(string);
+	void setTextAnchor(string);
+	void setFontStyle(string);
+	void setDx(float);
+	void setDy(float);
 
 	void transformFigure();
 };

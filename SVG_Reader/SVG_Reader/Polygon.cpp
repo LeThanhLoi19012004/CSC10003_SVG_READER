@@ -1,19 +1,16 @@
 #include "Lib.h"
 
-Polygon::Polygon() : Figure() {
-	nVer = 0;
-	Vers = NULL;
+polygon::polygon() : figure() {
+	Vers = {};
 }
 
-Polygon::~Polygon() {
-	nVer = 0;
-	if (Vers != NULL)
-		delete[] Vers;
+polygon::~polygon() {
+	Vers = {};
 }
 
-void Polygon::updateProperty() {
+void polygon::updateProperty() {
 
-	stringstream ss(line);
+	stringstream ss(line_str);
 	string property, val, temp;
 
 	while (ss >> property) {
@@ -26,10 +23,13 @@ void Polygon::updateProperty() {
 
 			stringstream ss(val);
 			string x = "", y = "";
-			while (ss >> x >> y)
-				nVer++;
-
-			Vers = new Point[nVer];
+			while (ss >> x >> y) {
+				point p;
+				p.setX(stof(x));
+				p.setY(stof(y));
+				Vers.push_back(p);
+			}
+			/*Vers = new point[nVer];
 			int i = 0;
 
 			stringstream pointLine(val);
@@ -37,31 +37,22 @@ void Polygon::updateProperty() {
 				Vers[i].setX(stof(x));
 				Vers[i].setY(stof(y));
 				i++;
-			}
+			}*/
 		}
 	}
 
 }
 
-Point* Polygon::getVers() {
+vector<point> polygon::getVers() {
 	return this->Vers;
 }
-int Polygon::getNVer() {
-	return this->nVer;
+
+void polygon::setVers(vector<point> Vers) {
+	
+	this->Vers = Vers;
 }
 
-void Polygon::setVers(Point* Vers) {
-	if (this->Vers != NULL) {
-		delete[] Vers;
-		Vers = NULL;
-		this->Vers = Vers;
-	}
-}
-void Polygon::setNVer(int nVer) {
-	this->nVer = nVer;
-}
-
-void Polygon::transformFigure() {
+void polygon::transformFigure() {
 
 	/*float curX = this->Vers[i].getX();
 	float curY = this->Vers[i].getY();
@@ -94,7 +85,7 @@ void Polygon::transformFigure() {
 			}
 		}
 	}*/
-	for (int i = 0; i < nVer; i++) {
+	/*for (int i = 0; i < nVer; i++) {
 		float curX = this->Vers[i].getX();
 		float curY = this->Vers[i].getY();
 		for (auto p : transVct) {
@@ -131,5 +122,5 @@ void Polygon::transformFigure() {
 			}
 		}
 
-	}
+	}*/
 }
