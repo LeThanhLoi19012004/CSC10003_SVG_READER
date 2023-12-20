@@ -4,7 +4,7 @@
 class path : public figure {
 private:
 	vector<pair<char, vector<point>>> vct;
-	string strokeLineJoin, strokeLineCap;
+	string strokeLineJoin, strokeLineCap, fillRule;
 public:
 	path();
 	~path();
@@ -12,9 +12,11 @@ public:
 	vector<pair<char, vector<point>>> getProp();
 	string getStrokeLineJoin();
 	string getStrokeLineCap();
+	string getFillRule();
 
 	void setStrokeLineJoin(string);
 	void setStrokeLineCap(string);
+	void setFillRule(string);
 	void setVct(vector<pair<char, vector<point>>>);
 	/*Update different polyline element*/
 	void updateProperty();

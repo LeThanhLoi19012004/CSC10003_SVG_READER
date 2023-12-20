@@ -3,6 +3,7 @@
 path::path() :figure() {
 	strokeLineJoin = "miter";
 	strokeLineCap = "butt";
+	fillRule = "evenodd";
 }
 
 path::~path() {}
@@ -10,7 +11,7 @@ path::~path() {}
 void path::updateProperty() {
 	stringstream ss(line_str);
 	string property, val, temp;
-	int start = 0;
+	//int start = 0;
 
 	while (ss >> property) {
 		getline(ss, temp, '"');
@@ -80,12 +81,15 @@ void path::updateProperty() {
 					}
 
 					else if (pr.first == 'Z' || pr.first == 'z') {
-						pr.second.push_back(vct[start].second[0]);
+						point point;
+						int n = vct[vct.size() - 1].second.size();
+						point.setX(vct[vct.size() - 1].second[n - 1].getX());
+						point.setY(vct[vct.size() - 1].second[n - 1].getY());
+						pr.second.push_back(point);
 						vct.push_back(pr);
-						start = vct.size();
 					}
 
-					else {
+					else if (pr.first == 'M' || pr.first == 'm' || pr.first == 'L' || pr.first == 'l') {
 						string x = "", y = "";
 						bool flag = false;
 						while (ss >> x >> y) {
@@ -94,7 +98,7 @@ void path::updateProperty() {
 								n = vct[vct.size() - 1].second.size();
 
 							point point;
-							if (pr.first == 'M' || pr.first == 'L' || pr.first == 'C' || pr.first == 'S') {
+							if (pr.first == 'M' || pr.first == 'L') {
 								point.setX(stof(x));
 								point.setY(stof(y));
 							}
@@ -116,7 +120,7 @@ void path::updateProperty() {
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
 							}
-							else if (pr.first == 'l') {
+							else {
 								if (!flag) {
 									point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
 									point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
@@ -128,14 +132,41 @@ void path::updateProperty() {
 									point.setY(stof(y) + pr.second[m - 1].getY());
 								}
 							}
-							else {		
-								point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
-								point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
-							}
 							pr.second.push_back(point);
 						}
 						vct.push_back(pr);
 					}
+
+					else {
+						string x = "", y = "";
+						
+						while (ss >> x >> y) {
+							int n = 0;
+							if (vct.size() != 0)
+								n = vct[vct.size() - 1].second.size();
+
+							point point;
+							if (pr.first == 'C' || pr.first == 'S') {
+								point.setX(stof(x));
+								point.setY(stof(y));
+							}
+							
+							else {
+								int size = pr.second.size();
+								if (size < 3) {
+									point.setX(stof(x) + vct[vct.size() - 1].second[n - 1].getX());
+									point.setY(stof(y) + vct[vct.size() - 1].second[n - 1].getY());
+								}
+								else {
+									int mod = size % 3;
+									point.setX(stof(x) + pr.second[size - mod - 1].getX());
+									point.setY(stof(y) + pr.second[size - mod - 1].getY());
+								}
+							}
+							pr.second.push_back(point);
+						}
+						vct.push_back(pr);
+						}
 				}
 			}
 		}
@@ -155,6 +186,14 @@ string path::getStrokeLineJoin() {
 
 string path::getStrokeLineCap() {
 	return this->strokeLineCap;
+}
+
+string path::getFillRule() {
+	return this->fillRule;
+}
+
+void path::setFillRule(string fillRule) {
+	this->fillRule = fillRule;
 }
 
 void path:: setStrokeLineJoin(string linejoin) {

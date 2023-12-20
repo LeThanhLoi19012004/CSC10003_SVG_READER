@@ -262,35 +262,44 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 void renderer::drawPath(Graphics& graphics, path* fig) {
 	GraphicsState save = graphics.Save();
 	vector<pair<char, vector<point>>> vct = fig->getProp();
-	GraphicsPath path;
-	int numPoint = vct[0].second.size();
-	if (numPoint == 2) {
-		point Pt0 = vct[0].second[0];
-		Point P0 = Point(Pt0.getX(), Pt0.getY());
-		point Pt1 = vct[0].second[1];
-		Point P1 = Point(Pt1.getX(), Pt1.getY());
-		path.AddLine(P0, P1);
-	}
-	else if (numPoint > 2){
-		vector <Point> points(numPoint);
-		for (int i = 0; i < numPoint; i++)
-			points[i] = Point(vct[0].second[i].getX(), vct[0].second[i].getY());
-		path.AddLines(points.data(), numPoint);
-	}
+	FillMode fillMode;
+	if (fig->getFillRule() == "nonzero")
+		fillMode = FillModeWinding;
+	else fillMode = FillModeAlternate;
+	GraphicsPath path(fillMode);
 
-	for (int i = 1; i < vct.size(); i++) {
-		numPoint = vct[i].second.size();
-		point Pt0 = vct[i - 1].second[vct[i - 1].second.size() - 1];
-		Point P0 = Point(Pt0.getX(), Pt0.getY());
-		if (vct[i].first == 'C' || vct[i].first == 'c' || vct[i].first == 'S' || vct[i].first == 's') {
+	Point P0;
+	for (int i = 0; i < vct.size(); i++) {
+		int numPoint = vct[i].second.size();
+		if (vct[i].first == 'M' || vct[i].first == 'm') {
+			path.StartFigure();
+			if (numPoint == 2) {
+				point Pt1 = vct[i].second[0];
+				Point P1 = Point(Pt1.getX(), Pt1.getY());
+				point Pt2 = vct[i].second[1];
+				Point P2 = Point(Pt2.getX(), Pt2.getY());
+				path.AddLine(P1, P2);
+				P0 = P2;
+			}
+			else if (numPoint > 2) {
+				vector <Point> points(numPoint);
+				for (int j = 0; j < numPoint; j++)
+					points[j] = Point(vct[i].second[j].getX(), vct[i].second[j].getY());
+				path.AddLines(points.data(), numPoint);
+				P0 = points[numPoint - 1];
+			}
+			else P0 = Point(vct[i].second[0].getX(), vct[i].second[0].getY());
+		}
+		else if (vct[i].first == 'C' || vct[i].first == 'c' || vct[i].first == 'S' || vct[i].first == 's') {
 			if (numPoint > 3) {
 				vector <Point> points(numPoint + 1);
 				points[0] = P0;
 				for (int j = 0; j < numPoint; j++)
 					points[j + 1] = Point(vct[i].second[j].getX(), vct[i].second[j].getY());
 				path.AddBeziers(points.data(), numPoint + 1);
+				P0 = points[numPoint];
 			}
-			else {
+			else { 
 				point Pt1 = vct[i].second[0];
 				Point P1 = Point(Pt1.getX(), Pt1.getY());
 				point Pt2 = vct[i].second[1];
@@ -299,62 +308,23 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 					point Pt3 = vct[i].second[2];
 					Point P3 = Point(Pt3.getX(), Pt3.getY());
 					path.AddBezier(P0, P1, P2, P3);
+					P0 = P3;
 				}
-				else path.AddBezier(P0, P1, P2, P2);
+				else {
+					path.AddBezier(P0, P1, P2, P2);
+					P0 = P2;
+				}
 			}
 		}
 		else if (vct[i].first == 'Z' || vct[i].first == 'z') {
-			point Pt1 = vct[i].second[0];
-			Point P1 = Point(Pt1.getX(), Pt1.getY());
-			path.AddLine(P0, P1);
-
-			Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
-			SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-			vector<pair<string, vector<float>>> transVct = fig->getTransVct();
-
-			for (auto trans : transVct) {
-				float x = 0.0f;
-				if (!trans.second.empty())
-					x = trans.second[0];
-				float y = x;
-				if (trans.second.size() == 2)
-					y = trans.second[1];
-				if (trans.first == "translate")
-					graphics.TranslateTransform(x, y);
-				else if (trans.first == "rotate")
-					graphics.RotateTransform(x);
-				else graphics.ScaleTransform(x, y);
-			}
-
-			graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-			graphics.FillPath(&fillPath, &path);
-			graphics.DrawPath(&penPath, &path);
-			path.Reset();
-
-			if (i != vct.size() - 1) {
-				++i;
-				if (vct[i].first != 'M' && vct[i].first != 'm')
-					break;
-				if (numPoint == 2) {
-					point Pt0 = vct[0].second[0];
-					Point P0 = Point(Pt0.getX(), Pt0.getY());
-					point Pt1 = vct[0].second[1];
-					Point P1 = Point(Pt1.getX(), Pt1.getY());
-					path.AddLine(P0, P1);
-				}
-				else if (numPoint > 2) {
-					vector <Point> points(numPoint);
-					for (int i = 0; i < numPoint; i++)
-						points[i] = Point(vct[0].second[i].getX(), vct[0].second[i].getY());
-					path.AddLines(points.data(), numPoint);
-				}
-			}
+			path.CloseFigure();
 		}
 		else {
 			if (numPoint == 1) {
 				point Pt1 = vct[i].second[0];
 				Point P1 = Point(Pt1.getX(), Pt1.getY());
 				path.AddLine(P0, P1);
+				P0 = P1;
 			}
 			else {
 				vector <Point> points(numPoint + 1);
@@ -362,10 +332,11 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				for (int j = 0; j < numPoint; j++)
 					points[j + 1] = Point(vct[i].second[j].getX(), vct[i].second[j].getY());
 				path.AddLines(points.data(), numPoint + 1);
+				P0 = points[numPoint];
 			}
 		}
 	}
-
+	
 	Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	vector<pair<string, vector<float>>> transVct = fig->getTransVct();

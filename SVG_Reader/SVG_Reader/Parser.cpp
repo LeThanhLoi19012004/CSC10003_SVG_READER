@@ -48,6 +48,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		string r, g, b;
 		ss >> r >> g >> b;
 		clr.r = stof(r); clr.g = stof(g); clr.b = stof(b);
+		if (clr.r > 255)
+			clr.r = 255.0;
+		if (clr.g > 255)
+			clr.g = 255.0;
+		if (clr.b > 255)
+			clr.b = 255.0;
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
