@@ -6,6 +6,10 @@
 
 #define MAX_LOADSTRING 100
 
+struct CMD {
+    string FileInput;
+};
+float offsetX = 0, offsetY = 0, zoomFactor = 1.0;
 // Global Variables:
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
@@ -13,17 +17,21 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
-BOOL                InitInstance(HINSTANCE, int);
+BOOL                InitInstance(HINSTANCE, int, CMD*);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+    _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR    lpCmdLine,
+    _In_ int       nCmdShow)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
+    //Command Line
+    wstring ws(lpCmdLine);
+    CMD* cmdLine = new CMD;
+    cmdLine->FileInput = string(ws.begin(), ws.end());
 
     // TODO: Place code here.
 
@@ -33,7 +41,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MyRegisterClass(hInstance);
 
     // Perform application initialization:
-    if (!InitInstance (hInstance, nCmdShow))
+    if (!InitInstance(hInstance, nCmdShow, cmdLine))
     {
         return FALSE;
     }
@@ -52,7 +60,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
-    return (int) msg.wParam;
+    return (int)msg.wParam;
 }
 
 
@@ -68,17 +76,17 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_SVGREADER));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_SVGREADER);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc = WndProc;
+    wcex.cbClsExtra = 0;
+    wcex.cbWndExtra = 0;
+    wcex.hInstance = hInstance;
+    wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_SVGREADER));
+    wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+    wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_SVGREADER);
+    wcex.lpszClassName = szWindowClass;
+    wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
 }
@@ -93,22 +101,22 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //        In this function, we save the instance handle in a global variable and
 //        create and display the main program window.
 //
-BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow, CMD* cmdLine)
 {
-   hInst = hInstance; // Store instance handle in our global variable
+    hInst = hInstance; // Store instance handle in our global variable
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, cmdLine);
 
-   if (!hWnd)
-   {
-      return FALSE;
-   }
+    if (!hWnd)
+    {
+        return FALSE;
+    }
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
 
-   return TRUE;
+    return TRUE;
 }
 
 //
@@ -121,48 +129,91 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - post a quit message and return
 //
 //
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     GdiplusStartupInput gdiplusStartupInput;
     ULONG_PTR gdiplustoken;
     GdiplusStartup(&gdiplustoken, &gdiplusStartupInput, nullptr);
 
+    CMD* cmdLine;
+    LONG_PTR ptr;
+    if (message == WM_CREATE)
+    {
+        CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
+        cmdLine = reinterpret_cast<CMD*>(pCreate->lpCreateParams);
+        SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)cmdLine);
+    }
+
     switch (message)
     {
     case WM_COMMAND:
+    {
+        int wmId = LOWORD(wParam);
+        // Parse the menu selections:
+        switch (wmId)
         {
-            int wmId = LOWORD(wParam);
-            // Parse the menu selections:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-                // case: ZOOM_IN, ...
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+            // case: ZOOM_IN, ...
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
         }
-        break;
+    }
+    break;
     case WM_PAINT:
-        {
-            //DrawAgain:
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: Add any drawing code that uses hdc here...
-            
-            image img("sample.svg");
-            parser parseTool;
-            renderer renderTool;
-            img.parseImage(parseTool);
-            img.renderImage(renderTool, hdc);
-            
-            EndPaint(hWnd, &ps);
+    {
+        //DrawAgain:
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+        Graphics graphics(hdc);
+        // TODO: Add any drawing code that uses hdc here...
+        ptr = GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        cmdLine = reinterpret_cast<CMD*>(ptr);
+        image img("sample.svg");
+        parser parseTool;
+        renderer renderTool;
+        viewbox *vb = new viewbox();
+        img.parseImage(parseTool,*vb);
+
+        float Width = vb->getPortWidth();
+        float Height = vb->getPortHeight();
+        float scaleX = 1, scaleY = 1, scale = 1;
+        if (Width == 0 || Height == 0) {
+    	    Width = 800;//GetSystemMetrics(SM_CXSCREEN);
+    	    Height = 600;//GetSystemMetrics(SM_CYSCREEN);
         }
-        break;
+        if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+    	    scaleX = Width / vb->getViewWidth();
+    	    scaleY = Height / vb->getViewHeight();
+    	    scale = (scaleX < scaleY) ? scaleX : scaleY;
+        }
+        static bool loop = true;
+        if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+    	    offsetX += abs(Width - vb->getViewWidth() * scale) / 2;
+    	    offsetY += abs(Height - vb->getViewHeight() * scale) / 2;
+    	    loop = false;
+        }
+
+        // Init GDI+ Graphics
+        // Set GDI+ transform
+
+        Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
+
+        // Set the clipping region for the Graphics object
+        graphics.SetClip(clipRect, CombineModeReplace);
+        graphics.TranslateTransform(offsetX, offsetY);
+        graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
+
+        img.renderImage(renderTool, graphics);
+
+        EndPaint(hWnd, &ps);
+    }
+    break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

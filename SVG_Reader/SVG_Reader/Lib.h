@@ -22,6 +22,7 @@ using namespace rapidxml;
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
+#include "Viewbox.h"
 #include "Color.h"
 #include "Figure.h"
 #include "Group.h"
@@ -38,6 +39,5 @@ using namespace Gdiplus;
 #include "Parser.h"
 #include "Renderer.h"
 #include "Image.h"
-#include "Program.h"
 
 #endif 

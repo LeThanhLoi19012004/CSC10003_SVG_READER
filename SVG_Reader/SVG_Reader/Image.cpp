@@ -1,17 +1,22 @@
 #include "Lib.h"
 
-void image::parseImage(parser parse) {
+void image::parseImage(parser parse, viewbox& vb) {
 	root = new group();
-	parse.parseItem(root, fileName);
+	//viewbox vb;
+	parse.parseItem(root, fileName, vb);
 }
 
-void image::renderImage(renderer render, HDC hdc) {
-	render.renderItem(root, antialiasingLevel, imageName, width, height, hdc);
+void image::renderImage(renderer render, Graphics& graphics) {
+	
+	//Graphics graphics(hdc);
+
+	//Render Items
+	render.renderItem(root, antialiasingLevel, imageName, width, height, graphics);
 }
 
 image::image(string fileInput) {
 	this->fileName = fileInput;
-	this->figures = {};
+	//this->figures = {};
 	this->width = 0;
 	this->height = 0;
 	this->antialiasingLevel = 8;
@@ -43,15 +48,16 @@ void image::setAntialiasingLevel(float atlvl) {
 	this->antialiasingLevel = atlvl;
 }
 
-vector<figure*> image::getFigures() {
-	return this->figures;
-}
+//vector<figure*> image::getFigures() {
+//	return this->figures;
+//}
 
 image::~image() {
-	for (auto x : figures) {
+	/*for (auto x : figures) {
 		delete x;
 		x = NULL;
-	}
+	}*/
 	delete root;
 	root = NULL;
 }
+

@@ -58,8 +58,42 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 	}
 }
 
-void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
-	Graphics graphics(hdc);
+void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
+
+	//// Get ViewBox and ViewPort
+	//float Width = vb.getPortWidth();
+	//float Height = vb.getPortHeight();
+	//float scaleX = 1, scaleY = 1, scale = 1;
+	//if (Width == 0 || Height == 0) {
+	//	Width = 800;//GetSystemMetrics(SM_CXSCREEN);
+	//	Height = 600;//GetSystemMetrics(SM_CYSCREEN);
+	//	//std::cout << "width = " << width << " height = " << height << std::endl;
+	//}
+	//if (Width && Height && vb.getPortWidth() && vb.getPortHeight()) {
+	//	scaleX = Width / vb.getPortWidth();
+	//	scaleY = Height / vb.getPortHeight();
+	//	scale = (scaleX < scaleY) ? scaleX : scaleY;
+	//}
+	//static bool loop = true;
+	//float offsetX = vb.getViewX(), offsetY = vb.getViewY();
+	//if (loop && vb.getPortWidth() != 0 && vb.getPortHeight() != 0) {
+	//	offsetX += abs(Width - vb.getPortWidth() * scale) / 2;
+	//	offsetY += abs(Height - vb.getPortHeight() * scale) / 2;
+	//	loop = false;
+	//}
+
+	//// Init GDI+ Graphics
+	//float zoomFactor = 1;
+	//// Set GDI+ transform
+	////graphics.RotateTransform(rotationAngle);
+	//Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
+
+	//// Set the clipping region for the Graphics object
+	//graphics.SetClip(clipRect, CombineModeReplace);
+	////graphics.TranslateTransform(offsetX, offsetY);
+	//graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
+
+	////Draw
 	drawFigure(graphics, root);
 } 
 
@@ -332,8 +366,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 	graphics.Restore(save);
 }
 
-void renderer::drawGroup(Graphics& graphics, group* fig) {
-	if (!fig->getFigureArray().empty())
-		drawFigure(graphics, fig->getFigureArray());
-	//...
-}
+//void renderer::drawGroup(Graphics& graphics, group* fig) {
+//	if (!fig->getFigureArray().empty())
+//		drawFigure(graphics, fig->getFigureArray());
+//}
