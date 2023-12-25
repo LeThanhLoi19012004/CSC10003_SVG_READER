@@ -8,13 +8,11 @@ private:
 	int width, height;
 	float antialiasingLevel;
 	group* root;
-	//viewbox vb;
 public:
 	image(string);
 	int getWidth();
 	int getHeight();
 	float getAntialiasingLevel();
-//	vector<figure*> getFigures();
 
 	void setWidth(int);
 	void setHeight(int);

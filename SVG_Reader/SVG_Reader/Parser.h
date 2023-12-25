@@ -5,7 +5,7 @@ private:
 	unordered_map<string, color> colorMap;
 	void processColor(string, string, color&);
 	void loadColorMap();
-	void processProperty(string, string, string, figure*&);
+	void processProperty(string, string, string, figure*&, unordered_map<string, vector<string>>);
 	//void parseGroupStr(string&);
 public:
 	void parseItem(group* ,string, viewbox&);

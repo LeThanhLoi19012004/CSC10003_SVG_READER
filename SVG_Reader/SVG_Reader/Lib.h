@@ -35,6 +35,9 @@ using namespace Gdiplus;
 #include "Line.h"
 #include "Text.h"
 #include "Path.h"
+
+#include "LinearGradient.h"
+
 #include "FactoryFigure.h"
 #include "Parser.h"
 #include "Renderer.h"
