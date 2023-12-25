@@ -3,13 +3,13 @@
 
 class path : public figure {
 private:
-	vector<pair<char, vector<point>>> vct;
+	vector<pair<char, vector<float>>> vct;
 	string strokeLineJoin, strokeLineCap, fillRule;
 public:
 	path();
 	~path();
 
-	vector<pair<char, vector<point>>> getProp();
+	vector<pair<char, vector<float>>> getProp();
 	string getStrokeLineJoin();
 	string getStrokeLineCap();
 	string getFillRule();
@@ -17,7 +17,7 @@ public:
 	void setStrokeLineJoin(string);
 	void setStrokeLineCap(string);
 	void setFillRule(string);
-	void setVct(vector<pair<char, vector<point>>>);
+	void setVct(vector<pair<char, vector<float>>>);
 	/*Update different polyline element*/
 	void updateProperty();
 

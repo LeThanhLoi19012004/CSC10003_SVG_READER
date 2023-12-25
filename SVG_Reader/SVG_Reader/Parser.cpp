@@ -105,14 +105,14 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	if (fill == "none")
+	if (fill == "none" || fill == "transparent")
 		processColor(fill, "0", clr);
 	else processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
 	stroke strk;
 	strk.setStrokeWidth(stof(strokeWidth));
 	color strokeColor = { 0, 0, 0, 1 };
-	if (sStroke == "none" || sStroke == "")
+	if (sStroke == "none" || sStroke == "transparent" || sStroke == "")
 		processColor(sStroke, "0", strokeColor);
 	else processColor(sStroke, strokeOpa, strokeColor);
 	strk.setStrokeColor(strokeColor);
@@ -152,7 +152,7 @@ void parser::parseItem(group* root, string fileName) {
 		getline(stream, property, '>');
 		
 		for (int i = 0; i < property.size(); i++) {
-			if (property[i] == '/' || property[i] == '=') {
+			if (property[i] == '/' || property[i] == '=' || property[i] == ':' || property[i] == ';') {
 				property[i] = ' ';
 			}
 			if (property[i] == '\'') {
