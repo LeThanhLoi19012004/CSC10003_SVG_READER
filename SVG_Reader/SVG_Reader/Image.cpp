@@ -5,8 +5,8 @@ void image::parseImage(parser parse) {
 	parse.parseItem(root, fileName);
 }
 
-void image::renderImage(renderer render, HDC hdc) {
-	render.renderItem(root, antialiasingLevel, imageName, width, height, hdc);
+void image::renderImage(renderer render, Graphics& graphics) {
+	render.renderItem(root, antialiasingLevel, imageName, width, height, graphics);
 }
 
 image::image(string fileInput) {

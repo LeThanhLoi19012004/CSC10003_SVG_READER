@@ -152,7 +152,7 @@ void parser::parseItem(group* root, string fileName) {
 		getline(stream, property, '>');
 		
 		for (int i = 0; i < property.size(); i++) {
-			if (property[i] == '/' || property[i] == '=' || property[i] == ':' || property[i] == ';') {
+			if (property[i] == '/' || property[i] == '=') {
 				property[i] = ' ';
 			}
 			if (property[i] == '\'') {

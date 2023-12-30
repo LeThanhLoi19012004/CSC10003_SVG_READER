@@ -52,7 +52,7 @@ void path::updateProperty() {
 					}
 				}
 			}
-
+			int start = 0;
 			for (int i = 0; i < val.size(); i++) {
 				if (isalpha(val[i])) {
 					int j = i + 1;
@@ -362,8 +362,15 @@ void path::updateProperty() {
 						if (n > 0) {
 							int m = vct[n - 1].second.size();
 							if (m > 1) {
-								pr.second.push_back(vct[n - 1].second[m - 2]);
+								float x = vct[n - 1].second[m - 2];
+								float y = vct[n - 1].second[m - 1];
+								if (abs(x - vct[start].second[0]) <= 0.015)
+									vct[n - 1].second[m - 2] = vct[start].second[0];
+								if (abs(y - vct[start].second[1]) <= 0.015)
+									vct[n - 1].second[m - 1] = vct[start].second[1];
+								pr.second.push_back(vct[n - 1].second[m - 2]);							
 								pr.second.push_back(vct[n - 1].second[m - 1]);
+								start = i + 1;
 							}
 						}
 						vct.push_back(pr);

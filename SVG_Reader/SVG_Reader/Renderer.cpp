@@ -1,4 +1,7 @@
 ﻿#include "Lib.h"
+#define Pi 3.14159265358979323846
+#define Kappa 0.551915024494
+#define Pakka 1.5707963267948966
 using namespace std;
 
 void renderer::drawFigure(Graphics& graphics, group* root) {
@@ -58,8 +61,7 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 	}
 }
 
-void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
-	Graphics graphics(hdc);
+void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
 	drawFigure(graphics, root);
 } 
 
@@ -346,73 +348,116 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				if (i > 0) {
 					int n = vct[i - 1].second.size();
 					if (n > 1) {
-						float sx = vct[i - 1].second[n - 2];
-						float sy = vct[i - 1].second[n - 1];
-						float rx = vct[i].second[j + 0];
-						float ry = vct[i].second[j + 1];
-						float xAR = vct[i].second[j + 2];
+						double sx = vct[i - 1].second[n - 2];
+						double sy = vct[i - 1].second[n - 1];
+						double rx = vct[i].second[j + 0];
+						double ry = vct[i].second[j + 1];
+						double xAR = vct[i].second[j + 2];
 						bool lAF = vct[i].second[j + 3];
 						bool sF = vct[i].second[j + 4];
-						float ex = vct[i].second[j + 5];
-						float ey = vct[i].second[j + 6];
+						double ex = vct[i].second[j + 5];
+						double ey = vct[i].second[j + 6];
 
-						float angle = xAR * 3.1415 / 180.f;
-						float cosAngle = cos(angle);
-						float sinAngle = sin(angle);
+						double angle = xAR * Pi / 180.f;
+						double cosAngle = cos(angle);
+						double sinAngle = sin(angle);
 
-						float a = (sx - ex) / 2.f;
-						float b = (sy - ey) / 2.f;
+						double a = (sx - ex) / 2.f;
+						double b = (sy - ey) / 2.f;
 
-						float x1 = cosAngle * a + sinAngle * b;
-						float y1 = -sinAngle * a + cosAngle * b;
+						double x1 = cosAngle * a + sinAngle * b;
+						double y1 = -sinAngle * a + cosAngle * b;
 
-						float checkR = (x1 * x1) / (rx * rx) + (y1 * y1) / (ry * ry);
-						if (checkR > 1.f) {
-							rx = sqrt(checkR) * rx;
-							ry = sqrt(checkR) * ry;
+						rx = abs(rx);
+						ry = abs(ry);
+
+						double lambda = (x1 * x1) / (rx * rx) + (y1 * y1) / (ry * ry);
+						if (lambda > 1.f) {
+							rx *= sqrt(lambda);
+							ry *= sqrt(lambda);
 						}
 
-						float sign = (lAF == sF ? -1.f : 1.f);
-						float num = abs(rx * rx * ry * ry - rx * rx * y1 * y1 - ry * ry * x1 * x1);
-						float den = rx * rx * y1 * y1 + ry * ry * x1 * x1;
+						double sign = (lAF == sF ? -1.f : 1.f);
+						double num = rx * rx * ry * ry - rx * rx * y1 * y1 - ry * ry * x1 * x1;
+						double den = rx * rx * y1 * y1 + ry * ry * x1 * x1;
+						if (num < 0)
+							num = 0;
 
-						float x2 = sign * sqrt(num / den) * rx * y1 / ry;
-						float y2 = -sign * sqrt(num / den) * ry * x1 / rx;
+						double x2 = sign * sqrt(num / den) * rx * y1 / ry;
+						double y2 = -sign * sqrt(num / den) * ry * x1 / rx;
 
-						float x = cosAngle * x2 - sinAngle * y2 + ((sx + ex) / 2.f);
-						float y = sinAngle * x2 + cosAngle * y2 + ((sy + ey) / 2.f);
+						double x = cosAngle * x2 - sinAngle * y2 + ((sx + ex) / 2.f);
+						double y = sinAngle * x2 + cosAngle * y2 + ((sy + ey) / 2.f);
 
 						a = (x1 - x2) / rx;
 						b = (y1 - y2) / ry;
-						float c = (- x1 - x2) / rx;
-						float d = (- y1 - y2) / ry;
+						double c = (- x1 - x2) / rx;
+						double d = (- y1 - y2) / ry;
 
-						/*if (a < 0)
+						if (b < 0)
 							sign = -1.f;
 						else sign = 1.f;
-						float startAngle = acos(a / sqrt(a * a + b * b));
+						double temp = a / sqrt(a * a + b * b);
+						if (temp < -1.f)
+							temp = -1.f;
+						else if (temp > 1.f)
+							temp = 1.f;
+						double startAngle = sign * acos(temp);
 
-						if (a * c + b * d < 0)
+						if (a * d - b * c < 0)
 							sign = -1.f;
 						else sign = 1.f;
-						float dentaAngle = acos((a * c + b * d) / (sqrt(a * a + b * b) * sqrt(c * c + d * d)));*/
+						temp = (a * c + b * d) / (sqrt(a * a + b * b) * sqrt(c * c + d * d));
+						if (temp < -1.f)
+							temp = -1.f;
+						else if (temp > 1.f)
+							temp = 1.f;
+						double dentaAngle = sign * acos(temp);
 
-						float startAngle = atan2(b, a);
-						float endAngle = atan2(d, c);
-						float dentaAngle = endAngle - startAngle;
+						if (sF == 0 && dentaAngle > 0)
+							dentaAngle -= (2.f * Pi);
+						else if (sF == 1 && dentaAngle < 0)
+							dentaAngle += (2.f * Pi);
 
-						if (sF && dentaAngle < 0)
-							dentaAngle += 2.f * 3.1415;
-						else if (!sF && dentaAngle > 0)
-							dentaAngle -= 2.f * 3.1415;
+						double ratio = abs(dentaAngle) / (Pi / 2.f);
+						if (abs(1.f - ratio) < 0.0000001)
+							ratio = 1.f;
+						int segments = max(static_cast<int>(ceil(ratio)), 1);
+						dentaAngle /= segments;
 
-						//dentaAngle = fmod(dentaAngle * 180.f / 3.1415, 360);
+						vector<vector<vector<double>>> curves;
+						vector<vector<double>> curve;
+						for (int t = 0; t < segments; t++) {
+							double kappa = (dentaAngle == Pakka) ? Kappa : (dentaAngle == -Pakka) ? -Kappa : 4.f / 3.f * tan(dentaAngle / 4.f);
+							double x3 = cos(startAngle);
+							double y3 = sin(startAngle);
+							double x4 = cos(startAngle + dentaAngle);
+							double y4 = sin(startAngle + dentaAngle);
+							curve.push_back({ x3 - y3 * kappa, y3 + x3 * kappa });
+							curve.push_back({ x4 + y4 * kappa, y4 - x4 * kappa });
+							curve.push_back({ x4, y4 });
+							curves.push_back(curve);
+							curve.clear();
+							startAngle += dentaAngle;
+						}
 
-						/*if (!sF)
-							dentaAngle - 360;
-						else dentaAngle + 360;*/
+						for (auto& cur : curves) {
+							auto mapped_curve_0 = { (cosAngle * cur[0][0] * rx - sinAngle * cur[0][1] * ry) + x,(sinAngle * cur[0][0] * rx + cosAngle * cur[0][1] * ry) + y };
+							auto mapped_curve_1 = { (cosAngle * cur[1][0] * rx - sinAngle * cur[1][1] * ry) + x,(sinAngle * cur[1][0] * rx + cosAngle * cur[1][1] * ry) + y };
+							auto mapped_curve_2 = { (cosAngle * cur[2][0] * rx - sinAngle * cur[2][1] * ry) + x,(sinAngle * cur[2][0] * rx + cosAngle * cur[2][1] * ry) + y };
+							cur = { mapped_curve_0, mapped_curve_1, mapped_curve_2 };
 
-						path.AddArc(x - rx, y - ry, 2.f * rx, 2.f * ry, fmod(startAngle * 180.f / 3.1415, 360), fmod(dentaAngle * 180.f / 3.1415, 360));
+							for (size_t i = 0; i < cur.size(); i += 3) {
+								if (i + 2 < cur.size()) {
+									PointF P1(cur[i][0], cur[i][1]);
+									PointF P2(cur[i + 1][0], cur[i + 1][1]);
+									PointF P3(cur[i + 2][0], cur[i + 2][1]);
+									path.AddBezier(P0, P1, P2, P3);
+									P0 = P3;
+								}
+							}
+						}
+						
 						P0 = PointF(ex, ey);
 						numPoint -= 6;
 						j += 6;
@@ -432,7 +477,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			}
 		}
 
-		else if (vct[i].first == 'Z' || vct[i].first == 'z')
+		else if (vct[i].first == 'Z' || vct[i].first == 'z') 
 			path.CloseFigure();
 	}
 	
