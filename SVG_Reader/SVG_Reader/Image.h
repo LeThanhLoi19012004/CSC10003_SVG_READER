@@ -19,7 +19,7 @@ public:
 	void setAntialiasingLevel(float);
 
 	void parseImage(parser);
-	void renderImage(renderer, HDC);
+	void renderImage(renderer, Graphics&);
 
 	~image();
 };

@@ -48,6 +48,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		string r, g, b;
 		ss >> r >> g >> b;
 		clr.r = stof(r); clr.g = stof(g); clr.b = stof(b);
+		if (clr.r > 255)
+			clr.r = 255.0;
+		if (clr.g > 255)
+			clr.g = 255.0;
+		if (clr.b > 255)
+			clr.b = 255.0;
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
@@ -99,14 +105,14 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 
 	color clr = { 0, 0, 0, 1 };
-	if (fill == "none")
+	if (fill == "none" || fill == "transparent")
 		processColor(fill, "0", clr);
 	else processColor(fill, fillOpa, clr);
 	fig->setColor(clr);
 	stroke strk;
 	strk.setStrokeWidth(stof(strokeWidth));
 	color strokeColor = { 0, 0, 0, 1 };
-	if (sStroke == "none" || sStroke == "")
+	if (sStroke == "none" || sStroke == "transparent" || sStroke == "")
 		processColor(sStroke, "0", strokeColor);
 	else processColor(sStroke, strokeOpa, strokeColor);
 	strk.setStrokeColor(strokeColor);

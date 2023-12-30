@@ -169,6 +169,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         //DrawAgain:
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hWnd, &ps);
+        Graphics graphics(hdc);
         // TODO: Add any drawing code that uses hdc here...
         ptr = GetWindowLongPtr(hWnd, GWLP_USERDATA);
         cmdLine = reinterpret_cast<CMD*>(ptr);
@@ -177,7 +178,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         parser parseTool;
         renderer renderTool;
         img.parseImage(parseTool);
-        img.renderImage(renderTool, hdc);
+        img.renderImage(renderTool, graphics);
 
         EndPaint(hWnd, &ps);
     }
