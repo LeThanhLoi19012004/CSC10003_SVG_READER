@@ -1,4 +1,4 @@
-// SVG_Reader.cpp : Defines the entry point for the application.
+﻿// SVG_Reader.cpp : Defines the entry point for the application.
 //
 
 #include "Lib.h"
@@ -14,6 +14,12 @@ struct CMD {
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+float scale = 1;
+float Rotate = 0;
+float scroll_x = 0;
+float scroll_y = 0;
+float max_width = 0, max_height = 0;
+float offsetX = 0, offsetY = 0, zoomFactor = 1.0;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -143,7 +149,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         cmdLine = reinterpret_cast<CMD*>(pCreate->lpCreateParams);
         SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)cmdLine);
     }
-
+    bool is_dragging = false;
+    POINT last_mouse_position;
     switch (message)
     {
     case WM_COMMAND:
@@ -158,26 +165,171 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
-            // case: ZOOM_IN, ...
+        case IDM_ZOOM_IN:
+            scale *= 1.1;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_ZOOM_OUT:
+            scale *= 0.9;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_DEFAULT:
+            scale = 1;
+            Rotate = 0;
+            scroll_x = 0;
+            scroll_y = 0;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_ROTATE_LEFT:
+            Rotate -= 30;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_ROTATE_RIGHT:
+            Rotate += 30;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_UP:
+            scroll_y -= 20;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_DOWN:
+            scroll_y += 20;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_RIGHT:
+            scroll_x += 20;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        case IDM_LEFT:
+            scroll_x -= 20;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
     }
     break;
+    case WM_KEYDOWN:
+    {
+        switch (wParam)
+        {
+        case VK_UP:
+            // Xử lý mũi tên lên
+            scroll_y -= 20;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case VK_DOWN:
+            // Xử lý mũi tên xuống
+            scroll_y += 20;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case VK_LEFT:
+            // Xử lý mũi tên trái
+            scroll_x -= 20;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case VK_RIGHT:
+            // Xử lý mũi tên phải
+            scroll_x += 20;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case 'i': case 'I':
+            scale *= 1.1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case 'o': case 'O':
+            scale *= 0.9;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case 'r': case 'R':
+            Rotate += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+        case 'l': case 'L':
+            Rotate -= 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            goto DrawAgain;
+            break;
+            break;
+        case 'd': case 'D':
+            scale = 1;
+            Rotate = 0;
+            scroll_x = 0;
+            scroll_y = 0;
+            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            goto DrawAgain;
+        }
+    }
+    case WM_MOUSEWHEEL:
+    {
+        short delta = GET_WHEEL_DELTA_WPARAM(wParam);
+        if (delta > 0)
+            scale *= 1.1;
+        else
+            scale *= 0.9;
+        InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+        goto DrawAgain;
+    }
     case WM_PAINT:
     {
-        //DrawAgain:
+        DrawAgain:
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hWnd, &ps);
         // TODO: Add any drawing code that uses hdc here...
         ptr = GetWindowLongPtr(hWnd, GWLP_USERDATA);
         cmdLine = reinterpret_cast<CMD*>(ptr);
-
         image img(cmdLine->FileInput);
         parser parseTool;
         renderer renderTool;
-        img.parseImage(parseTool);
-        img.renderImage(renderTool, hdc);
+        viewbox* vb = new viewbox();
+        img.parseImage(parseTool, *vb);
+
+        float Width = vb->getPortWidth();
+        float Height = vb->getPortHeight();
+        float scaleX = 1, scaleY = 1, scale = 1;
+        if (Width == 0 || Height == 0) {
+            Width = 800;//GetSystemMetrics(SM_CXSCREEN);
+            Height = 600;//GetSystemMetrics(SM_CYSCREEN);
+        }
+        if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+            scaleX = Width / vb->getViewWidth();
+            scaleY = Height / vb->getViewHeight();
+            scale = (scaleX < scaleY) ? scaleX : scaleY;
+        }
+        static bool loop = true;
+        if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+            offsetX += abs(Width - vb->getViewWidth() * scale) / 2;
+            offsetY += abs(Height - vb->getViewHeight() * scale) / 2;
+            loop = false;
+        }
+
+        // Init GDI+ Graphics
+        // Set GDI+ transform
+        Graphics graphics(hdc);
+        Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
+
+        // Set the clipping region for the Graphics object
+        graphics.SetClip(clipRect, CombineModeReplace);
+        graphics.TranslateTransform(offsetX, offsetY);
+        graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
+
+
+        // Apply transformations to the rendering context
+        //Graphics graphics(hdc);
+        Matrix transformMatrix;
+        transformMatrix.Translate(scroll_x, scroll_y);
+        transformMatrix.Scale(scale, scale);
+        transformMatrix.Rotate(Rotate);
+        graphics.SetTransform(&transformMatrix);
+  
+        img.renderImage(renderTool, graphics);
 
         EndPaint(hWnd, &ps);
     }

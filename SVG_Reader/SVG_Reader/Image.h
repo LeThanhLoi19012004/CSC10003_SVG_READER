@@ -18,8 +18,8 @@ public:
 	void setHeight(int);
 	void setAntialiasingLevel(float);
 
-	void parseImage(parser);
-	void renderImage(renderer, HDC);
+	void parseImage(parser, viewbox &vb);
+	void renderImage(renderer, Graphics&);
 
 	~image();
 };

@@ -1,12 +1,12 @@
 #include "Lib.h"
 
-void image::parseImage(parser parse) {
+void image::parseImage(parser parse, viewbox &vb) {
 	root = new group();
-	parse.parseItem(root, fileName);
+	parse.parseItem(root, fileName, vb);
 }
 
-void image::renderImage(renderer render, HDC hdc) {
-	render.renderItem(root, antialiasingLevel, imageName, width, height, hdc);
+void image::renderImage(renderer render, Graphics& graphics) {
+	render.renderItem(root, antialiasingLevel, imageName, width, height, graphics);
 }
 
 image::image(string fileInput) {

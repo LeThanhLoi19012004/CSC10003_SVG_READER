@@ -17,10 +17,11 @@ program* program::getObj(void(*pFunc)()) {
 
 void program::run() {
 	name = "sample.svg";
+	viewbox* vb = new viewbox();
 	image img(name);
 	parser parseTool;
 	renderer renderTool;
-	img.parseImage(parseTool);
+	//img.parseImage(parseTool, *vb);
 	//img.renderImage(renderTool);
 }
 

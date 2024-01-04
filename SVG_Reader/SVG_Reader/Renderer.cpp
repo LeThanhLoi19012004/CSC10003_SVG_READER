@@ -58,8 +58,8 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 	}
 }
 
-void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, HDC hdc) {
-	Graphics graphics(hdc);
+void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
+	//Graphics graphics(hdc);
 	drawFigure(graphics, root);
 } 
 

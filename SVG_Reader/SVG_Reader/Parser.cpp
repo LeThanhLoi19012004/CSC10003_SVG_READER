@@ -1,4 +1,4 @@
-#include "Lib.h"
+﻿#include "Lib.h"
 
 void parser::loadColorMap() {
 	ifstream color_file("Color.txt", ios::in);
@@ -63,9 +63,6 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		clr.opacity = stof(strokeopa);
 	}
 	else {
-		for (int i = 0; i < strokecolor.size(); i++)
-			if (isupper(strokecolor[i]))
-				strokecolor[i] = tolower(strokecolor[i]);
 		clr = colorMap[strokecolor];
 		clr.opacity = stof(strokeopa);
 	}
@@ -121,7 +118,7 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
-void parser::parseItem(group* root, string fileName) { 
+void parser::parseItem(group* root, string fileName, viewbox& vb) {
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -134,17 +131,21 @@ void parser::parseItem(group* root, string fileName) {
 	bool openGroup = false;
 	stack<string> groupStack;
 	vector<string> groupVct;
-	
+
 	groupStack.push(" ");
 	group* curGroup = root;
-
+	vb.setPortWidth(0); vb.setPortHeight(0);
+	/*ViewBox*/
+	float viewX = 0, viewY = 0, viewWidth = 0, viewHeight = 0, portWidth = 0, portHeight = 0;
+	string preservedForm = "", preservedMode = "";
+	/*======*/
 	while (getline(fin, line_str, '>')) {
 		line_str += ">";
 		string name = "", property = "", textContent = "";
 		stringstream stream(line_str);
 		stream >> name;
 		getline(stream, property, '>');
-		
+
 		for (int i = 0; i < property.size(); i++) {
 			if (property[i] == '/' || property[i] == '=') {
 				property[i] = ' ';
@@ -153,20 +154,54 @@ void parser::parseItem(group* root, string fileName) {
 				property[i] = '"';
 			}
 		}
-		
+		if (name == "<svg") {
+			//std::cout << "Property: " << property << "\n";
+			stringstream sss(property);
+			string attribute, temp, val;
+
+			while (sss >> attribute) {
+				getline(sss, temp, '"');
+				getline(sss, val, '"');
+				if (attribute == "viewBox") {
+					stringstream ssss(val);
+
+					ssss >> viewX >> viewY >> viewWidth >> viewHeight;
+					ssss.ignore();
+					vb.setViewX(viewX);
+					vb.setViewY(viewY);
+					vb.setViewWidth(viewWidth);
+					vb.setViewHeight(viewHeight);
+				}
+				if (attribute == "preserveAspectRatio") {
+					stringstream ssss(val);
+					ssss >> preservedForm >> preservedMode;
+					ssss.ignore();
+					vb.setPreservedForm(preservedForm);
+					vb.setPreservedMode(preservedMode);
+				}
+				if (attribute == "width") {
+					portWidth = stof(val);
+					vb.setPortWidth(portWidth);
+				}
+				if (attribute == "height") {
+					portHeight = stof(val);
+					vb.setPortHeight(portHeight);
+				}
+			}
+		}
 		if (name.find("<g") != string::npos) {
-	
-			property = " "+groupStack.top() + " " + property+" ";
+
+			property = " " + groupStack.top() + " " + property + " ";
 			groupStack.push(property);
-		
-			group* newGroup = new group(); 
+
+			group* newGroup = new group();
 			newGroup->setName("g");
 			newGroup->setParent(curGroup);
 			curGroup->addFigure(newGroup);
 			curGroup = newGroup;
 		}
 		else if (name.find("</g") != string::npos) {
-			if (!groupStack.empty()) 
+			if (!groupStack.empty())
 				groupStack.pop();
 			curGroup = curGroup->getParent();
 		}
@@ -178,11 +213,11 @@ void parser::parseItem(group* root, string fileName) {
 				getline(fin, textContent, '<');
 				getline(fin, temp, '>');
 			}
-			
+
 			figure* fig = factory.getFigure(name);
 			if (fig) {
 				if (!groupStack.empty()) {
-					property = " "+ groupStack.top() + " " + property + " ";
+					property = " " + groupStack.top() + " " + property + " ";
 				}
 				processProperty(name, property, textContent, fig);
 				curGroup->addFigure(fig);
