@@ -4,7 +4,7 @@
 #define Pakka 1.5707963267948966
 using namespace std;
 
-void renderer::drawFigure(Graphics& graphics, group* root) {
+void renderer::renderFigure(Graphics& graphics, group* root) {
 	factoryfigure factory;
 	for (figure* fig : root->getFigureArray()) {
 		int num = factory.getFigureId()[fig->getName()];
@@ -51,18 +51,14 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 		case 9: {
 			group* groups = dynamic_cast<group*>(fig);
 			if (groups->getFigureArray().empty())
-        return;
-			drawFigure(graphics, groups);
+				return;
+			renderFigure(graphics, groups);
 			break;
 		}
 		default:
 			break;
 		}
 	}
-}
-
-void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
-	drawFigure(graphics, root);
 } 
 
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {

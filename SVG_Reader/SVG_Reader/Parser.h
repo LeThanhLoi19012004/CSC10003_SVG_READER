@@ -8,7 +8,7 @@ private:
 	void loadColorMap();
 	void processProperty(string, string, string, figure*&);
 public:
-	void parseItem(group* ,string);
+	void parseItem(group* ,string, viewbox&);
 };
 
 #endif

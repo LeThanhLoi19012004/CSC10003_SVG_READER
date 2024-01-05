@@ -10,7 +10,6 @@ void parser::loadColorMap() {
 
 	string color_line = "";
 	while (getline(color_file, color_line)) {
-		//int pos = color_line.find("#");
 		stringstream ss(color_line);
 		string token = "";
 		vector<string> vct;
@@ -127,7 +126,7 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
-void parser::parseItem(group* root, string fileName) { 
+void parser::parseItem(group* root, string fileName, viewbox& vb) { 
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -144,6 +143,10 @@ void parser::parseItem(group* root, string fileName) {
 	groupStack.push(" ");
 	group* curGroup = root;
 
+	vb.setPortWidth(0); vb.setPortHeight(0);
+	float viewX = 0, viewY = 0, viewWidth = 0, viewHeight = 0, portWidth = 0, portHeight = 0;
+	string preservedForm = "", preservedMode = "";
+
 	while (getline(fin, line_str, '>')) {
 		line_str += ">";
 		string name = "", property = "", textContent = "";
@@ -157,6 +160,41 @@ void parser::parseItem(group* root, string fileName) {
 			}
 			if (property[i] == '\'') {
 				property[i] = '"';
+			}
+		}
+
+		if (name == "<svg") {
+			stringstream sss(property);
+			string attribute, temp, val;
+
+			while (sss >> attribute) {
+				getline(sss, temp, '"');
+				getline(sss, val, '"');
+				if (attribute == "viewBox") {
+					stringstream ssss(val);
+
+					ssss >> viewX >> viewY >> viewWidth >> viewHeight;
+					ssss.ignore();
+					vb.setViewX(viewX);
+					vb.setViewY(viewY);
+					vb.setViewWidth(viewWidth);
+					vb.setViewHeight(viewHeight);
+				}
+				if (attribute == "preserveAspectRatio") {
+					stringstream ssss(val);
+					ssss >> preservedForm >> preservedMode;
+					ssss.ignore();
+					vb.setPreservedForm(preservedForm);
+					vb.setPreservedMode(preservedMode);
+				}
+				if (attribute == "width") {
+					portWidth = stof(val);
+					vb.setPortWidth(portWidth);
+				}
+				if (attribute == "height") {
+					portHeight = stof(val);
+					vb.setPortHeight(portHeight);
+				}
 			}
 		}
 		
