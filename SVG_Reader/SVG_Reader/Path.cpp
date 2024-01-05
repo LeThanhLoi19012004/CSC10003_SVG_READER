@@ -364,10 +364,12 @@ void path::updateProperty() {
 							if (m > 1) {
 								float x = vct[n - 1].second[m - 2];
 								float y = vct[n - 1].second[m - 1];
-								if (abs(x - vct[start].second[0]) <= 0.015)
-									vct[n - 1].second[m - 2] = vct[start].second[0];
-								if (abs(y - vct[start].second[1]) <= 0.015)
-									vct[n - 1].second[m - 1] = vct[start].second[1];
+								if (start < n) {
+									if (abs(x - vct[start].second[0]) <= 0.015)
+										vct[n - 1].second[m - 2] = vct[start].second[0];
+									if (abs(y - vct[start].second[1]) <= 0.015)
+										vct[n - 1].second[m - 1] = vct[start].second[1];
+								}
 								pr.second.push_back(vct[n - 1].second[m - 2]);							
 								pr.second.push_back(vct[n - 1].second[m - 1]);
 								start = i + 1;
