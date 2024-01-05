@@ -58,7 +58,7 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 	}
 }
 
-void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
+void renderer::renderItem(group* root,  Graphics& graphics) {
 
 	//// Get ViewBox and ViewPort
 	//float Width = vb.getPortWidth();
@@ -94,6 +94,7 @@ void renderer::renderItem(group* root, float antialiasingLevel, string imageName
 	//graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
 
 	////Draw
+	
 	drawFigure(graphics, root);
 } 
 
@@ -365,8 +366,3 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 	graphics.DrawPath(&penPath, &path);
 	graphics.Restore(save);
 }
-
-//void renderer::drawGroup(Graphics& graphics, group* fig) {
-//	if (!fig->getFigureArray().empty())
-//		drawFigure(graphics, fig->getFigureArray());
-//}

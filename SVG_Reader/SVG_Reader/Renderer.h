@@ -3,7 +3,7 @@
 
 class renderer {
 public:	
-	void renderItem(group*, float, string, float, float, Graphics&);
+	void renderItem(group*, Graphics&);
 	
 	///*Draw the figure functions*/
 	void drawFigure(Graphics&, group*);

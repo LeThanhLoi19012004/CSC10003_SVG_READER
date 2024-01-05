@@ -177,37 +177,37 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         image img("sample.svg");
         parser parseTool;
         renderer renderTool;
-        viewbox *vb = new viewbox();
-        img.parseImage(parseTool,*vb);
-
-        float Width = vb->getPortWidth();
-        float Height = vb->getPortHeight();
-        float scaleX = 1, scaleY = 1, scale = 1;
-        if (Width == 0 || Height == 0) {
-    	    Width = 800;//GetSystemMetrics(SM_CXSCREEN);
-    	    Height = 600;//GetSystemMetrics(SM_CYSCREEN);
-        }
-        if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
-    	    scaleX = Width / vb->getViewWidth();
-    	    scaleY = Height / vb->getViewHeight();
-    	    scale = (scaleX < scaleY) ? scaleX : scaleY;
-        }
-        static bool loop = true;
-        if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
-    	    offsetX += abs(Width - vb->getViewWidth() * scale) / 2;
-    	    offsetY += abs(Height - vb->getViewHeight() * scale) / 2;
-    	    loop = false;
-        }
+       // viewbox *vb = new viewbox();
+       // img.parseImage(parseTool,*vb);
+        img.parseImage(parseTool);
+        //float Width = vb->getPortWidth();
+        //float Height = vb->getPortHeight();
+        //float scaleX = 1, scaleY = 1, scale = 1;
+        //if (Width == 0 || Height == 0) {
+    	   // Width = 800;//GetSystemMetrics(SM_CXSCREEN);
+    	   // Height = 600;//GetSystemMetrics(SM_CYSCREEN);
+        //}
+        //if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+    	   // scaleX = Width / vb->getViewWidth();
+    	   // scaleY = Height / vb->getViewHeight();
+    	   // scale = (scaleX < scaleY) ? scaleX : scaleY;
+        //}
+        //static bool loop = true;
+        //if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+    	   // offsetX += abs(Width - vb->getViewWidth() * scale) / 2;
+    	   // offsetY += abs(Height - vb->getViewHeight() * scale) / 2;
+    	   // loop = false;
+        //}
 
         // Init GDI+ Graphics
         // Set GDI+ transform
 
-        Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
+        //Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
 
-        // Set the clipping region for the Graphics object
-        graphics.SetClip(clipRect, CombineModeReplace);
-        graphics.TranslateTransform(offsetX, offsetY);
-        graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
+        //// Set the clipping region for the Graphics object
+        //graphics.SetClip(clipRect, CombineModeReplace);
+        //graphics.TranslateTransform(offsetX, offsetY);
+        //graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
 
         img.renderImage(renderTool, graphics);
 

@@ -3,12 +3,14 @@
 class parser {
 private:
 	unordered_map<string, color> colorMap;
+	unordered_map<string, gradient*> idMap;
+
 	void processColor(string, string, color&);
 	void loadColorMap();
-	void processProperty(string, string, string, figure*&, unordered_map<string, vector<string>>);
-	//void parseGroupStr(string&);
+	void processProperty(string, string, string, figure*&);
 public:
-	void parseItem(group* ,string, viewbox&);
+	~parser();
+	void parseItem(group* ,string);
 };
 
 #endif

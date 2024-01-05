@@ -7,6 +7,13 @@ void figure::updateProperty() {}
 string figure::getName() {
 	return this->fig;
 }
+gradient* figure::getGrad() {
+	return this->grad;
+}
+
+void figure::setGrad(gradient* grad) {
+	this->grad = grad;
+}
 
 void figure::setName(string s) {
 	this->fig = s;
@@ -22,6 +29,7 @@ figure:: ~figure() {}
 void figure::setTextName(string textName) {
 	this->text_name = textName;
 }
+
 void figure::setLine(string line) {
 	this->line_str = line;
 }
@@ -91,7 +99,6 @@ void figure::updateTransformVct(string str) {
 				string x = "", y = "";
 				ssss >> x >> y;
 				ssss.ignore();
-
 				p.second.push_back(stof(x));
 				p.second.push_back(stof(y));
 			}

@@ -1,50 +1,34 @@
 #include "Lib.h"
 
-color stop::getStopColor() {
-	return this->stopColor;
+point lineargradient::getA() {
+	return A;
 }
-float stop:: getStopOpa() {
-	return this->stopOpa;
+point lineargradient::getB() {
+	return B;
 }
-float stop:: getOffSet() {
-	return this->offset;
+void lineargradient::setA(point p) {
+	this->A = p;
 }
-
-void stop::setStopColor(color stopColor) {
-	this->stopColor = stopColor;
-}
-void stop:: setStopOpa(float opa) {
-	this->stopOpa = opa;
-}
-void stop:: setOffSet(float offSet) {
-	this->offset = offset;
+void lineargradient::setB(point p) {
+	this->B = p;
 }
 
-vector<stop> lineargradient::getStopVct() {
-	return this->stopVct;
+lineargradient::lineargradient() {
+	A.setX(0);
+	A.setY(0);
+	B.setX(0);
+	B.setY(0);
 }
-float lineargradient::getX1() {
-	return this->x1;
-}
-float lineargradient:: getY1() {
-	return this->y1;
-}
-float lineargradient:: getX2() {
-	return this->x2;
-}
-float lineargradient:: getY2() {
-	return this->y2;
-}
+lineargradient::lineargradient(const lineargradient& linear) {
+	this->A = linear.A;
+	this->B = linear.B;
 
-void lineargradient::setX1(float x1) {
-	this->x1 = x1;
 }
-void lineargradient::setY1(float y1) {
-	this->y1 = y1;
-}
-void lineargradient::setX2(float x2) {
-	this->x2 = x2;
-}
-void lineargradient::setY2(float y2) {
-	this->y2 = y2;
+lineargradient& lineargradient::operator=(const lineargradient& linear) {
+	if (this != &linear) {
+		this->A = linear.A;
+		this->B = linear.B;
+	}
+
+	return *this;
 }
