@@ -1,165 +1,16 @@
-﻿  Circle.cpp
-  Color.cpp
-  Ellipse.cpp
-  FactoryFigure.cpp
-  Figure.cpp
-  Group.cpp
-  Image.cpp
-  Line.cpp
-  Parser.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(21,9): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(28,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(29,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(30,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(65,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(66,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Parser.cpp(67,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Path.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(73,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(75,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(88,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(103,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(105,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(114,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(128,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(130,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(143,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(145,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(154,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(167,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(169,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(183,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(185,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(194,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(209,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(211,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(241,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(269,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(271,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(284,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(303,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(305,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(316,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(339,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(341,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(350,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(361,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Path.cpp(363,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Point.cpp
-  Polygon.cpp
-  Polyline.cpp
-  Rectangle.cpp
-  Renderer.cpp
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(66,181): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(66,144): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(66,107): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(66,67): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(67,117): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(67,98): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(67,79): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(67,57): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(92,179): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(92,142): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(92,105): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(92,65): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,115): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,96): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,77): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(93,55): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(111,141): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(111,121): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(112,140): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(112,120): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(118,176): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(118,139): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(118,102): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(118,62): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(142,179): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(142,142): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(142,105): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(142,65): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,115): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,96): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,77): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(143,55): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(160,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(174,180): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(174,143): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(174,106): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(174,66): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(175,116): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(175,97): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(175,78): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(175,56): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(192,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(219,133): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(219,65): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(224,131): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(231,81): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(233,79): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(234,86): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(236,176): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(236,139): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(236,102): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(236,62): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(237,112): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(237,93): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(237,74): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(237,52): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(271,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(322,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(345,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(448,39): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(448,28): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(449,47): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(449,32): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(450,47): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(450,32): warning C4244: 'argument': conversion from '_Ty' to 'Gdiplus::REAL', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(457,23): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(457,19): warning C4244: 'argument': conversion from 'double' to 'Gdiplus::REAL', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(480,176): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(480,139): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(480,102): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(480,62): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(481,112): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(481,93): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(481,74): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\Renderer.cpp(481,52): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-  SVG_Reader.cpp
+﻿  SVG_Reader.cpp
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(168,25): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(173,25): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(245,25): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(250,25): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(279,25): warning C4305: '*=': truncation from 'double' to 'float'
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(281,25): warning C4305: '*=': truncation from 'double' to 'float'
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(322,65): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(322,49): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(322,33): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
-C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(322,23): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(308,34): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(309,36): warning C4244: '=': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(328,65): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(328,49): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(328,33): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
+C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(328,23): warning C4244: 'argument': conversion from 'float' to 'INT', possible loss of data
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(152,11): warning C4101: 'last_mouse_position': unreferenced local variable
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(2728,53): warning C4244: 'argument': conversion from 'wchar_t' to 'const _Elem', possible loss of data
           with
@@ -182,7 +33,4 @@ C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Re
               _Alloc=std::allocator<char>
           ]
 C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\SVG_Reader\SVG_Reader.cpp(39,24): message : see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'wWinMain'
-  Text.cpp
-  Viewbox.cpp
-  Generating Code...
   SVG_Reader.vcxproj -> C:\Users\Admin\Documents\GitHub\CSC10003_SVG_READER\SVG_Reader\x64\Debug\SVG_Reader.exe

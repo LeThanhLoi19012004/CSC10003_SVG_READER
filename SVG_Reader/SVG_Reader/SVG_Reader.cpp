@@ -166,12 +166,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             break;
         case IDM_ZOOM_IN:
             scale *= 1.1;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_ZOOM_OUT:
             scale *= 0.9;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_DEFAULT:
@@ -179,37 +179,37 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             Rotate = 0;
             scroll_x = 0;
             scroll_y = 0;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_ROTATE_LEFT:
             Rotate -= 30;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_ROTATE_RIGHT:
             Rotate += 30;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_UP:
             scroll_y -= 20;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_DOWN:
             scroll_y += 20;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_RIGHT:
             scroll_x += 20;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case IDM_LEFT:
             scroll_x -= 20;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         default:
@@ -252,12 +252,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             goto DrawAgain;
             break;
         case 'r': case 'R':
-            Rotate += 30;
+            Rotate += 1;
             InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         case 'l': case 'L':
-            Rotate -= 30;
+            Rotate -= 1;
             InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
@@ -266,7 +266,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             Rotate = 0;
             scroll_x = 0;
             scroll_y = 0;
-            InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+            InvalidateRect(hWnd, NULL, TRUE);
             goto DrawAgain;
             break;
         }
@@ -279,7 +279,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             scale *= 1.1;
         else
             scale *= 0.9;
-        InvalidateRect(hWnd, NULL, TRUE); // Force a repaint
+        InvalidateRect(hWnd, NULL, TRUE);
         goto DrawAgain;
     }
     break;
@@ -300,15 +300,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         float Width = vb->getPortWidth();
         float Height = vb->getPortHeight();
         float scaleX = 1, scaleY = 1, scaleXY = 1;
+        
+        RECT window;
+        GetWindowRect(hWnd, &window);
+
         if (Width == 0 || Height == 0) {
-            Width = 800;//GetSystemMetrics(SM_CXSCREEN);
-            Height = 600;//GetSystemMetrics(SM_CYSCREEN);
+            Width = window.right - window.left;
+            Height = window.bottom - window.top;
         }
+
         if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
             scaleX = Width / vb->getViewWidth();
             scaleY = Height / vb->getViewHeight();
             scaleXY = (scaleX < scaleY) ? scaleX : scaleY;
         }
+
         static bool loop = true;
         if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
             scroll_x += abs(Width - vb->getViewWidth() * scaleXY) / 2;
@@ -325,13 +331,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         graphics.RotateTransform(Rotate);
         graphics.SetClip(clipRect, CombineModeReplace);
         graphics.TranslateTransform(scroll_x, scroll_y);
+
         if (Height != 0 || Width != 0)
             graphics.SetClip(Gdiplus::RectF(0, 0, Width * scale, Height * scale));
         graphics.ScaleTransform(scale * scaleXY, scale * scaleXY);
-
         img.renderImage(renderTool, graphics);
-
         EndPaint(hWnd, &ps);
+        delete vb;
     }
     break;
     case WM_DESTROY:
