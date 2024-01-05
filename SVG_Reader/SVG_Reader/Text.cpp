@@ -36,7 +36,7 @@ void text::updateProperty() {
 		if (attribute == "text-anchor")
 			this->textAnchor = val;
 		if (attribute == "font-family") {
-			if (val != "Time New Romand")
+			if (val.find("Time") == string::npos)
 			this->fontFamily = val;
 		}
 		if (attribute == "font-style")
