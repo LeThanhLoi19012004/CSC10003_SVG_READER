@@ -10,6 +10,8 @@ struct CMD {
     string FileInput;
 };
 
+float offsetX = 0, offsetY = 0, zoomFactor = 1.0;
+
 // Global Variables:
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
@@ -134,6 +136,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow, CMD* cmdLine)
 //  WM_DESTROY  - post a quit message and return
 //
 //
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     GdiplusStartupInput gdiplusStartupInput;
@@ -148,8 +151,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         cmdLine = reinterpret_cast<CMD*>(pCreate->lpCreateParams);
         SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)cmdLine);
     }
+
     bool is_dragging = false;
     POINT last_mouse_position;
+
     switch (message)
     {
     case WM_COMMAND:
@@ -288,7 +293,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     DrawAgain:
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hWnd, &ps);
-        // TODO: Add any drawing code that uses hdc here...
         ptr = GetWindowLongPtr(hWnd, GWLP_USERDATA);
         cmdLine = reinterpret_cast<CMD*>(ptr);
         image img(cmdLine->FileInput);

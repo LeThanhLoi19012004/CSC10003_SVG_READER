@@ -6,6 +6,7 @@ private:
 	//Image property
 	string fileName;
 	group* root;
+
 public:
 	image(string);
 	void parseImage(parser, viewbox&);

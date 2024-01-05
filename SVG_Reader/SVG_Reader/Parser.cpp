@@ -86,15 +86,52 @@ void parser::processProperty(string name, string property, string textName, figu
 	string strokeWidth = "1", sStroke = "", strokeOpa = "1", fill = "", fillOpa = "1";
 	string strTransform = "";
 	string temp = "";
+	bool isGradient = false;
+		
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
 		getline(ss, value, '"');
+		/*if (attribute == "style") {
+			int pos = value.find(';');
+			if (pos != -1) value[pos] = ' ';
+	
+			stringstream valStream(value);
+			string attr, subVal;
+			while (getline(valStream, attr,':')) {
+				if (attr == "fill") {
+					fill = subVal;
+				}
+				if (attr == "fill-opacity") {
+					fillOpa = subVal;
+				}
+				if (attr == "stroke-width") {
+					strokeWidth = subVal;
+				}
+				if (attr == "stroke-opacity") {
+					strokeOpa = subVal;
+				}
+				if (attr == "stroke") {
+					sStroke = value;
+				}
+			}
+		}*/
 		if (attribute == "stroke-width")
 			strokeWidth = value;
 		if (attribute == "fill-opacity")
 			fillOpa = value;
-		if (attribute == "fill")
-			fill = value; //rgb(.g.g.g)
+		if (attribute == "fill") {
+			if (value.find("url") != string::npos) {
+				//If you can find keyword url in 
+				isGradient = true;//url
+				getline(ss, temp, '#');
+				getline(ss, value,')');
+				getline(ss, temp, '"');
+				while (value != "" && (value[value.size() - 1] == ' ' || value[value.size() - 1] == '"')) {
+					value.erase(value.size() - 1, 1);
+				}
+			}
+			fill = value;
+		}
 		if (attribute == "stroke")
 			sStroke = value;
 		if (attribute == "stroke-opacity")
@@ -103,20 +140,34 @@ void parser::processProperty(string name, string property, string textName, figu
 			strTransform += (" " + value + " ");
 	}
 
-	color clr = { 0, 0, 0, 1 };
-	if (fill == "none" || fill == "transparent")
-		processColor(fill, "0", clr);
-	else processColor(fill, fillOpa, clr);
-	fig->setColor(clr);
-	stroke strk;
-	strk.setStrokeWidth(stof(strokeWidth));
-	color strokeColor = { 0, 0, 0, 1 };
-	if (sStroke == "none" || sStroke == "transparent" || sStroke == "")
-		processColor(sStroke, "0", strokeColor);
-	else processColor(sStroke, strokeOpa, strokeColor);
-	strk.setStrokeColor(strokeColor);
-	fig->setStroke(strk);
+	if (isGradient) {
+		
+		string temp = fill;
+		fill += " 1";
+		idMap[fill]->setGradId(1);
+		if (idMap.find(fill) == idMap.end()) {
+			fill = temp;
+			fill += " 2";
+			idMap[fill]->setGradId(2);
+		}
+		fig->setGrad(idMap[fill]);
+	}
+	else {
+		color clr = { 0, 0, 0, 1 };
+		if (fill == "none" || fill == "transparent")
+			processColor(fill, "0", clr);
+		else processColor(fill, fillOpa, clr);
+		fig->setColor(clr);
+		stroke strk;
+		strk.setStrokeWidth(stof(strokeWidth));
+		color strokeColor = { 0, 0, 0, 1 };
 
+		if (sStroke == "none" || sStroke == "transparent" || sStroke == "")
+			processColor(sStroke, "0", strokeColor);
+		else processColor(sStroke, strokeOpa, strokeColor);
+		strk.setStrokeColor(strokeColor);
+		fig->setStroke(strk);
+	}
 	stringstream transformStream(strTransform);
 	string token = "";
 	fig->updateProperty();
@@ -133,7 +184,8 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 		return;
 	}
 	loadColorMap();
-	string line_str = "", group_str = "";
+	
+	string line_str = "";
 	factoryfigure factory;
 
 	bool openGroup = false;
@@ -142,6 +194,10 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 	
 	groupStack.push(" ");
 	group* curGroup = root;
+
+	bool openDef = false, openLinear = false, openRadial = false;
+	string idStr = "";
+	vector<string> gradVct;
 
 	vb.setPortWidth(0); vb.setPortHeight(0);
 	float viewX = 0, viewY = 0, viewWidth = 0, viewHeight = 0, portWidth = 0, portHeight = 0;
@@ -198,6 +254,117 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 			}
 		}
 		
+		if (name == "<defs") {
+			openDef = true;
+		}
+		if (openDef) {
+			if (name == "<linearGradient") {
+				openLinear = true;
+			}
+			else if (name == "<radialGradient") {
+				openRadial = true;
+			}
+			if (openLinear) { //If the current position is in the linear scope
+				if (property.find("id") != string::npos) {
+
+					stringstream sss(property);
+					string temp = "",  remainLine = "";
+					getline(sss, temp, '"');
+					getline(sss, idStr, '"');
+					getline(sss, remainLine);
+
+					 
+					idMap[idStr] = NULL;
+					gradVct.push_back(remainLine); //x1 y1 x2 y2 
+				}
+				else {
+					gradVct.push_back(property);
+				}
+			}
+			if (openRadial) {
+				if (property.find("id") != string::npos) {
+					stringstream sss(property);
+					string temp = "", remainLine = "";
+					getline(sss, temp, '"');
+					getline(sss, idStr, '"');
+					getline(sss, remainLine);
+					
+					idMap[idStr] = NULL;
+					gradVct.push_back(remainLine); //x1 y1 x2 y2 
+
+				}
+				else {
+					gradVct.push_back(property); //x1 y1 x2 
+				}
+			}
+
+			if (name.find("/linearGradient") != string::npos) {
+				openLinear = false;
+				lineargradient linear;
+				if (!gradVct[0].empty()) {
+					stringstream sss(gradVct[0]);
+					string temp = "", attribute = "", value = "";
+					point ptA, ptB;
+					while (sss >> attribute) {
+						getline(sss, temp, '"');
+						getline(sss, value, '"');
+
+						if (attribute == "x1") {
+							ptA.setX(stof(value));
+						}
+						if (attribute == "y1") {
+							ptA.setY(stof(value));
+						}
+						if (attribute == "x2") {
+							ptB.setX(stof(value));
+						}
+						if (attribute == "y2") {
+							ptB.setY(stof(value));
+						}
+					}
+					linear.setA(ptA);
+					linear.setB(ptB);
+				}
+				stop stp;
+				for (int i = 1; i < gradVct.size(); i++) {
+					stringstream sss(gradVct[i]);
+					string temp = "", attribute = "", value = "",stopColorStr = "",stopOpaStr = "1";
+					while (sss >> attribute) {
+						getline(sss, temp, '"');
+						getline(sss, value, '"');
+
+						if (attribute == "stop-color") {
+							stopColorStr = value;
+						}
+						if (attribute == "stop-opacity") {
+							stopOpaStr = value;
+						}
+						if (attribute == "offset") {
+							stp.offset = stof(value);
+						}
+					}
+					color clr = { 0, 0, 0, 1 };
+					if (stopColorStr == "none" || stopColorStr == "transparent")
+						processColor(stopColorStr, "0", clr);
+					else processColor(stopColorStr, stopOpaStr, clr);
+					stp.stopColor = clr;
+					linear.addStop(stp);
+				}
+				idStr += " 1";
+				idMap[idStr] = &linear;
+				idStr = "";
+			}
+			if (name.find("/radialGradient") != string::npos) {
+				openRadial = false;
+				idStr += " 2";
+				idMap[idStr] = new radialgradient;
+				idStr = "";
+			}
+		}
+		if (name.find("/def") != string::npos) {
+			openDef = false;
+
+		}
 		if (name.find("<g") != string::npos) {
 	
 			property = " "+groupStack.top() + " " + property+" ";
@@ -229,10 +396,19 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					property = " "+ groupStack.top() + " " + property + " ";
 				}
 				processProperty(name, property, textContent, fig);
-				curGroup->addFigure(fig);
+				curGroup->addFigure(fig);	
 			}
 		}
 	}
 
 	fin.close();
+}
+
+parser::~parser() {
+	for (auto& x : this->idMap) {
+		
+		delete x.second;
+		x.second = NULL;
+		
+	}
 }

@@ -23,9 +23,12 @@ using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
 #include "Color.h"
+#include "Point.h"
+#include "Gradient.h"
+#include "LinearGradient.h"
+#include "RadialGradient.h"
 #include "Figure.h"
 #include "Group.h"
-#include "Point.h"
 #include "Polygon.h"
 #include "Rectangle.h"
 #include "Ellipse.h"
@@ -39,6 +42,5 @@ using namespace Gdiplus;
 #include "Parser.h"
 #include "Renderer.h"
 #include "Image.h"
-
 
 #endif 

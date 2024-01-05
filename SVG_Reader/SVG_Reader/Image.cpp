@@ -10,7 +10,7 @@ void image::renderImage(renderer render, Graphics& graphics) {
 }
 
 image::image(string fileInput) {
-	this->fileName = fileInput;
+	this->fileName = fileInput;	
 	this->root = NULL;
 }
 
@@ -18,3 +18,4 @@ image::~image() {
 	delete root;
 	root = NULL;
 }
+
