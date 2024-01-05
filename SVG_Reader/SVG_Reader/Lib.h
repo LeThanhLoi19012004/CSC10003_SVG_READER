@@ -24,14 +24,11 @@ using namespace Gdiplus;
 
 #include "Color.h"
 #include "Point.h"
-
 #include "Gradient.h"
 #include "LinearGradient.h"
 #include "RadialGradient.h"
-
 #include "Figure.h"
 #include "Group.h"
-
 #include "Polygon.h"
 #include "Rectangle.h"
 #include "Ellipse.h"
@@ -40,11 +37,8 @@ using namespace Gdiplus;
 #include "Line.h"
 #include "Text.h"
 #include "Path.h"
-
-
-
-
 #include "FactoryFigure.h"
+#include "Viewbox.h"
 #include "Parser.h"
 #include "Renderer.h"
 #include "Image.h"

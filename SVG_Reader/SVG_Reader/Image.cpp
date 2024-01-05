@@ -1,29 +1,20 @@
 #include "Lib.h"
 
-void image::parseImage(parser parse) {
+void image::parseImage(parser parse, viewbox& vb) {
 	root = new group();
-	//viewbox vb;
-	//parse.parseItem(root, fileName, vb);
-	parse.parseItem(root, fileName);
+	parse.parseItem(root, fileName, vb);
 }
 
 void image::renderImage(renderer render, Graphics& graphics) {
-	
-	//Graphics graphics(hdc);
-
-	//Render Items
-	render.renderItem(root, graphics);
+	render.renderFigure(graphics, root);
 }
 
 image::image(string fileInput) {
-	this->fileName = fileInput;
-	
+	this->fileName = fileInput;	
 	this->root = NULL;
 }
 
-
 image::~image() {
-
 	delete root;
 	root = NULL;
 }

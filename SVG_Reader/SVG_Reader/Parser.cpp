@@ -10,7 +10,6 @@ void parser::loadColorMap() {
 
 	string color_line = "";
 	while (getline(color_file, color_line)) {
-		//int pos = color_line.find("#");
 		stringstream ss(color_line);
 		string token = "";
 		vector<string> vct;
@@ -48,6 +47,12 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		string r, g, b;
 		ss >> r >> g >> b;
 		clr.r = stof(r); clr.g = stof(g); clr.b = stof(b);
+		if (clr.r > 255)
+			clr.r = 255.0;
+		if (clr.g > 255)
+			clr.g = 255.0;
+		if (clr.b > 255)
+			clr.b = 255.0;
 		ss.ignore();
 	}
 	else if (strokecolor[0] == '#') {
@@ -63,6 +68,9 @@ void parser::processColor(string strokecolor, string strokeopa, color& clr) {
 		clr.opacity = stof(strokeopa);
 	}
 	else {
+		for (int i = 0; i < strokecolor.size(); i++)
+			if (isupper(strokecolor[i]))
+				strokecolor[i] = tolower(strokecolor[i]);
 		clr = colorMap[strokecolor];
 		clr.opacity = stof(strokeopa);
 	}
@@ -137,7 +145,6 @@ void parser::processProperty(string name, string property, string textName, figu
 		string temp = fill;
 		fill += " 1";
 		idMap[fill]->setGradId(1);
-
 		if (idMap.find(fill) == idMap.end()) {
 			fill = temp;
 			fill += " 2";
@@ -146,7 +153,6 @@ void parser::processProperty(string name, string property, string textName, figu
 		fig->setGrad(idMap[fill]);
 	}
 	else {
-		//rgb #fff
 		color clr = { 0, 0, 0, 1 };
 		if (fill == "none" || fill == "transparent")
 			processColor(fill, "0", clr);
@@ -156,7 +162,7 @@ void parser::processProperty(string name, string property, string textName, figu
 		strk.setStrokeWidth(stof(strokeWidth));
 		color strokeColor = { 0, 0, 0, 1 };
 
-		if (sStroke == "none" || sStroke == "")
+		if (sStroke == "none" || sStroke == "transparent" || sStroke == "")
 			processColor(sStroke, "0", strokeColor);
 		else processColor(sStroke, strokeOpa, strokeColor);
 		strk.setStrokeColor(strokeColor);
@@ -171,7 +177,7 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 }
 
-void parser::parseItem(group* root, string fileName) {
+void parser::parseItem(group* root, string fileName, viewbox& vb) { 
 	ifstream fin(fileName, ios::in);
 	if (!fin.is_open()) {
 		cout << "Error Opening SVG File\n";
@@ -188,16 +194,14 @@ void parser::parseItem(group* root, string fileName) {
 	
 	groupStack.push(" ");
 	group* curGroup = root;
-	//vb.setPortWidth(0); vb.setPortHeight(0);
-	/*ViewBox*/
-	//float viewX = 0, viewY = 0, viewWidth = 0, viewHeight = 0, portWidth =  0, portHeight = 0;
-	string preservedForm = "", preservedMode = "";
-	/*Linear Gradient*/
+
 	bool openDef = false, openLinear = false, openRadial = false;
 	string idStr = "";
-	
 	vector<string> gradVct;
-	/*======*/
+
+	vb.setPortWidth(0); vb.setPortHeight(0);
+	float viewX = 0, viewY = 0, viewWidth = 0, viewHeight = 0, portWidth = 0, portHeight = 0;
+	string preservedForm = "", preservedMode = "";
 
 	while (getline(fin, line_str, '>')) {
 		line_str += ">";
@@ -214,6 +218,7 @@ void parser::parseItem(group* root, string fileName) {
 				property[i] = '"';
 			}
 		}
+
 		if (name == "<svg") {
 			stringstream sss(property);
 			string attribute, temp, val;
@@ -222,16 +227,16 @@ void parser::parseItem(group* root, string fileName) {
 				getline(sss, temp, '"');
 				getline(sss, val, '"');
 				if (attribute == "viewBox") {
-					//stringstream ssss(val);
+					stringstream ssss(val);
 
-					//ssss >> viewX >> viewY >> viewWidth >> viewHeight;
-					//ssss.ignore();
-					//vb.setViewX(viewX);
-					//vb.setViewY(viewY);
-					//vb.setViewWidth(viewWidth);
-					//vb.setViewHeight(viewHeight);
+					ssss >> viewX >> viewY >> viewWidth >> viewHeight;
+					ssss.ignore();
+					vb.setViewX(viewX);
+					vb.setViewY(viewY);
+					vb.setViewWidth(viewWidth);
+					vb.setViewHeight(viewHeight);
 				}
-				/*if (attribute == "preserveAspectRatio") {
+				if (attribute == "preserveAspectRatio") {
 					stringstream ssss(val);
 					ssss >> preservedForm >> preservedMode;
 					ssss.ignore();
@@ -245,7 +250,7 @@ void parser::parseItem(group* root, string fileName) {
 				if (attribute == "height") {
 					portHeight = stof(val);
 					vb.setPortHeight(portHeight);
-				}*/
+				}
 			}
 		}
 		

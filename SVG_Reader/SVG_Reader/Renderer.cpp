@@ -1,7 +1,10 @@
 ﻿#include "Lib.h"
+#define Pi 3.14159265358979323846
+#define Kappa 0.551915024494
+#define Pakka 1.5707963267948966
 using namespace std;
 
-void renderer::drawFigure(Graphics& graphics, group* root) {
+void renderer::renderFigure(Graphics& graphics, group* root) {
 	factoryfigure factory;
 	for (figure* fig : root->getFigureArray()) {
 		int num = factory.getFigureId()[fig->getName()];
@@ -48,54 +51,14 @@ void renderer::drawFigure(Graphics& graphics, group* root) {
 		case 9: {
 			group* groups = dynamic_cast<group*>(fig);
 			if (groups->getFigureArray().empty())
-        return;
-			drawFigure(graphics, groups);
+				return;
+			renderFigure(graphics, groups);
 			break;
 		}
 		default:
 			break;
 		}
 	}
-}
-
-void renderer::renderItem(group* root,  Graphics& graphics) {
-
-	//// Get ViewBox and ViewPort
-	//float Width = vb.getPortWidth();
-	//float Height = vb.getPortHeight();
-	//float scaleX = 1, scaleY = 1, scale = 1;
-	//if (Width == 0 || Height == 0) {
-	//	Width = 800;//GetSystemMetrics(SM_CXSCREEN);
-	//	Height = 600;//GetSystemMetrics(SM_CYSCREEN);
-	//	//std::cout << "width = " << width << " height = " << height << std::endl;
-	//}
-	//if (Width && Height && vb.getPortWidth() && vb.getPortHeight()) {
-	//	scaleX = Width / vb.getPortWidth();
-	//	scaleY = Height / vb.getPortHeight();
-	//	scale = (scaleX < scaleY) ? scaleX : scaleY;
-	//}
-	//static bool loop = true;
-	//float offsetX = vb.getViewX(), offsetY = vb.getViewY();
-	//if (loop && vb.getPortWidth() != 0 && vb.getPortHeight() != 0) {
-	//	offsetX += abs(Width - vb.getPortWidth() * scale) / 2;
-	//	offsetY += abs(Height - vb.getPortHeight() * scale) / 2;
-	//	loop = false;
-	//}
-
-	//// Init GDI+ Graphics
-	//float zoomFactor = 1;
-	//// Set GDI+ transform
-	////graphics.RotateTransform(rotationAngle);
-	//Rect clipRect(offsetX, offsetY, Width * zoomFactor, Height * zoomFactor);
-
-	//// Set the clipping region for the Graphics object
-	//graphics.SetClip(clipRect, CombineModeReplace);
-	////graphics.TranslateTransform(offsetX, offsetY);
-	//graphics.ScaleTransform(zoomFactor * scale, zoomFactor * scale);
-
-	////Draw
-	
-	drawFigure(graphics, root);
 } 
 
 void renderer::drawRectangle(Graphics& graphics, rectangle* fig) {
@@ -248,27 +211,27 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 	PointF textPosition;
 	StringFormat stringFormat;
 	if (fig->getTextAnchor() == "middle") {
-		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 20.f, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 20.f);
+		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 25, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 4);
 		stringFormat.SetAlignment(StringAlignmentCenter);
 		stringFormat.SetLineAlignment(StringAlignmentCenter);
 	}
 	else if (fig->getTextAnchor() == "end") {
-		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize(), fig->getTextPos().getY() + fig->getDy() - fig->getFontSize());
+		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() + fig->getFontSize() / 6.5, fig->getTextPos().getY() + fig->getDy() + fig->getFontSize() / 2.8);
 		stringFormat.SetAlignment(StringAlignmentFar);
 		stringFormat.SetLineAlignment(StringAlignmentFar);
 	}
 	else {
-		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 5.0f, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 1.1f);
+		textPosition = PointF(fig->getTextPos().getX() + fig->getDx() - fig->getFontSize() / 7, fig->getTextPos().getY() + fig->getDy() - fig->getFontSize() / 1.2);
 		stringFormat.SetAlignment(StringAlignmentNear);
 		stringFormat.SetLineAlignment(StringAlignmentNear);
 	}
 	
 	GraphicsPath path;
 	if (fig->getFontStyle() == "italic")
-		path.AddString(wContent.c_str(), -1, &WFF, FontStyleItalic, fig->getFontSize(), textPosition, &stringFormat);
+		path.AddString(wContent.c_str(), -1, &WFF, FontStyleItalic, fig->getFontSize()/1.05, textPosition, &stringFormat);
 	else if (fig->getFontStyle() == "bold")
-		path.AddString(wContent.c_str(), -1, &WFF, FontStyleBold, fig->getFontSize(), textPosition, &stringFormat);
-	else path.AddString(wContent.c_str(), -1, &WFF, FontStyleRegular, fig->getFontSize(), textPosition, &stringFormat);
+		path.AddString(wContent.c_str(), -1, &WFF, FontStyleBold, fig->getFontSize()/1.05, textPosition, &stringFormat);
+	else path.AddString(wContent.c_str(), -1, &WFF, FontStyleRegular, fig->getFontSize()/1.05, textPosition, &stringFormat);
 
 	Pen penText(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillText(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
@@ -296,53 +259,224 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 
 void renderer::drawPath(Graphics& graphics, path* fig) {
 	GraphicsState save = graphics.Save();
-	vector<pair<char, vector<point>>> vct = fig->getProp();
-	GraphicsPath path;
-	int numPoint = vct[0].second.size();
-	if (numPoint != 0) {
-		vector <Point> points(numPoint);
-		for (int i = 0; i < numPoint; i++)
-			points[i] = Point(vct[0].second[i].getX(), vct[0].second[i].getY());
-		path.AddLines(points.data(), numPoint);
-	}
-	for (int i = 1; i < vct.size(); i++) {
-		numPoint = vct[i].second.size();
-		if (vct[i].first == 'C' || vct[i].first == 'c') {
-				point Pt0 = vct[i - 1].second[vct[i - 1].second.size() - 1];
-				Point P0 = Point(Pt0.getX(), Pt0.getY());
-				point Pt1 = vct[i].second[0];
-				Point P1 = Point(Pt1.getX(), Pt1.getY());
-				point Pt2 = vct[i].second[1];
-				Point P2 = Point(Pt2.getX(), Pt2.getY());
-				point Pt3 = vct[i].second[2];
-				Point P3 = Point(Pt3.getX(), Pt3.getY());
-				path.AddBezier(P0, P1, P2, P3);	
-		}
-		else if (vct[i].first == 'Z' || vct[i].first == 'z') {
-			point Pt0 = vct[i].second[0];
-			Point P0 = Point(Pt0.getX(), Pt0.getY());
-			point Pt1 = vct[0].second[0];
-			Point P1 = Point(Pt1.getX(), Pt1.getY());
-			path.AddLine(P0, P1);
-			
-			/*if (i == vct.size() - 1)
-				open = false;
-			else {
-				SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-				Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
-				graphics.FillPath(&fillPath, &path);
-				graphics.DrawPath(&penPath, &path);
-				graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-			}*/
-		}
-		else {
-			vector <Point> points(numPoint);
-			for (int j = 0; j < numPoint; j++)
-				points[j] = Point(vct[i].second[j].getX(), vct[i].second[j].getY());
-			path.AddLines(points.data(), numPoint);
-		}
-	}
+	vector<pair<char, vector<float>>> vct = fig->getProp();
+	FillMode fillMode;
+	if (fig->getFillRule() == "evenodd")
+		fillMode = FillModeAlternate;
+	else fillMode = FillModeWinding;
+	GraphicsPath path(fillMode);
 
+	PointF P0;
+	for (int i = 0; i < vct.size(); i++) {
+		int numPoint = vct[i].second.size();
+		if (vct[i].first == 'M' || vct[i].first == 'm') {
+			path.StartFigure();
+			if (numPoint == 4) {
+				PointF P0 = PointF(vct[i].second[0], vct[i].second[1]);
+				PointF P1 = PointF(vct[i].second[2], vct[i].second[3]);
+				path.AddLine(P0, P1);
+				P0 = P1;
+			}
+			else if (numPoint > 4) {
+				int k = 0;
+				vector <PointF> points(numPoint / 2);
+				for (int j = 0; j < numPoint; j += 2)
+					points[k++] = PointF(vct[i].second[j], vct[i].second[j + 1]);
+				path.AddLines(points.data(), numPoint / 2);
+				P0 = points[numPoint / 2 - 1];
+			}
+			else P0 = PointF(vct[i].second[0], vct[i].second[1]);
+		}
+
+		else if (vct[i].first == 'Q' || vct[i].first == 'q' || vct[i].first == 'T' || vct[i].first == 't') {
+			int j = 0;
+			while (numPoint > 3) {
+				PointF P1 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
+				PointF P2 = PointF(vct[i].second[j + 2], vct[i].second[j + 3]);
+				path.AddBezier(P0, P1, P2, P2);
+				P0 = P2;
+				numPoint -= 4;
+				j += 4;
+			}
+		}
+
+		else if (vct[i].first == 'C' || vct[i].first == 'c') {
+			int j = 0;
+			while (numPoint > 5) {
+				PointF P1 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
+				PointF P2 = PointF(vct[i].second[j + 2], vct[i].second[j + 3]);
+				PointF P3 = PointF(vct[i].second[j + 4], vct[i].second[j + 5]);
+				path.AddBezier(P0, P1, P2, P3);
+				P0 = P3;
+				numPoint -= 6;
+				j += 6;
+			}
+		}
+
+		else if (vct[i].first == 'S' || vct[i].first == 's') {
+			int j = 0;
+			while (numPoint > 3) {
+				PointF P1 = P0;
+				if (i > 0) {
+					if (vct[i - 1].first == 'C' || vct[i - 1].first == 'c' || vct[i - 1].first == 'S' || vct[i - 1].first == 's') {
+						int n = vct[i - 1].second.size();
+						if (n > 3) {
+							float oldx2 = vct[i - 1].second[n - 4];
+							float oldy2 = vct[i - 1].second[n - 3];
+							float curx = vct[i - 1].second[n - 2];
+							float cury = vct[i - 1].second[n - 1];
+							P1 = PointF(2.f * curx - oldx2, 2.f * cury - oldy2);
+						}
+					}
+				}
+				PointF P2 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
+				PointF P3 = PointF(vct[i].second[j + 2], vct[i].second[j + 3]);
+				path.AddBezier(P0, P1, P2, P3);
+				P0 = P3;
+				numPoint -= 4;
+				j += 4;
+			}
+		}
+
+		else if (vct[i].first == 'A' || vct[i].first == 'a') {
+			int j = 0;
+			while (numPoint > 6) {
+				if (i > 0) {
+					int n = vct[i - 1].second.size();
+					if (n > 1) {
+						double sx = vct[i - 1].second[n - 2];
+						double sy = vct[i - 1].second[n - 1];
+						double rx = vct[i].second[j + 0];
+						double ry = vct[i].second[j + 1];
+						double xAR = vct[i].second[j + 2];
+						bool lAF = vct[i].second[j + 3];
+						bool sF = vct[i].second[j + 4];
+						double ex = vct[i].second[j + 5];
+						double ey = vct[i].second[j + 6];
+
+						double angle = xAR * Pi / 180.f;
+						double cosAngle = cos(angle);
+						double sinAngle = sin(angle);
+
+						double a = (sx - ex) / 2.f;
+						double b = (sy - ey) / 2.f;
+
+						double x1 = cosAngle * a + sinAngle * b;
+						double y1 = -sinAngle * a + cosAngle * b;
+
+						rx = abs(rx);
+						ry = abs(ry);
+
+						double lambda = (x1 * x1) / (rx * rx) + (y1 * y1) / (ry * ry);
+						if (lambda > 1.f) {
+							rx *= sqrt(lambda);
+							ry *= sqrt(lambda);
+						}
+
+						double sign = (lAF == sF ? -1.f : 1.f);
+						double num = rx * rx * ry * ry - rx * rx * y1 * y1 - ry * ry * x1 * x1;
+						double den = rx * rx * y1 * y1 + ry * ry * x1 * x1;
+						if (num < 0)
+							num = 0;
+
+						double x2 = sign * sqrt(num / den) * rx * y1 / ry;
+						double y2 = -sign * sqrt(num / den) * ry * x1 / rx;
+
+						double x = cosAngle * x2 - sinAngle * y2 + ((sx + ex) / 2.f);
+						double y = sinAngle * x2 + cosAngle * y2 + ((sy + ey) / 2.f);
+
+						a = (x1 - x2) / rx;
+						b = (y1 - y2) / ry;
+						double c = (- x1 - x2) / rx;
+						double d = (- y1 - y2) / ry;
+
+						if (b < 0)
+							sign = -1.f;
+						else sign = 1.f;
+						double temp = a / sqrt(a * a + b * b);
+						if (temp < -1.f)
+							temp = -1.f;
+						else if (temp > 1.f)
+							temp = 1.f;
+						double startAngle = sign * acos(temp);
+
+						if (a * d - b * c < 0)
+							sign = -1.f;
+						else sign = 1.f;
+						temp = (a * c + b * d) / (sqrt(a * a + b * b) * sqrt(c * c + d * d));
+						if (temp < -1.f)
+							temp = -1.f;
+						else if (temp > 1.f)
+							temp = 1.f;
+						double dentaAngle = sign * acos(temp);
+
+						if (sF == 0 && dentaAngle > 0)
+							dentaAngle -= (2.f * Pi);
+						else if (sF == 1 && dentaAngle < 0)
+							dentaAngle += (2.f * Pi);
+
+						double ratio = abs(dentaAngle) / (Pi / 2.f);
+						if (abs(1.f - ratio) < 0.0000001)
+							ratio = 1.f;
+						int segments = max(static_cast<int>(ceil(ratio)), 1);
+						dentaAngle /= segments;
+
+						vector<vector<vector<double>>> curves;
+						vector<vector<double>> curve;
+						for (int t = 0; t < segments; t++) {
+							double kappa = (dentaAngle == Pakka) ? Kappa : (dentaAngle == -Pakka) ? -Kappa : 4.f / 3.f * tan(dentaAngle / 4.f);
+							double x3 = cos(startAngle);
+							double y3 = sin(startAngle);
+							double x4 = cos(startAngle + dentaAngle);
+							double y4 = sin(startAngle + dentaAngle);
+							curve.push_back({ x3 - y3 * kappa, y3 + x3 * kappa });
+							curve.push_back({ x4 + y4 * kappa, y4 - x4 * kappa });
+							curve.push_back({ x4, y4 });
+							curves.push_back(curve);
+							curve.clear();
+							startAngle += dentaAngle;
+						}
+
+						for (auto& cur : curves) {
+							auto mapped_curve_0 = { (cosAngle * cur[0][0] * rx - sinAngle * cur[0][1] * ry) + x,(sinAngle * cur[0][0] * rx + cosAngle * cur[0][1] * ry) + y };
+							auto mapped_curve_1 = { (cosAngle * cur[1][0] * rx - sinAngle * cur[1][1] * ry) + x,(sinAngle * cur[1][0] * rx + cosAngle * cur[1][1] * ry) + y };
+							auto mapped_curve_2 = { (cosAngle * cur[2][0] * rx - sinAngle * cur[2][1] * ry) + x,(sinAngle * cur[2][0] * rx + cosAngle * cur[2][1] * ry) + y };
+							cur = { mapped_curve_0, mapped_curve_1, mapped_curve_2 };
+
+							for (size_t i = 0; i < cur.size(); i += 3) {
+								if (i + 2 < cur.size()) {
+									PointF P1(cur[i][0], cur[i][1]);
+									PointF P2(cur[i + 1][0], cur[i + 1][1]);
+									PointF P3(cur[i + 2][0], cur[i + 2][1]);
+									path.AddBezier(P0, P1, P2, P3);
+									P0 = P3;
+								}
+							}
+						}
+						
+						P0 = PointF(ex, ey);
+						numPoint -= 6;
+						j += 6;
+					}
+				}
+			}
+		}
+	
+		else if (vct[i].first == 'L' || vct[i].first == 'H' || vct[i].first == 'V' || vct[i].first == 'l' || vct[i].first == 'h' || vct[i].first == 'v') {
+			int j = 0;
+			while (numPoint > 1) {
+				PointF P1 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
+				path.AddLine(P0, P1);
+				P0 = P1;
+				numPoint -= 2;
+				j += 2;
+			}
+		}
+
+		else if (vct[i].first == 'Z' || vct[i].first == 'z') 
+			path.CloseFigure();
+	}
+	
 	Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
 	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
 	vector<pair<string, vector<float>>> transVct = fig->getTransVct();

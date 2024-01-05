@@ -3,29 +3,28 @@
 
 class viewbox {
 private:
-	float viewX, viewY, viewWidth, viewHeight;
-	float portWidth, portHeight; //This is the viewPort
+    float viewX, viewY, viewWidth, viewHeight;
+    float portWidth, portHeight;
+    string preservedForm, preservedMode;
 
-	string preservedForm, preservedMode;
 public:
-	float getViewX();
-	float getViewY();
-	float getViewWidth();
-	float getViewHeight();
-	float getPortWidth();
-	float getPortHeight();
-	string getPreservedForm();
-	string getPreservedMode();	
+    float getViewX() const;
+    float getViewY() const;
+    float getViewWidth() const;
+    float getViewHeight() const;
+    float getPortWidth() const;
+    float getPortHeight() const;
+    const string& getPreservedForm() const;
+    const string& getPreservedMode() const;
 
-	
-	void setPreservedMode(string);
-	void setPreservedForm(string);
-	void setPortWidth(float);
-	void setPortHeight(float);
-	void setViewWidth(float);
-	void setViewHeight(float);
-	void setViewX(float);
-	void setViewY(float);
-
+    void setViewX(float);
+    void setViewY(float);
+    void setViewWidth(float);
+    void setViewHeight(float);
+    void setPortWidth(float);
+    void setPortHeight(float);
+    void setPreservedForm(const string&);
+    void setPreservedMode(const string&);
 };
+
 #endif

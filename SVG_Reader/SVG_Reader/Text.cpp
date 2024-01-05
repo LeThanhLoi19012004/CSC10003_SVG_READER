@@ -35,8 +35,10 @@ void text::updateProperty() {
 			this->fontSize = stof(val);
 		if (attribute == "text-anchor")
 			this->textAnchor = val;
-		if (attribute == "font-family")
+		if (attribute == "font-family") {
+			if (val.find("Time") == string::npos)
 			this->fontFamily = val;
+		}
 		if (attribute == "font-style")
 			this->fontStyle = val;
 		if (attribute == "dx")
