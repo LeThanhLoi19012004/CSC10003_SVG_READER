@@ -3,13 +3,15 @@
 
 class image {
 private:
-	//Image property
 	string fileName, imageName;
 	int width, height;
 	float antialiasingLevel;
 	group* root;
+
 public:
 	image(string);
+	~image();
+
 	int getWidth();
 	int getHeight();
 	float getAntialiasingLevel();
@@ -20,8 +22,6 @@ public:
 
 	void parseImage(parser);
 	void renderImage(renderer, Graphics&);
-
-	~image();
 };
 
 #endif

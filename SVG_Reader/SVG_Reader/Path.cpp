@@ -11,11 +11,11 @@ path::~path() {}
 void path::updateProperty() {
 	stringstream ss(line_str);
 	string property, val, temp;
-	//int start = 0;
 
 	while (ss >> property) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
+
 		if (property == "stroke-linejoin")
 			this->strokeLineJoin = val;
 		else if (property == "stroke-linecap")
@@ -364,11 +364,13 @@ void path::updateProperty() {
 							if (m > 1) {
 								float x = vct[n - 1].second[m - 2];
 								float y = vct[n - 1].second[m - 1];
-								if (abs(x - vct[start].second[0]) <= 0.015)
-									vct[n - 1].second[m - 2] = vct[start].second[0];
-								if (abs(y - vct[start].second[1]) <= 0.015)
-									vct[n - 1].second[m - 1] = vct[start].second[1];
-								pr.second.push_back(vct[n - 1].second[m - 2]);							
+								if (start < n) {
+									if (abs(x - vct[start].second[0]) <= 0.015)
+										vct[n - 1].second[m - 2] = vct[start].second[0];
+									if (abs(y - vct[start].second[1]) <= 0.015)
+										vct[n - 1].second[m - 1] = vct[start].second[1];
+								}
+								pr.second.push_back(vct[n - 1].second[m - 2]);
 								pr.second.push_back(vct[n - 1].second[m - 1]);
 								start = i + 1;
 							}
@@ -404,15 +406,15 @@ void path::setFillRule(string fillRule) {
 	this->fillRule = fillRule;
 }
 
-void path:: setStrokeLineJoin(string linejoin) {
+void path::setStrokeLineJoin(string linejoin) {
 	this->strokeLineJoin = linejoin;
 }
 
-void path:: setStrokeLineCap(string linecap) {
+void path::setStrokeLineCap(string linecap) {
 	this->strokeLineCap = linecap;
 }
 
-void path:: setVct(vector<pair<char, vector<float>>> vct) {
+void path::setVct(vector<pair<char, vector<float>>> vct) {
 	this->vct = vct;
 }
 

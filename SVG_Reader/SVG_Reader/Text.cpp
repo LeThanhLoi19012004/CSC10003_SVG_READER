@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-text::text() :figure() {
+text::text() : figure() {
 	textPos.setX(0);
 	textPos.setY(0);
 	fontSize = 16;
@@ -27,6 +27,7 @@ void text::updateProperty() {
 	while (ss >> attribute) {
 		getline(ss, a, '"');
 		getline(ss, val, '"');
+
 		if (attribute == "x")
 			this->textPos.setX(stof(val));
 		if (attribute == "y")
@@ -73,24 +74,31 @@ void text::setFontSize(float fontSize) {
 void text::setContent(string content) {
 	this->content = content;
 }
+
 void text::setFontFamily(string fontFamily) {
 	this->fontFamily = fontFamily;
 }
+
 void text::setTextAnchor(string textAnchor) {
 	this->textAnchor = textAnchor;
 }
+
 void text::setFontStyle(string fontStyle) {
 	this->fontStyle = fontStyle;
 }
+
 void text::setDx(float dx) {
 	this->dx = dx;
 }
+
 void text::setDy(float dy) {
 	this->dy = dy;
 }
+
 string text::getFontFamily() {
 	return this->fontFamily;
 }
+
 string text::getTextAnchor() {
 	return this->textAnchor;
 }

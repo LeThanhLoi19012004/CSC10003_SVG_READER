@@ -5,8 +5,8 @@ class renderer {
 public:	
 	void renderItem(group*, float, string, float, float, Graphics&);
 	
-	///*Draw the figure functions*/
-  void drawFigure(Graphics&, group*);
+	//Draw figures
+	void drawFigure(Graphics&, group*);
 	void drawRectangle(Graphics&, rectangle*);
 	void drawEllipse(Graphics&, ellipse*);
 	void drawLine(Graphics&, line*);

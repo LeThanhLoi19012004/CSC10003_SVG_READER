@@ -4,6 +4,7 @@
 class polygon : public figure {
 private:
 	vector<point> Vers;
+
 public:
 	polygon();
 	~polygon();

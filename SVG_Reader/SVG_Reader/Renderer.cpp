@@ -1,65 +1,65 @@
 ﻿#include "Lib.h"
+
 #define Pi 3.14159265358979323846
 #define Kappa 0.551915024494
 #define Pakka 1.5707963267948966
-using namespace std;
 
 void renderer::drawFigure(Graphics& graphics, group* root) {
-	factoryfigure factory;
-	for (figure* fig : root->getFigureArray()) {
-		int num = factory.getFigureId()[fig->getName()];
+    factoryfigure factory;
 
-		switch (num)
-		{
-		case 1:
-		{
-			rectangle* rect = dynamic_cast<rectangle*>(fig);
-			drawRectangle(graphics, rect);
-			break;
-		}
-		case 2: case 3: {
-			ellipse* ellipses = dynamic_cast<ellipse*>(fig);
-			drawEllipse(graphics, ellipses);
-			break;
-		}
-		case 4:
-		{
-			line* lines = dynamic_cast<line*>(fig);
-			drawLine(graphics, lines);
-			break;
-		}
-		case 5: {
-			polyline* polylines = dynamic_cast<polyline*>(fig);
-			drawPolyline(graphics, polylines);
-			break;
-		}
-		case 6: {
-			polygon* polygons = dynamic_cast<polygon*>(fig);
-			drawPolygon(graphics, polygons);
-			break;
-		}
-		case 7: {
-			text* texts = dynamic_cast<text*> (fig);
-			drawText(graphics, texts);
-			break;
-		}
-		case 8: {
-			path* paths = dynamic_cast<path*>(fig);
-			drawPath(graphics, paths);
-			break;
-		}
-		case 9: {
-			group* groups = dynamic_cast<group*>(fig);
-			if (groups->getFigureArray().empty())
-        return;
-			drawFigure(graphics, groups);
-			break;
-		}
-		default:
-			break;
-		}
-	}
+    for (figure* fig : root->getFigureArray()) {
+        int num = factory.getFigureId()[fig->getName()];
+
+        switch (num) {
+            case 1: {
+                rectangle* rect = dynamic_cast<rectangle*>(fig);
+                drawRectangle(graphics, rect);
+                break;
+            }
+            case 2:
+            case 3: {
+                ellipse* ellipses = dynamic_cast<ellipse*>(fig);
+                drawEllipse(graphics, ellipses);
+                break;
+            }
+            case 4: {
+                line* lines = dynamic_cast<line*>(fig);
+                drawLine(graphics, lines);
+                break;
+            }
+            case 5: {
+                polyline* polylines = dynamic_cast<polyline*>(fig);
+                drawPolyline(graphics, polylines);
+                break;
+            }
+            case 6: {
+                polygon* polygons = dynamic_cast<polygon*>(fig);
+                drawPolygon(graphics, polygons);
+                break;
+            }
+            case 7: {
+                text* texts = dynamic_cast<text*>(fig);
+                drawText(graphics, texts);
+                break;
+            }
+            case 8: {
+                path* paths = dynamic_cast<path*>(fig);
+                drawPath(graphics, paths);
+                break;
+            }
+            case 9: {
+                group* groups = dynamic_cast<group*>(fig);
+                if (groups->getFigureArray().empty())
+                    return;
+                drawFigure(graphics, groups);
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }
+
 
 void renderer::renderItem(group* root, float antialiasingLevel, string imageName, float width, float height, Graphics& graphics) {
 	drawFigure(graphics, root);

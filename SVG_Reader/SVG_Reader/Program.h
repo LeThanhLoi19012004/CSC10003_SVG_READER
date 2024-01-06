@@ -7,6 +7,7 @@ private:
 	static program* pg;
 	void(*currentFunc)();
 	static string name;
+
 public:
 	static program* getObj(void (*currentFunc)() = NULL);
 	static void run();

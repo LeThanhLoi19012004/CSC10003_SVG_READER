@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-polyline::polyline() :figure() {
+polyline::polyline() : figure() {
 	fill.r = fill.g = fill.b = 0;
 	fill.opacity = 1;
 }
@@ -29,15 +29,6 @@ void polyline::updateProperty() {
 				p.setY(stof(y));
 				Vers.push_back(p);
 			}
-			/*Vers = new point[nVer];
-			int i = 0;
-
-			stringstream pointLine(val);
-			while (pointLine >> x >> y) {
-				Vers[i].setX(stof(x));
-				Vers[i].setY(stof(y));
-				i++;
-			}*/
 		}
 	}
 }

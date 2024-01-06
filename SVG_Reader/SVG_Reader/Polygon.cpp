@@ -9,7 +9,6 @@ polygon::~polygon() {
 }
 
 void polygon::updateProperty() {
-
 	stringstream ss(line_str);
 	string property, val, temp;
 
@@ -29,18 +28,8 @@ void polygon::updateProperty() {
 				p.setY(stof(y));
 				Vers.push_back(p);
 			}
-			/*Vers = new point[nVer];
-			int i = 0;
-
-			stringstream pointLine(val);
-			while (pointLine >> x >> y) {
-				Vers[i].setX(stof(x));
-				Vers[i].setY(stof(y));
-				i++;
-			}*/
 		}
 	}
-
 }
 
 vector<point> polygon::getVers() {
@@ -48,12 +37,10 @@ vector<point> polygon::getVers() {
 }
 
 void polygon::setVers(vector<point> Vers) {
-	
 	this->Vers = Vers;
 }
 
 void polygon::transformFigure() {
-
 	/*float curX = this->Vers[i].getX();
 	float curY = this->Vers[i].getY();
 	for (auto p : transVct) {

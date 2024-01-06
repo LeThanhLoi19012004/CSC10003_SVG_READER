@@ -4,19 +4,20 @@ line::line() :figure() {
 	p1.setX(0); p1.setY(0);
 	p2.setX(0); p2.setY(0);
 }
+
 line::~line() {
 	p1.setX(0); p1.setY(0);
 	p2.setX(0); p2.setY(0);
 }
 
-void line::updateProperty()
-{
+void line::updateProperty() {
 	stringstream ss(line_str);
 	string attribute, val, temp;
 
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
+
 		if (attribute == "x1") {
 			this->p1.setX(stof(val));
 		}

@@ -1,6 +1,7 @@
 #ifndef _LIB_H_
 #define _LIB_H_
 
+// Standard C++ libraries
 #include <iostream>
 #include <vector>
 #include <string>
@@ -12,16 +13,22 @@
 #include <locale>
 #include <codecvt>
 
+// Windows libraries
 #include "framework.h"
-#include "rapidxml.hpp"
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+#pragma comment (lib, "Gdiplus.lib")
+
+// Rapidxml
+#include "rapidxml.hpp"
+
+// Namespace declarations
 using namespace std;
 using namespace rapidxml;
 using namespace Gdiplus;
-#pragma comment (lib,"Gdiplus.lib")
 
+// SVG headers
 #include "Color.h"
 #include "Figure.h"
 #include "Group.h"
@@ -40,4 +47,4 @@ using namespace Gdiplus;
 #include "Image.h"
 #include "Program.h"
 
-#endif 
+#endif

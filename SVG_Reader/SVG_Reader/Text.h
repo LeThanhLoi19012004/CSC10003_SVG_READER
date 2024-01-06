@@ -1,7 +1,7 @@
 #ifndef _TEXT_H_
 #define _TEXT_H_
 
-class text :public figure {
+class text : public figure {
 private:
 	float fontSize, dx, dy;
 	point textPos;
@@ -10,10 +10,7 @@ private:
 public:
 	text();
 	~text();
-	/*Update different element of shape*/
-	void updateProperty();
 
-	/*Setter and Getter*/
 	point getTextPos();
 	float getFontSize();
 	string getContent();
@@ -32,6 +29,7 @@ public:
 	void setDx(float);
 	void setDy(float);
 
+	void updateProperty();
 	void transformFigure();
 };
 

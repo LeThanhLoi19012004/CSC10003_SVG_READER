@@ -4,15 +4,15 @@
 class polyline :public figure {
 private:
 	vector<point> Vers;
+
 public:
 	polyline();
 	~polyline();
 
-	/*Update different polyline element*/
-	void updateProperty();
 	vector<point> getVers();
 	void setVers(vector<point>);
 
+	void updateProperty();
 	void transformFigure();
 };
 

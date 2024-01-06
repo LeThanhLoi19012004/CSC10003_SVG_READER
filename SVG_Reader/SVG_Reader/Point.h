@@ -5,11 +5,11 @@ class point {
 private:
 	float x, y;
 	bool intersect;
+
 public:
 	point();
 	~point();
 
-	/*Setter and Getter*/
 	float getX();
 	float getY();
 	bool getIntersect();
@@ -18,7 +18,6 @@ public:
 	void setX(float);
 	void setY(float);
 
-	//Operator == 
 	friend bool operator == (const point&, const point&);
 };
 

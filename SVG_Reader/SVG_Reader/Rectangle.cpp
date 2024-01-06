@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-rectangle::rectangle() :figure() {
+rectangle::rectangle() : figure() {
 	width = height = 0;
 	root.setX(0);
 	root.setY(0);
@@ -15,9 +15,11 @@ rectangle::~rectangle() {
 void rectangle::updateProperty() {
 	stringstream ss(line_str);
 	string attribute, val, temp;
+
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
+
 		if (attribute == "x")
 			this->root.setX(stof(val));
 		if (attribute == "y")
@@ -27,8 +29,6 @@ void rectangle::updateProperty() {
 		if (attribute == "height")
 			this->height = stof(val);
 	}
-
-
 }
 
 point rectangle::getRoot() {

@@ -3,34 +3,30 @@
 
 class figure {
 protected:
-	// Figure name, textname
-	string fig, text_name, line_str;
+    string fig, text_name, line_str;
+    stroke strk;
+    color fill;
+    vector<pair<string, vector<float>>> transVct; // Transformation
 
-	vector<pair<string, vector<float>>> transVct;
-	// Stroke and fillings
-	stroke strk;
-	color fill;
-	
 public:
+    figure();
+    virtual ~figure();
 
-	figure();
-	virtual ~figure();
-	virtual void updateProperty();
-	//Update element of figure
-	string getName();
-	string getTextName();
-	stroke getStroke();
-	color getColor();
-	vector<pair<string, vector<float>>> getTransVct();
+    string getName();
+    string getTextName();
+    stroke getStroke();
+    color getColor();
+    vector<pair<string, vector<float>>> getTransVct();
 
-	void setName(string);
-	void setTextName(string);
-	void setLine(string);
-	void setStroke(stroke);
-	void setColor(color);
+    void setName(string);
+    void setTextName(string);
+    void setLine(string);
+    void setStroke(stroke);
+    void setColor(color);
 
-	void updateTransformVct(string);
-	virtual void transformFigure(); //Transform Figure;
+    virtual void updateProperty();
+    void updateTransformVct(string);
+    virtual void transformFigure();
 };
 
 #endif
