@@ -17,8 +17,11 @@ float radialgradient::getFy() {
 }
 
 radialgradient::radialgradient() {
+	isLink = false;
 	cx = cy = r = fx = fy = 0;
+	//gradId = 2;
 }
+
 radialgradient::radialgradient(const radialgradient& radial) {
 	cx = radial.cx;
 	cy = radial.cy;
@@ -35,4 +38,45 @@ radialgradient& radialgradient::operator = (const radialgradient& radial) {
 		fy = radial.fy;
 	}
 	return *this;
+}
+
+//Update element
+void radialgradient::updateElement() {
+	stringstream sss(strLine);
+	string temp = "", attribute = "", value = "", transformGradient = "";
+
+	while (sss >> attribute) {
+		getline(sss, temp, '"');
+		getline(sss, value, '"');
+		if (attribute == "cx") {
+			this->cx = stof(value);
+		}
+		if (attribute == "cy") {
+			this->cy = stof(value);
+		}
+		if (attribute == "r") {
+			this->r = stof(value);
+		}
+		if (attribute == "fx") {
+			this->fx = stof(value);
+		}
+		if (attribute == "fy") {
+			this->fy = stof(value);
+		}
+		if (attribute == "gradientTransform") {
+			transformGradient = value;
+		}
+		if (attribute == "xlink:href") {
+			this->isLink = true;
+		}
+	}
+	this->updateGradientTransform(transformGradient);
+}
+
+bool radialgradient::getIsLink() {
+	return this->isLink;
+}
+
+void radialgradient::setIsLink(bool link) {
+	this->isLink = link;
 }

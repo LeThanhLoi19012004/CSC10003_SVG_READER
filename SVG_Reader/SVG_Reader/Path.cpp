@@ -11,7 +11,6 @@ path::~path() {}
 void path::updateProperty() {
 	stringstream ss(line_str);
 	string property, val, temp;
-	//int start = 0;
 
 	while (ss >> property) {
 		getline(ss, temp, '"');
@@ -24,7 +23,7 @@ void path::updateProperty() {
 			if (val[0] != 'M' && val[0] != 'm')
 				return;
 			for (int i = 0; i < val.size(); i++) {
-				if (isalpha(val[i])) {
+				if (isalpha(val[i]) && val[i] != 'e') {
 					if (i + 1 < val.size() && val[i + 1] != ' ')
 						val.insert(i + 1, " ");
 					if (i - 1 > -1 && isdigit(val[i - 1]))
@@ -32,7 +31,7 @@ void path::updateProperty() {
 				}
 				if (val[i] == ',')
 					val[i] = ' ';
-				if (val[i] == '-' && val[i - 1] != ' ')
+				if (val[i] == '-' && val[i - 1] != ' ' && val[i - 1] != 'e')
 					val.insert(i, " ");
 			}
 
@@ -52,11 +51,11 @@ void path::updateProperty() {
 					}
 				}
 			}
-			int start = 0;
+
 			for (int i = 0; i < val.size(); i++) {
-				if (isalpha(val[i])) {
+				if (isalpha(val[i]) && val[i] != 'e') {
 					int j = i + 1;
-					while (!isalpha(val[j]) && j < val.size())
+					while ((!isalpha(val[j]) || val[j] == 'e') && j < val.size())
 						j++;
 					string pointStr = val.substr(i, j - i);
 					pair<char, vector<float>> pr;
@@ -330,16 +329,16 @@ void path::updateProperty() {
 						string rx = "", ry = "", xAR = "0", lAF = "", sF = "", x = "", y = "";
 						// xAR <=> x_axis_rotation, lAF <=> large_arc_flag, sF <=> sweep_flag
 						while (ss >> rx >> ry >> xAR >> lAF >> sF >> x >> y) {
-							pr.second.push_back(stof(rx));
-							pr.second.push_back(stof(ry));
-							pr.second.push_back(stof(xAR));
-							pr.second.push_back(stof(lAF));
-							pr.second.push_back(stof(sF));
 							if (first) {
 								int n = vct.size();
 								if (n > 0) {
 									int m = vct[n - 1].second.size();
 									if (m > 1) {
+										pr.second.push_back(stof(rx));
+										pr.second.push_back(stof(ry));
+										pr.second.push_back(stof(xAR));
+										pr.second.push_back(stof(lAF));
+										pr.second.push_back(stof(sF));
 										pr.second.push_back(stof(x) + vct[n - 1].second[m - 2]);
 										pr.second.push_back(stof(y) + vct[n - 1].second[m - 1]);
 										first = false;
@@ -349,6 +348,11 @@ void path::updateProperty() {
 							else {
 								int n = pr.second.size();
 								if (n > 1) {
+									pr.second.push_back(stof(rx));
+									pr.second.push_back(stof(ry));
+									pr.second.push_back(stof(xAR));
+									pr.second.push_back(stof(lAF));
+									pr.second.push_back(stof(sF));
 									pr.second.push_back(stof(x) + pr.second[n - 2]);
 									pr.second.push_back(stof(y) + pr.second[n - 1]);
 								}
@@ -362,17 +366,8 @@ void path::updateProperty() {
 						if (n > 0) {
 							int m = vct[n - 1].second.size();
 							if (m > 1) {
-								float x = vct[n - 1].second[m - 2];
-								float y = vct[n - 1].second[m - 1];
-								if (start < n) {
-									if (abs(x - vct[start].second[0]) <= 0.015)
-										vct[n - 1].second[m - 2] = vct[start].second[0];
-									if (abs(y - vct[start].second[1]) <= 0.015)
-										vct[n - 1].second[m - 1] = vct[start].second[1];
-								}
 								pr.second.push_back(vct[n - 1].second[m - 2]);							
 								pr.second.push_back(vct[n - 1].second[m - 1]);
-								start = i + 1;
 							}
 						}
 						vct.push_back(pr);

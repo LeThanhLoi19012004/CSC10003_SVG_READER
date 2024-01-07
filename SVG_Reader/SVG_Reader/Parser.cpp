@@ -91,14 +91,42 @@ void parser::processProperty(string name, string property, string textName, figu
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
 		getline(ss, value, '"');
-		/*if (attribute == "style") {
-			int pos = value.find(';');
-			if (pos != -1) value[pos] = ' ';
-	
+
+		if (attribute == "style") {
+			for (int i = 0; i < value.size(); i++) {
+				if (value[i] == ':') {
+					value.insert(value.begin() + i + 1, '"');
+					i++;
+				}
+				else if (value[i] == ';') {
+					value.insert(value.begin() + i, '"');
+					i++;
+				}
+			}
+			value.push_back('"');
+
+
+			for (int i = 0; i < value.size(); i++) {
+				if (value[i] == ':' || value[i] == ';') 
+					value[i] = ' ';
+			}
 			stringstream valStream(value);
-			string attr, subVal;
-			while (getline(valStream, attr,':')) {
+			string attr, subVal, subTemp;
+
+			while (valStream >> attr) {
+				getline(valStream, subTemp, '"');
+				getline(valStream, subVal, '"');
 				if (attr == "fill") {
+					if (subVal.find("url") != string::npos) {
+						stringstream sss(subVal);
+						isGradient = true;
+						getline(sss, subTemp, '#');
+						getline(sss, subVal, ')');
+						getline(sss, subTemp, '"');
+						while (subVal != "" && (subVal[subVal.size() - 1] == ' ' || subVal[subVal.size() - 1] == '"')) {
+							subVal.erase(value.size() - 1, 1);
+						}
+					}
 					fill = subVal;
 				}
 				if (attr == "fill-opacity") {
@@ -114,18 +142,19 @@ void parser::processProperty(string name, string property, string textName, figu
 					sStroke = value;
 				}
 			}
-		}*/
+		}
+
 		if (attribute == "stroke-width")
 			strokeWidth = value;
 		if (attribute == "fill-opacity")
 			fillOpa = value;
 		if (attribute == "fill") {
 			if (value.find("url") != string::npos) {
-				//If you can find keyword url in 
-				isGradient = true;//url
-				getline(ss, temp, '#');
-				getline(ss, value,')');
-				getline(ss, temp, '"');
+				stringstream sss(value);
+				isGradient = true;
+				getline(sss, temp, '#');
+				getline(sss, value,')');
+				getline(sss, temp, '"');
 				while (value != "" && (value[value.size() - 1] == ' ' || value[value.size() - 1] == '"')) {
 					value.erase(value.size() - 1, 1);
 				}
@@ -141,17 +170,22 @@ void parser::processProperty(string name, string property, string textName, figu
 	}
 
 	if (isGradient) {
-		
 		string temp = fill;
 		fill += " 1";
-		idMap[fill]->setGradId(1);
-		if (idMap.find(fill) == idMap.end()) {
+		if (idMap.find(fill) != idMap.end()) {
+			idMap[fill]->setGradId(1);
+			fig->convertGradient(idMap[fill]);
+		}
+		else {
 			fill = temp;
 			fill += " 2";
-			idMap[fill]->setGradId(2);
+			if (idMap.find(fill) != idMap.end()) {
+				idMap[fill]->setGradId(2);
+				fig->convertGradient(idMap[fill]);
+			}
 		}
-		fig->setGrad(idMap[fill]);
 	}
+
 	else {
 		color clr = { 0, 0, 0, 1 };
 		if (fill == "none" || fill == "transparent")
@@ -228,7 +262,6 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 				getline(sss, val, '"');
 				if (attribute == "viewBox") {
 					stringstream ssss(val);
-
 					ssss >> viewX >> viewY >> viewWidth >> viewHeight;
 					ssss.ignore();
 					vb.setViewX(viewX);
@@ -236,6 +269,7 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					vb.setViewWidth(viewWidth);
 					vb.setViewHeight(viewHeight);
 				}
+
 				if (attribute == "preserveAspectRatio") {
 					stringstream ssss(val);
 					ssss >> preservedForm >> preservedMode;
@@ -243,10 +277,12 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					vb.setPreservedForm(preservedForm);
 					vb.setPreservedMode(preservedMode);
 				}
+
 				if (attribute == "width") {
 					portWidth = stof(val);
 					vb.setPortWidth(portWidth);
 				}
+
 				if (attribute == "height") {
 					portHeight = stof(val);
 					vb.setPortHeight(portHeight);
@@ -254,16 +290,19 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 			}
 		}
 		
-		if (name == "<defs") {
+		if (name == "<defs>") {
 			openDef = true;
 		}
+
 		if (openDef) {
 			if (name == "<linearGradient") {
 				openLinear = true;
 			}
+
 			else if (name == "<radialGradient") {
 				openRadial = true;
 			}
+
 			if (openLinear) { //If the current position is in the linear scope
 				if (property.find("id") != string::npos) {
 
@@ -272,10 +311,7 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					getline(sss, temp, '"');
 					getline(sss, idStr, '"');
 					getline(sss, remainLine);
-
-					 
-					idMap[idStr] = NULL;
-					gradVct.push_back(remainLine); //x1 y1 x2 y2 
+					gradVct.push_back(remainLine);
 				}
 				else {
 					gradVct.push_back(property);
@@ -288,45 +324,22 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					getline(sss, temp, '"');
 					getline(sss, idStr, '"');
 					getline(sss, remainLine);
-					
-					idMap[idStr] = NULL;
-					gradVct.push_back(remainLine); //x1 y1 x2 y2 
-
+					gradVct.push_back(remainLine);
 				}
 				else {
-					gradVct.push_back(property); //x1 y1 x2 
+					gradVct.push_back(property);
 				}
 			}
 
 			if (name.find("/linearGradient") != string::npos) {
 				openLinear = false;
-				lineargradient linear;
-				if (!gradVct[0].empty()) {
-					stringstream sss(gradVct[0]);
-					string temp = "", attribute = "", value = "";
-					point ptA, ptB;
-					while (sss >> attribute) {
-						getline(sss, temp, '"');
-						getline(sss, value, '"');
+				lineargradient* linear = new lineargradient;
+				
+				linear->setStrLine(gradVct[0]);
+				linear->updateElement();
 
-						if (attribute == "x1") {
-							ptA.setX(stof(value));
-						}
-						if (attribute == "y1") {
-							ptA.setY(stof(value));
-						}
-						if (attribute == "x2") {
-							ptB.setX(stof(value));
-						}
-						if (attribute == "y2") {
-							ptB.setY(stof(value));
-						}
-					}
-					linear.setA(ptA);
-					linear.setB(ptB);
-				}
-				stop stp;
-				for (int i = 1; i < gradVct.size(); i++) {
+				for (int i = 1; i < gradVct.size() - 1; i++) {
+					stop stp;
 					stringstream sss(gradVct[i]);
 					string temp = "", attribute = "", value = "",stopColorStr = "",stopOpaStr = "1";
 					while (sss >> attribute) {
@@ -336,9 +349,11 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 						if (attribute == "stop-color") {
 							stopColorStr = value;
 						}
+
 						if (attribute == "stop-opacity") {
 							stopOpaStr = value;
 						}
+
 						if (attribute == "offset") {
 							stp.offset = stof(value);
 						}
@@ -348,17 +363,57 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 						processColor(stopColorStr, "0", clr);
 					else processColor(stopColorStr, stopOpaStr, clr);
 					stp.stopColor = clr;
-					linear.addStop(stp);
+					linear->addStop(stp);
 				}
 				idStr += " 1";
-				idMap[idStr] = &linear;
+				if (idMap.find(idStr) == idMap.end()) {
+					linear->setGradId(1);
+					idMap[idStr] = linear;
+				}
 				idStr = "";
+				gradVct.clear();
 			}
 			if (name.find("/radialGradient") != string::npos) {
 				openRadial = false;
+				radialgradient* radial = new radialgradient;
+				radial->setStrLine(gradVct[0]);
+				radial->updateElement();
+
+				for (int i = 1; i < gradVct.size() - 1; i++) {
+					stop stp;
+					stringstream sss(gradVct[i]);
+					string temp = "", attribute = "", value = "", stopColorStr = "", stopOpaStr = "1";
+					while (sss >> attribute) {
+						getline(sss, temp, '"');
+						getline(sss, value, '"');
+
+						if (attribute == "stop-color") {
+							stopColorStr = value;
+						}
+
+						if (attribute == "stop-opacity") {
+							stopOpaStr = value;
+						}
+
+						if (attribute == "offset") {
+							stp.offset = stof(value);
+						}
+					}
+					color clr = { 0, 0, 0, 1 };
+					if (stopColorStr == "none" || stopColorStr == "transparent")
+						processColor(stopColorStr, "0", clr);
+					else processColor(stopColorStr, stopOpaStr, clr);
+					stp.stopColor = clr;
+					radial->addStop(stp);
+
+				}
 				idStr += " 2";
-				idMap[idStr] = new radialgradient;
+				if (idMap.find(idStr) == idMap.end()) {
+					radial->setGradId(2);
+					idMap[idStr] = radial;
+				}
 				idStr = "";
+				gradVct.clear();
 			}
 		}
 		if (name.find("/def") != string::npos) {
@@ -400,15 +455,12 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 			}
 		}
 	}
-
 	fin.close();
 }
 
 parser::~parser() {
-	for (auto& x : this->idMap) {
-		
-		delete x.second;
+	/*for (auto& x : this->idMap) {
+		delete[] x.second;
 		x.second = NULL;
-		
-	}
+	}*/
 }

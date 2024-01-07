@@ -373,3 +373,10 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     }
     return (INT_PTR)FALSE;
 }
+
+//int main(int argc, char* argv[]) {
+//    /*GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+//    if (argc > 1) filename = "test case/" + (string)argv[1];*/
+//    INT result = WinMain(GetModuleHandle(NULL), NULL, GetCommandLineA(), SW_SHOWNORMAL);
+//    return result;
+//}

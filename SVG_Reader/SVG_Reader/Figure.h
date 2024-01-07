@@ -5,14 +5,14 @@ class figure {
 protected:
 	// Figure name, textname
 	string fig, text_name, line_str;
-	gradient* grad;
 	vector<pair<string, vector<float>>> transVct;
+
 	// Stroke and fillings
 	stroke strk;
 	color fill;
+	gradient* grad;
 
 public:
-
 	figure();
 	virtual ~figure();
 	virtual void updateProperty();
@@ -32,6 +32,7 @@ public:
 	void setColor(color);
 	void updateTransformVct(string);
 	virtual void transformFigure(); //Transform Figure;
+	void convertGradient(gradient*);
 };
 
 #endif

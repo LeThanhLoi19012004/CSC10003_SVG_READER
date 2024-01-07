@@ -5,6 +5,8 @@ class color {
 
 public:
 	float r = 0, g = 0, b = 0, opacity = 1;
+	color() {}
+	color(float r, float g, float b, float o): r(r), g(g), b(b), opacity(o){}
 };
 
 class stroke {

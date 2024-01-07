@@ -19,6 +19,7 @@ lineargradient::lineargradient() {
 	B.setX(0);
 	B.setY(0);
 }
+
 lineargradient::lineargradient(const lineargradient& linear) {
 	this->A = linear.A;
 	this->B = linear.B;
@@ -29,6 +30,33 @@ lineargradient& lineargradient::operator=(const lineargradient& linear) {
 		this->A = linear.A;
 		this->B = linear.B;
 	}
-
 	return *this;
+}
+
+void lineargradient::updateElement() {
+	stringstream sss(strLine);
+	
+	string temp = "", attribute = "", value = "", transformGradient = "";
+	//point ptA, ptB;
+
+	while (sss >> attribute) {
+		getline(sss, temp, '"');
+		getline(sss, value, '"');
+		if (attribute == "x1") {
+			A.setX(stof(value));
+		}
+		if (attribute == "y1") {
+			A.setY(stof(value));
+		}
+		if (attribute == "x2") {
+			B.setX(stof(value));
+		}
+		if (attribute == "y2") {
+			B.setY(stof(value));
+		}
+		if (attribute == "gradientTransform") {
+			transformGradient = value;
+		}
+	}
+	this->updateGradientTransform(transformGradient);
 }

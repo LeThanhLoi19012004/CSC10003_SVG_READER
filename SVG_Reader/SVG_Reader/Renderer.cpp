@@ -270,22 +270,35 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 	for (int i = 0; i < vct.size(); i++) {
 		int numPoint = vct[i].second.size();
 		if (vct[i].first == 'M' || vct[i].first == 'm') {
-			path.StartFigure();
-			if (numPoint == 4) {
-				PointF P0 = PointF(vct[i].second[0], vct[i].second[1]);
-				PointF P1 = PointF(vct[i].second[2], vct[i].second[3]);
-				path.AddLine(P0, P1);
-				P0 = P1;
+			gradient* grad = fig->getGrad();
+			if (grad == NULL) {
+				path.StartFigure();
+				if (numPoint == 4) {
+					PointF P0 = PointF(vct[i].second[0], vct[i].second[1]);
+					PointF P1 = PointF(vct[i].second[2], vct[i].second[3]);
+					path.AddLine(P0, P1);
+					P0 = P1;
+				}
+				else if (numPoint > 4) {
+					int k = 0;
+					vector <PointF> points(numPoint / 2);
+					for (int j = 0; j < numPoint; j += 2)
+						points[k++] = PointF(vct[i].second[j], vct[i].second[j + 1]);
+					path.AddLines(points.data(), numPoint / 2);
+					P0 = points[numPoint / 2 - 1];
+				}
+				else P0 = PointF(vct[i].second[0], vct[i].second[1]);
 			}
-			else if (numPoint > 4) {
-				int k = 0;
-				vector <PointF> points(numPoint / 2);
-				for (int j = 0; j < numPoint; j += 2)
-					points[k++] = PointF(vct[i].second[j], vct[i].second[j + 1]);
-				path.AddLines(points.data(), numPoint / 2);
-				P0 = points[numPoint / 2 - 1];
+			else {
+				int j = 0;
+				while (numPoint > 1) {
+					PointF P1 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
+					path.AddLine(P0, P1);
+					P0 = P1;
+					numPoint -= 2;
+					j += 2;
+				}
 			}
-			else P0 = PointF(vct[i].second[0], vct[i].second[1]);
 		}
 
 		else if (vct[i].first == 'Q' || vct[i].first == 'q' || vct[i].first == 'T' || vct[i].first == 't') {
@@ -387,8 +400,8 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 
 						a = (x1 - x2) / rx;
 						b = (y1 - y2) / ry;
-						double c = (- x1 - x2) / rx;
-						double d = (- y1 - y2) / ry;
+						double c = (-x1 - x2) / rx;
+						double d = (-y1 - y2) / ry;
 
 						if (b < 0)
 							sign = -1.f;
@@ -453,7 +466,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 								}
 							}
 						}
-						
+
 						P0 = PointF(ex, ey);
 						numPoint -= 6;
 						j += 6;
@@ -461,7 +474,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				}
 			}
 		}
-	
+
 		else if (vct[i].first == 'L' || vct[i].first == 'H' || vct[i].first == 'V' || vct[i].first == 'l' || vct[i].first == 'h' || vct[i].first == 'v') {
 			int j = 0;
 			while (numPoint > 1) {
@@ -473,30 +486,196 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			}
 		}
 
-		else if (vct[i].first == 'Z' || vct[i].first == 'z') 
+		else if (vct[i].first == 'Z' || vct[i].first == 'z')
 			path.CloseFigure();
-	}
-	
-	Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
-	SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
-	vector<pair<string, vector<float>>> transVct = fig->getTransVct();
-
-	for (auto trans : transVct) {
-		float x = 0.0f;
-		if (!trans.second.empty())
-			x = trans.second[0];
-		float y = x;
-		if (trans.second.size() == 2)
-			y = trans.second[1];
-		if (trans.first == "translate")
-			graphics.TranslateTransform(x, y);
-		else if (trans.first == "rotate")
-			graphics.RotateTransform(x);
-		else graphics.ScaleTransform(x, y);
 	}
 
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-	graphics.FillPath(&fillPath, &path);
-	graphics.DrawPath(&penPath, &path);
-	graphics.Restore(save);
+	gradient* grad = fig->getGrad();
+
+	if (grad == NULL) {
+		Pen penPath(Color(fig->getStroke().getStrokeColor().opacity * 255, fig->getStroke().getStrokeColor().r, fig->getStroke().getStrokeColor().g, fig->getStroke().getStrokeColor().b), fig->getStroke().getStrokeWidth());
+		SolidBrush fillPath(Color(fig->getColor().opacity * 255, fig->getColor().r, fig->getColor().g, fig->getColor().b));
+		vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+		for (auto trans : transVct) {
+			float x = 0.0f;
+			if (!trans.second.empty())
+				x = trans.second[0];
+			float y = x;
+			if (trans.second.size() == 2)
+				y = trans.second[1];
+			if (trans.first == "translate")
+				graphics.TranslateTransform(x, y);
+			else if (trans.first == "rotate")
+				graphics.RotateTransform(x);
+			else graphics.ScaleTransform(x, y);
+		}
+
+		graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+		graphics.FillPath(&fillPath, &path);
+		graphics.DrawPath(&penPath, &path);
+		graphics.Restore(save);
+	}
+	else {
+		int type = grad->getGradId();
+		if (type == 1) {
+			lineargradient* linear = dynamic_cast<lineargradient*>(grad);
+			PointF p1 = PointF(linear->getA().getX(), linear->getA().getY());
+			PointF p2 = PointF(linear->getB().getX(), linear->getB().getY());
+
+			vector<stop> ColorOffset = linear->getStopVct();
+			int size = ColorOffset.size();
+
+			if (ColorOffset[0].offset != 0) {
+				color first = ColorOffset[0].stopColor;
+				float offset = ColorOffset[0].offset;
+				color zero{ first.r * (1 - offset), first.g * (1 - offset), first.b * (1 - offset), first.opacity * (1 - offset) };
+				ColorOffset.insert(ColorOffset.begin(), stop(zero, 0));
+				size++;
+			}
+
+			if (ColorOffset[size - 1].offset != 1) {
+				color last = ColorOffset[size - 1].stopColor;
+				float offset = ColorOffset[size - 1].offset;
+				color one{ last.r * (1 / offset), last.g * (1 / offset), last.b * (1 / offset), last.opacity * (1 / offset) };
+				ColorOffset.push_back(stop(one, 1));
+				size++;
+			}
+
+			float* points = new float[size];
+			Color* colors = new Color[size];
+			for (int k = 0; k < size; k++) {
+				points[k] = ColorOffset[k].offset;
+				colors[k] = Color(ColorOffset[k].stopColor.opacity * 255, ColorOffset[k].stopColor.r, ColorOffset[k].stopColor.g, ColorOffset[k].stopColor.b);
+			}
+
+			LinearGradientBrush fillPath(p1, p2, colors[0], colors[size - 1]);
+
+			vector<pair<string, vector<float>>> gradientTrans = linear->getGradientTrans();
+			for (int k = 0; k < gradientTrans.size(); k++) {
+				if (gradientTrans[k].first == "translate") {
+					fillPath.TranslateTransform(gradientTrans[k].second[0], gradientTrans[k].second[1]);
+				}
+				else if (gradientTrans[k].first == "rotate") {
+					fillPath.RotateTransform(gradientTrans[k].second[0]);
+				}
+				else if (gradientTrans[k].first == "scale") {
+					fillPath.ScaleTransform(gradientTrans[k].second[0], gradientTrans[k].second[1]);
+				}
+				else if (gradientTrans[k].first == "matrix") {
+					Matrix matrix(
+						gradientTrans[k].second[0], gradientTrans[k].second[1], gradientTrans[k].second[2],
+						gradientTrans[k].second[3], gradientTrans[k].second[4], gradientTrans[k].second[5]
+					);
+					fillPath.SetTransform(&matrix);
+				}
+			}
+
+			fillPath.SetWrapMode(WrapModeTileFlipXY);
+			fillPath.SetInterpolationColors(colors, points, size);
+			graphics.FillPath(&fillPath, &path);
+			delete[] colors;
+			delete[] points;
+		}
+
+		else if (type == 2) {
+			radialgradient* radial = dynamic_cast<radialgradient*>(grad);
+			float cx = radial->getCx();
+			float cy = radial->getCy();
+			float r = radial->getR();
+			vector<stop> ColorOffset = radial->getStopVct();
+			int size = ColorOffset.size();
+
+			GraphicsPath pathE;
+			pathE.AddEllipse(RectF(cx - r, cy - r, r * 2.f, r * 2.f));
+			PathGradientBrush fillPath(&pathE);
+
+			if (ColorOffset[0].offset != 0) {
+				color first = ColorOffset[0].stopColor;
+				float offset = ColorOffset[0].offset;
+				color zero{ first.r * (1 - offset), first.g * (1 - offset), first.b * (1 - offset), first.opacity * (1 - offset) };
+				ColorOffset.insert(ColorOffset.begin(), stop(zero, 0));
+				size++;
+			}
+
+			if (ColorOffset[size - 1].offset != 1) {
+				color last = ColorOffset[size - 1].stopColor;
+				float offset = ColorOffset[size - 1].offset;
+				color one{ last.r * (1 / offset), last.g * (1 / offset), last.b * (1 / offset), last.opacity * (1 / offset) };
+				ColorOffset.push_back(stop(one, 1));
+				size++;
+			}
+
+			float* points = new float[size];
+			Color* colors = new Color[size];
+			for (int k = 0; k < size; k++) {
+				points[k] = 1 - ColorOffset[size - k - 1].offset;
+				colors[k] = Color(ColorOffset[size - k - 1].stopColor.opacity * 255, ColorOffset[size - k - 1].stopColor.r, ColorOffset[size - k - 1].stopColor.g, ColorOffset[size - k - 1].stopColor.b);
+			}
+
+			vector<pair<string, vector<float>>> gradientTrans = radial->getGradientTrans();
+			for (int k = 0; k < gradientTrans.size(); ++k) {
+				if (gradientTrans[k].first == "translate") {
+					fillPath.TranslateTransform(gradientTrans[k].second[0], gradientTrans[k].second[1]);
+				}
+				else if (gradientTrans[k].first == "rotate") {
+					fillPath.RotateTransform(gradientTrans[k].second[0]);
+				}
+				else if (gradientTrans[k].first == "scale") {
+					fillPath.ScaleTransform(gradientTrans[k].second[0], gradientTrans[k].second[1]);
+				}
+				else if (gradientTrans[k].first == "matrix") {
+					Matrix matrix(
+						gradientTrans[k].second[0], gradientTrans[k].second[1], gradientTrans[k].second[2],
+						gradientTrans[k].second[3], gradientTrans[k].second[4], gradientTrans[k].second[5]
+					);
+					fillPath.SetTransform(&matrix);
+					pathE.Transform(&matrix);
+				}
+			}
+
+			Color it = Color(
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.opacity * 255,
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.r,
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.g,
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.b);
+
+			SolidBrush solidBrush(it);
+			Region region(&path);
+			region.Exclude(&pathE);
+
+			fillPath.SetInterpolationColors(colors, points, size);
+
+			graphics.FillPath(&fillPath, &path);
+			graphics.FillRegion(&solidBrush, &region);
+			delete[] colors;
+			delete[] points;
+		}
+
+		vector<pair<string, vector<float>>> transVct = fig->getTransVct();
+
+		for (auto trans : transVct) {
+			float x = 0.0f;
+			if (!trans.second.empty())
+				x = trans.second[0];
+			float y = x;
+			if (trans.second.size() == 2)
+				y = trans.second[1];
+			if (trans.first == "translate")
+				graphics.TranslateTransform(x, y);
+			else if (trans.first == "rotate")
+				graphics.RotateTransform(x);
+			else if (trans.first == "scale")
+				graphics.ScaleTransform(x, y);
+			else if (trans.first == "matrix") {
+				Matrix matrix(
+					trans.second[0], trans.second[1], trans.second[2],
+					trans.second[3], trans.second[4], trans.second[5]
+				);
+				graphics.SetTransform(&matrix);
+			}
+		}
+		graphics.Restore(save);
+	}
 }
