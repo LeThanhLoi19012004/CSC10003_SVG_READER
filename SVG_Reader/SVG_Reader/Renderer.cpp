@@ -359,15 +359,8 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				if (i > 0) {
 					int n = vct[i - 1].second.size();
 					if (n > 1) {
-						double sx = 0, sy = 0;
-						if (j == 0) {
-							sx = vct[i - 1].second[n - 2];
-							sy = vct[i - 1].second[n - 1];
-						}
-						else {
-							sx = vct[i].second[j - 2];
-							sy = vct[i].second[j - 1];
-						}
+						double sx = P0.X;
+						double sy = P0.Y;
 						double rx = vct[i].second[j + 0];
 						double ry = vct[i].second[j + 1];
 						double xAR = vct[i].second[j + 2];
@@ -643,7 +636,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			}
 
 			Color it = Color(
-				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.opacity * 1,
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.opacity * 255,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.r,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.g,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.b);
