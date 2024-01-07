@@ -207,7 +207,6 @@ void parser::processProperty(string name, string property, string textName, figu
 	fig->updateProperty();
 	if (!strTransform.empty()) {
 		fig->updateTransformVct(strTransform);
-		fig->transformFigure();
 	}
 }
 
@@ -499,9 +498,4 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 	fin.close();
 }
 
-parser::~parser() {
-	/*for (auto& x : this->idMap) {
-		delete[] x.second;
-		x.second = NULL;
-	}*/
-}
+parser::~parser() {}

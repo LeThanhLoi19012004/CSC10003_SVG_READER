@@ -5,6 +5,7 @@ class path : public figure {
 private:
 	vector<pair<char, vector<float>>> vct;
 	string strokeLineJoin, strokeLineCap, fillRule;
+
 public:
 	path();
 	~path();
@@ -18,10 +19,8 @@ public:
 	void setStrokeLineCap(string);
 	void setFillRule(string);
 	void setVct(vector<pair<char, vector<float>>>);
-	/*Update different polyline element*/
-	void updateProperty();
 
-	//void transformFigure();
+	void updateProperty();
 };
 
 #endif

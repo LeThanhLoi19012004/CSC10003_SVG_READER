@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-path::path() :figure() {
+path::path() : figure() {
 	strokeLineJoin = "miter";
 	strokeLineCap = "butt";
 	fillRule = "nonzero";
@@ -384,14 +384,6 @@ void path::updateProperty() {
 			}
 		}
 	}
-
-	/*for (auto pair : vct) {
-		ofs << pair.first << ":";
-		for (float p : pair.second) {
-			ofs << p << " ";
-		}
-		ofs << "\n";
-	}*/
 }
 
 string path::getStrokeLineJoin() {

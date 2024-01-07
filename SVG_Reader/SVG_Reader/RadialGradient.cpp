@@ -19,7 +19,6 @@ float radialgradient::getFy() {
 radialgradient::radialgradient() {
 	isLink = false;
 	cx = cy = r = fx = fy = 0;
-	//gradId = 2;
 }
 
 radialgradient::radialgradient(const radialgradient& radial) {
@@ -40,7 +39,6 @@ radialgradient& radialgradient::operator = (const radialgradient& radial) {
 	return *this;
 }
 
-//Update element
 void radialgradient::updateElement() {
 	stringstream sss(strLine);
 	string temp = "", attribute = "", value = "", transformGradient = "";
@@ -48,6 +46,7 @@ void radialgradient::updateElement() {
 	while (sss >> attribute) {
 		getline(sss, temp, '"');
 		getline(sss, value, '"');
+
 		if (attribute == "cx") {
 			this->cx = stof(value);
 		}

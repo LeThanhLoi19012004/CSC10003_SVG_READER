@@ -2,6 +2,7 @@
 #define _COLOR_H_
 
 class color {
+private:
 
 public:
 	float r = 0, g = 0, b = 0, opacity = 1;

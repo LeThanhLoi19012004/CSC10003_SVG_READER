@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-circle::circle() :ellipse() {
+circle::circle() : ellipse() {
 	this->setCenter(0, 0);
 	this->setRx(0);
 	this->setRy(0);
@@ -19,6 +19,7 @@ void circle::updateProperty() {
 	while (ss >> attribute) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
+
 		if (attribute == "r") {
 			this->setRx(stof(val));
 			this->setRy(stof(val));

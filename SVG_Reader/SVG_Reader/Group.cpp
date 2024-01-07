@@ -1,11 +1,11 @@
 #include "Lib.h"
+
 group::group():figure() {
 	figureArray = {};
 }
 
 group& group:: operator = (const group& grp) {
 	if (this != &grp) {
-
 		this->figureArray = grp.figureArray;
 		this->parent = grp.parent;
 	}

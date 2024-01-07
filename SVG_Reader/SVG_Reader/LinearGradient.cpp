@@ -3,12 +3,15 @@
 point lineargradient::getA() {
 	return A;
 }
+
 point lineargradient::getB() {
 	return B;
 }
+
 void lineargradient::setA(point p) {
 	this->A = p;
 }
+
 void lineargradient::setB(point p) {
 	this->B = p;
 }
@@ -25,6 +28,7 @@ lineargradient::lineargradient(const lineargradient& linear) {
 	this->B = linear.B;
 
 }
+
 lineargradient& lineargradient::operator=(const lineargradient& linear) {
 	if (this != &linear) {
 		this->A = linear.A;
@@ -35,13 +39,12 @@ lineargradient& lineargradient::operator=(const lineargradient& linear) {
 
 void lineargradient::updateElement() {
 	stringstream sss(strLine);
-	
 	string temp = "", attribute = "", value = "", transformGradient = "";
-	//point ptA, ptB;
 
 	while (sss >> attribute) {
 		getline(sss, temp, '"');
 		getline(sss, value, '"');
+
 		if (attribute == "x1") {
 			A.setX(stof(value));
 		}

@@ -4,18 +4,18 @@
 class line :public figure {
 private:
 	point p1, p2;
+
 public:
 	line();
 	~line();
+
 	void updateProperty();
-	/*Setter and Getter*/
+
 	point getP1();
 	point getP2();
 
 	void setP1(point);
 	void setP2(point);
-
-	void transformFigure();
 };
 
 #endif

@@ -4,8 +4,7 @@
 class renderer {
 public:	
 	void renderFigure(Graphics&, group*);
-	
-	///*Draw the figure functions*/
+
 	void drawRectangle(Graphics&, rectangle*);
 	void drawEllipse(Graphics&, ellipse*);
 	void drawLine(Graphics&, line*);

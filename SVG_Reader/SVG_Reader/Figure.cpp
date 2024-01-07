@@ -70,7 +70,7 @@ void figure::updateTransformVct(string str) {
 		stringstream sss(token);
 
 		string name = "", property;
-		getline(sss, name, '('); //name = {Translate, rotate, scale};
+		getline(sss, name, '(');						//name = {Translate, rotate, scale};
 		getline(sss, property, ')');
 		for (int i = 0; i < property.size(); i++) {
 			if (property[i] == ',') {
@@ -135,10 +135,6 @@ void figure::updateTransformVct(string str) {
 }
 vector<pair<string, vector<float>>> figure::getTransVct() {
 	return this->transVct;
-}
-
-void figure::transformFigure() {
-	return;
 }
 
 void figure::convertGradient(gradient* grad) {

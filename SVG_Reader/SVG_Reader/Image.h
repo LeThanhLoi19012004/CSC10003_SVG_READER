@@ -3,7 +3,6 @@
 
 class image {
 private:
-	//Image property
 	string fileName;
 	group* root;
 

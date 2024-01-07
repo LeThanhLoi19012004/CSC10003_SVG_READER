@@ -4,6 +4,7 @@
 class factoryfigure {
 private:
 	unordered_map<string, int> figureId;
+
 public:
 	factoryfigure();
 	figure* getFigure(string name);

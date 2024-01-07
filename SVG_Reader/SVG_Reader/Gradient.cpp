@@ -23,11 +23,13 @@ void gradient::addStop(stop stp) {
 gradient::gradient() {
 	stopVct = {};
 }
+
 gradient::gradient(const gradient& grad) {
 	for (int i = 0; i < stopVct.size(); i++) {
 		stopVct[i] = grad.stopVct[i];
 	}
 }
+
 gradient& gradient::operator = (const gradient& grad) {
 	if (this != &grad) {
 		for (int i = 0; i < stopVct.size(); i++) {
@@ -49,10 +51,10 @@ void gradient::updateGradientTransform(string str) {
 		token += " )";
 		while (token[0] == ' ' || token[0] == ',')
 			token.erase(0, 1);
+		
 		stringstream sss(token);
-
 		string name = "", property;
-		getline(sss, name, '('); //name = {Translate, rotate, scale};
+		getline(sss, name, '(');
 		getline(sss, property, ')');
 		for (int i = 0; i < property.size(); i++) {
 			if (property[i] == ',') {
@@ -128,9 +130,7 @@ void gradient::updateElement() {
 	return;
 }
 
-gradient::~gradient() {
-
-}
+gradient::~gradient() {}
 
 stop::stop() {
 	offset = 0;

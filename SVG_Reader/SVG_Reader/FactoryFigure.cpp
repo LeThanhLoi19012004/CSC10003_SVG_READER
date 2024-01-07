@@ -1,7 +1,6 @@
 #include "Lib.h"
 
 figure* factoryfigure::getFigure(string name) {
-
 	int num = figureId[name];
 	switch (num) {
 	case 1: {
@@ -44,6 +43,7 @@ figure* factoryfigure::getFigure(string name) {
 	}
 	return NULL;
 }
+
 factoryfigure::factoryfigure() {
 	figureId["rect"] = 1;
 	figureId["circle"] = 2;
@@ -55,6 +55,7 @@ factoryfigure::factoryfigure() {
 	figureId["path"] = 8;
 	figureId["g"] = 9;
 }
+
 unordered_map<string, int> factoryfigure::getFigureId() {
 	return this->figureId;
 }

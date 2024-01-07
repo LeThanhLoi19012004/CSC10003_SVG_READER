@@ -17,6 +17,7 @@
 #include <windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+
 using namespace std;
 using namespace rapidxml;
 using namespace Gdiplus;

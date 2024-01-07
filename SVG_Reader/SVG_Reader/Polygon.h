@@ -4,6 +4,7 @@
 class polygon : public figure {
 private:
 	vector<point> Vers;
+
 public:
 	polygon();
 	~polygon();
@@ -12,7 +13,6 @@ public:
 	vector<point> getVers();
 
 	void updateProperty();
-	void transformFigure();
 };
 
 #endif

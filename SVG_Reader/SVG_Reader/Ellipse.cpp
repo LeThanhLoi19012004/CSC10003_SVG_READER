@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-ellipse::ellipse() :figure() {
+ellipse::ellipse() : figure() {
 	rx = ry = 0;
 	center.setX(0);
 	center.setY(0);
@@ -19,6 +19,7 @@ void ellipse::updateProperty() {
 	while (ss >> property) {
 		getline(ss, temp, '"');
 		getline(ss, val, '"');
+
 		if (property == "rx")
 			this->rx = stof(val);
 		if (property == "ry")
@@ -54,38 +55,3 @@ void ellipse::setRx(float rx) {
 void ellipse::setRy(float ry) {
 	this->ry = ry;
 }
-
-void ellipse::transformFigure() {
-	/*float curX = this->center.getX();
-	float curY = this->center.getY();
-	for (auto p : transVct) {
-		if (p.first == "translate") {
-			this->center.setX(curX + p.second[0]);
-			this->center.setY(curY + p.second[1]);
-		}
-		if (p.first == "rotate") {
-			this->isRotate = true;
-		}
-		if (p.first == "scale") {
-			curX = this->center.getX();
-			curY = this->center.getY();
-			if (p.second.size() == 1) {
-				float scl = p.second[0];
-				this->center.setX(curX * scl);
-				this->center.setY(curY * scl);
-				this->rx *= scl;
-				this->ry *= scl;
-			}
-			else {
-				float sclX = p.second[0];
-				float sclY = p.second[1];
-
-				this->center.setX(curX * sclX);
-				this->center.setY(curY * sclY);
-				this->rx *= sclX;
-				this->ry *= sclY;
-			}
-		}
-	}*/
-}
-

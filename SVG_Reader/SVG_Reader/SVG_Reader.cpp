@@ -20,7 +20,6 @@ float scale = 1.0;
 float Rotate = 0;
 float scroll_x = 0;
 float scroll_y = 0;
-//float max_width = 0, max_height = 0;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -334,20 +333,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             loop = false;
         }
 
-        // Init GDI+ Graphics
-        // Set GDI+ transform
         Graphics graphics(hdc);
-        //Rect clipRect(scroll_x, scroll_y, Width * scale, Height * scale);
-
-        // Set the clipping region for the Graphics object
         graphics.RotateTransform(Rotate);
-        //graphics.SetClip(clipRect, CombineModeReplace);
         graphics.TranslateTransform(scroll_x, scroll_y);
         if (vb->getViewHeight() != 0 || vb->getViewWidth() != 0)
             graphics.SetClip(Gdiplus::RectF(0, 0, Width * scale, Height * scale));
         graphics.ScaleTransform(scale * scaleXY, scale * scaleXY);
 
-        // Set GDI+ rendering graphics
         graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
         graphics.SetCompositingMode(Gdiplus::CompositingModeSourceOver);
         graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHighQuality);
@@ -388,10 +380,3 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     }
     return (INT_PTR)FALSE;
 }
-
-//int main(int argc, char* argv[]) {
-//    /*GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
-//    if (argc > 1) filename = "test case/" + (string)argv[1];*/
-//    INT result = WinMain(GetModuleHandle(NULL), NULL, GetCommandLineA(), SW_SHOWNORMAL);
-//    return result;
-//}

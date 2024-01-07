@@ -18,4 +18,3 @@ image::~image() {
 	delete root;
 	root = NULL;
 }
-

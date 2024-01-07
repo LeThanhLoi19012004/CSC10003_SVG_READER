@@ -1,7 +1,7 @@
 #ifndef _CIRCLE_H_
 #define _CIRCLE_H_
 
-class circle :public ellipse {
+class circle : public ellipse {
 private:
 
 public:
