@@ -20,7 +20,7 @@ float scale = 1.0;
 float Rotate = 0;
 float scroll_x = 0;
 float scroll_y = 0;
-float max_width = 0, max_height = 0;
+//float max_width = 0, max_height = 0;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -309,18 +309,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         GetWindowRect(hWnd, &window);
 
         if (Width == 0 || Height == 0) {
-            Width = window.right - window.left;
-            Height = window.bottom - window.top;
+            Width = window.right - window.left - 16;
+            Height = window.bottom - window.top - 39;
         }
 
-        if (Width && Height && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+        float tmpX = 0, tmpY = 0;
+        if (vb->getViewWidth() && vb->getViewHeight())
+        {
+            scaleX = Width / vb->getViewWidth();
+            scaleY = Height / vb->getViewHeight();
+            scaleXY = (scaleX < scaleY) ? scaleX : scaleY;
+            tmpX = (Width - vb->getViewWidth() * scaleXY) / 2;
+            tmpY = (Height - vb->getViewHeight() * scaleXY) / 2;
+        }
+        if (Width && Height && vb->getViewWidth() && vb->getViewHeight()) {
             scaleX = Width / vb->getViewWidth();
             scaleY = Height / vb->getViewHeight();
             scaleXY = (scaleX < scaleY) ? scaleX : scaleY;
         }
-
         static bool loop = true;
-        if (loop && vb->getViewWidth() != 0 && vb->getViewHeight() != 0) {
+        if (loop && vb->getViewWidth() && vb->getViewHeight()) {
             scroll_x += abs(Width - vb->getViewWidth() * scaleXY) / 2;
             scroll_y += abs(Height - vb->getViewHeight() * scaleXY) / 2;
             loop = false;
@@ -329,17 +337,24 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         // Init GDI+ Graphics
         // Set GDI+ transform
         Graphics graphics(hdc);
-        Rect clipRect(scroll_x, scroll_y, Width * scale, Height * scale);
+        //Rect clipRect(scroll_x, scroll_y, Width * scale, Height * scale);
 
         // Set the clipping region for the Graphics object
         graphics.RotateTransform(Rotate);
-        graphics.SetClip(clipRect, CombineModeReplace);
+        //graphics.SetClip(clipRect, CombineModeReplace);
         graphics.TranslateTransform(scroll_x, scroll_y);
-
-        if (Height != 0 || Width != 0)
+        if (vb->getViewHeight() != 0 || vb->getViewWidth() != 0)
             graphics.SetClip(Gdiplus::RectF(0, 0, Width * scale, Height * scale));
         graphics.ScaleTransform(scale * scaleXY, scale * scaleXY);
+
+        // Set GDI+ rendering graphics
+        graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
+        graphics.SetCompositingMode(Gdiplus::CompositingModeSourceOver);
+        graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHighQuality);
+        graphics.SetInterpolationMode(Gdiplus::InterpolationModeHighQuality);
+
         img.renderImage(renderTool, graphics);
+
         EndPaint(hWnd, &ps);
         delete vb;
     }

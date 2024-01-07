@@ -262,6 +262,7 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 				getline(sss, val, '"');
 				if (attribute == "viewBox") {
 					stringstream ssss(val);
+
 					ssss >> viewX >> viewY >> viewWidth >> viewHeight;
 					ssss.ignore();
 					vb.setViewX(viewX);
@@ -269,7 +270,6 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					vb.setViewWidth(viewWidth);
 					vb.setViewHeight(viewHeight);
 				}
-
 				if (attribute == "preserveAspectRatio") {
 					stringstream ssss(val);
 					ssss >> preservedForm >> preservedMode;
@@ -277,14 +277,28 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					vb.setPreservedForm(preservedForm);
 					vb.setPreservedMode(preservedMode);
 				}
-
 				if (attribute == "width") {
 					portWidth = stof(val);
+					if (val.find("pt") != string::npos)
+					{
+						portWidth *= 96.f / 72.f;
+					}
+					else if (val.find("cm") != string::npos)
+					{
+						portWidth *= 96.f / 2.54f;
+					}
 					vb.setPortWidth(portWidth);
 				}
-
 				if (attribute == "height") {
 					portHeight = stof(val);
+					if (val.find("pt") != string::npos)
+					{
+						portHeight *= 96.f / 72.f;
+					}
+					else if (val.find("cm") != string::npos)
+					{
+						portHeight *= 96.f / 2.54f;
+					}
 					vb.setPortHeight(portHeight);
 				}
 			}
