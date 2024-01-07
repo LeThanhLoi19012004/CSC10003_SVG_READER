@@ -230,6 +230,7 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 	group* curGroup = root;
 
 	bool openDef = false, openLinear = false, openRadial = false;
+	bool closeLinear = false, closeRadial = false;
 	string idStr = "";
 	vector<string> gradVct;
 
@@ -339,6 +340,9 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 					getline(sss, idStr, '"');
 					getline(sss, remainLine);
 					gradVct.push_back(remainLine);
+					if (remainLine.find("xlink:href") != string::npos) {
+						closeRadial = true;
+					}
 				}
 				else {
 					gradVct.push_back(property);
@@ -387,11 +391,33 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 				idStr = "";
 				gradVct.clear();
 			}
-			if (name.find("/radialGradient") != string::npos) {
+			if (name.find("/radialGradient") != string::npos || closeRadial) {
 				openRadial = false;
+				
 				radialgradient* radial = new radialgradient;
 				radial->setStrLine(gradVct[0]);
 				radial->updateElement();
+
+				if (closeRadial) { // Have link
+					stringstream stream(gradVct[0]);
+					string temp = "", val = "", attr = "", strLink = "";
+					while (stream >> attr) {
+						getline(stream, temp, '"');
+						getline(stream, val, '"');
+						if (attr == "xlink:href") {
+							val.erase(0, 1);
+							strLink = val;
+							strLink += " 1";
+							if (idMap.find(strLink) != idMap.end()) {
+								for (int i = 0; i < idMap[strLink]->getStopVct().size(); i++) {
+									radial->addStop(idMap[strLink]->getStopVct()[i]);
+								}
+							}
+						}
+					}
+				}
+
+
 
 				for (int i = 1; i < gradVct.size() - 1; i++) {
 					stop stp;
@@ -428,6 +454,7 @@ void parser::parseItem(group* root, string fileName, viewbox& vb) {
 				}
 				idStr = "";
 				gradVct.clear();
+				closeRadial = false;
 			}
 		}
 		if (name.find("/def") != string::npos) {

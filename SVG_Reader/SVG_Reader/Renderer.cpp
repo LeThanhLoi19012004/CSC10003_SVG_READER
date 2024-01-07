@@ -258,6 +258,7 @@ void renderer::drawText(Graphics& graphics, text* fig) {
 }
 
 void renderer::drawPath(Graphics& graphics, path* fig) {
+	ofstream ofs("test.txt", ios::out);
 	GraphicsState save = graphics.Save();
 	vector<pair<char, vector<float>>> vct = fig->getProp();
 	FillMode fillMode;
@@ -269,7 +270,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 	PointF P0;
 	for (int i = 0; i < vct.size(); i++) {
 		int numPoint = vct[i].second.size();
-		if (vct[i].first == 'M' || vct[i].first == 'm') {
+		if (vct[i].first == 'M' || vct[i].first == 'm') {				
 			gradient* grad = fig->getGrad();
 			if (grad == NULL) {
 				path.StartFigure();
@@ -290,6 +291,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				else P0 = PointF(vct[i].second[0], vct[i].second[1]);
 			}
 			else {
+				path.StartFigure();
 				int j = 0;
 				while (numPoint > 1) {
 					PointF P1 = PointF(vct[i].second[j + 0], vct[i].second[j + 1]);
@@ -350,15 +352,22 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 				j += 4;
 			}
 		}
-
+		
 		else if (vct[i].first == 'A' || vct[i].first == 'a') {
 			int j = 0;
 			while (numPoint > 6) {
 				if (i > 0) {
 					int n = vct[i - 1].second.size();
 					if (n > 1) {
-						double sx = vct[i - 1].second[n - 2];
-						double sy = vct[i - 1].second[n - 1];
+						double sx = 0, sy = 0;
+						if (j == 0) {
+							sx = vct[i - 1].second[n - 2];
+							sy = vct[i - 1].second[n - 1];
+						}
+						else {
+							sx = vct[i].second[j - 2];
+							sy = vct[i].second[j - 1];
+						}
 						double rx = vct[i].second[j + 0];
 						double ry = vct[i].second[j + 1];
 						double xAR = vct[i].second[j + 2];
@@ -366,7 +375,6 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 						bool sF = vct[i].second[j + 4];
 						double ex = vct[i].second[j + 5];
 						double ey = vct[i].second[j + 6];
-
 						double angle = xAR * Pi / 180.f;
 						double cosAngle = cos(angle);
 						double sinAngle = sin(angle);
@@ -468,8 +476,8 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 						}
 
 						P0 = PointF(ex, ey);
-						numPoint -= 6;
-						j += 6;
+						numPoint -= 7;
+						j += 7;
 					}
 				}
 			}
@@ -526,7 +534,6 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 
 			vector<stop> ColorOffset = linear->getStopVct();
 			int size = ColorOffset.size();
-
 			if (ColorOffset[0].offset != 0) {
 				color first = ColorOffset[0].stopColor;
 				float offset = ColorOffset[0].offset;
@@ -588,7 +595,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			int size = ColorOffset.size();
 
 			GraphicsPath pathE;
-			pathE.AddEllipse(RectF(cx - r, cy - r, r * 2.f, r * 2.f));
+			pathE.AddEllipse(RectF(cx - r, cy - r, r * 2, r * 2));
 			PathGradientBrush fillPath(&pathE);
 
 			if (ColorOffset[0].offset != 0) {
@@ -636,7 +643,7 @@ void renderer::drawPath(Graphics& graphics, path* fig) {
 			}
 
 			Color it = Color(
-				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.opacity * 255,
+				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.opacity * 1,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.r,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.g,
 				radial->getStopVct()[radial->getStopVct().size() - 1].stopColor.b);

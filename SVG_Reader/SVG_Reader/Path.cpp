@@ -9,6 +9,7 @@ path::path() :figure() {
 path::~path() {}
 
 void path::updateProperty() {
+	ofstream ofs("test.txt", ios::out);
 	stringstream ss(line_str);
 	string property, val, temp;
 
@@ -383,6 +384,14 @@ void path::updateProperty() {
 			}
 		}
 	}
+
+	/*for (auto pair : vct) {
+		ofs << pair.first << ":";
+		for (float p : pair.second) {
+			ofs << p << " ";
+		}
+		ofs << "\n";
+	}*/
 }
 
 string path::getStrokeLineJoin() {
