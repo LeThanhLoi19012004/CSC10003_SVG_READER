@@ -1,6 +1,9 @@
 #include "Lib.h"
 
-figure::figure() {}
+figure::figure() {
+	grad = NULL;
+	text_name = "", line_str = "", fig = "";
+}
 
 void figure::updateProperty() {}
 
@@ -8,20 +11,38 @@ string figure::getName() {
 	return this->fig;
 }
 
+gradient* figure::getGrad() {
+	return this->grad;
+}
+
+void figure::setGrad(gradient* grad) {
+	if (grad->getGradId() == 1)
+		this->grad = new lineargradient;
+	else if (grad->getGradId() == 2)
+		this->grad = new radialgradient;
+}
+
 void figure::setName(string s) {
 	this->fig = s;
 }
+
 void figure::setStroke(stroke stroke) {
 	this->strk = stroke;
 }
+
 void figure::setColor(color fill) {
 	this->fill = fill;
 }
-figure:: ~figure() {}
+
+figure:: ~figure() {
+	delete grad;
+	grad = NULL;
+}
 
 void figure::setTextName(string textName) {
 	this->text_name = textName;
 }
+
 void figure::setLine(string line) {
 	this->line_str = line;
 }
@@ -29,9 +50,11 @@ void figure::setLine(string line) {
 string figure::getTextName() {
 	return this->text_name;
 }
+
 stroke figure::getStroke() {
 	return this->strk;
 }
+
 color figure::getColor() {
 	return this->fill;
 }
@@ -91,10 +114,21 @@ void figure::updateTransformVct(string str) {
 				string x = "", y = "";
 				ssss >> x >> y;
 				ssss.ignore();
-
 				p.second.push_back(stof(x));
 				p.second.push_back(stof(y));
 			}
+		}
+		else if (name == "matrix") {
+			p.first = name;
+			string x1 = "", y1 = "", x2 = "", y2 = "", x3 = "", y3 = "";
+			ssss >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+			ssss.ignore();
+			p.second.push_back(stof(x1));
+			p.second.push_back(stof(y1));
+			p.second.push_back(stof(x2));
+			p.second.push_back(stof(y2));
+			p.second.push_back(stof(x3));
+			p.second.push_back(stof(y3));
 		}
 		transVct.push_back(p);
 	}
@@ -104,5 +138,16 @@ vector<pair<string, vector<float>>> figure::getTransVct() {
 }
 
 void figure::transformFigure() {
+	return;
+}
 
+void figure::convertGradient(gradient* grad) {
+	if (grad->getGradId() == 1) {
+		this->grad = new lineargradient;
+	}
+	else if (grad->getGradId() == 2) {
+		this->grad = new radialgradient;
+	}
+	else this->grad = NULL;
+	this->grad = grad;
 }

@@ -3,10 +3,9 @@
 
 class renderer {
 public:	
-	void renderItem(group*, float, string, float, float, Graphics&);
+	void renderFigure(Graphics&, group*);
 	
 	///*Draw the figure functions*/
-  void drawFigure(Graphics&, group*);
 	void drawRectangle(Graphics&, rectangle*);
 	void drawEllipse(Graphics&, ellipse*);
 	void drawLine(Graphics&, line*);

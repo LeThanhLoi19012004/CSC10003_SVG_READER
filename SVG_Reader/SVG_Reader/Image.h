@@ -4,23 +4,13 @@
 class image {
 private:
 	//Image property
-	string fileName, imageName;
-	int width, height;
-	float antialiasingLevel;
+	string fileName;
 	group* root;
+
 public:
 	image(string);
-	int getWidth();
-	int getHeight();
-	float getAntialiasingLevel();
-
-	void setWidth(int);
-	void setHeight(int);
-	void setAntialiasingLevel(float);
-
-	void parseImage(parser);
+	void parseImage(parser, viewbox&);
 	void renderImage(renderer, Graphics&);
-
 	~image();
 };
 
